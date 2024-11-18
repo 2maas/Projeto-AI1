@@ -57,7 +57,7 @@
                 document.getElementById('ram-cell').textContent = `${storedItems['RAM'].name} - $${storedItems['RAM'].price}`;
             }
 
-            let precototal = (storedItems['CPU'].price + storedItems['GPU'].price + storedItems['RAM'].price);
+            let precototal = (storedItems['CPU'].price + storedItems['GPU'].price);
 
             document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal;
         }
