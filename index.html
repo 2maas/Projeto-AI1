@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página principal</title>
+    <title>PC Builder</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>Teste</p>
+    <h1>Monte o Seu PC</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Componente Selecionado</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody id="component-table">
+            <tr>
+                <td>CPU</td>
+                <td id="cpu-cell">Nenhum</td>
+                <td><button onclick="redirectTo('cpu')">Escolher CPU</button></td>
+            </tr>
+            <tr>
+                <td>GPU</td>
+                <td id="gpu-cell">Nenhum</td>
+                <td><button onclick="redirectTo('gpu')">Escolher GPU</button></td>
+            </tr>
+            <tr>
+              <td>RAM</td>
+              <td id="ram-cell">Nenhum</td>
+              <td><button onclick="redirectTo('ram')">Escolher GPU</button></td>
+          </tr>
+            <!-- Adicione mais componentes se necessário -->
+        </tbody>
+    </table>
+
+    <label id="labelteste"></label>
+
+    <script>
+        // Redirecionar para a página de seleção do componente
+        function redirectTo(pagina) {
+            window.location.href = 'listagem.html?valor=${pagina}';
+        }
+
+        // Recuperar os componentes salvos no localStorage e preencher a tabela
+        function loadComponents() {
+            const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
+            if (storedItems['CPU']) {
+                document.getElementById('cpu-cell').textContent = `${storedItems['CPU'].name} - $${storedItems['CPU'].price}`;
+            }
+            if (storedItems['GPU']) {
+                document.getElementById('gpu-cell').textContent = `${storedItems['GPU'].name} - $${storedItems['GPU'].price}`;
+            }
+            if (storedItems['RAM']) {
+                document.getElementById('ram-cell').textContent = `${storedItems['RAM'].name} - $${storedItems['RAM'].price}`;
+            }
+
+            let precototal = (storedItems['CPU'].price + storedItems['GPU'].price + storedItems['RAM'].price);
+
+            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal;
+        }
+
+
+
+        // Carregar os componentes ao abrir a página
+        window.onload = loadComponents;
+    </script>
 </body>
 </html>

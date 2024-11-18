@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar CPU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Escolha uma CPU</h1>
+    <div id="cpu-options">
+        <div class="option">
+            <h3>AMD Ryzen 7 7800X3D</h3>
+            <p>Preço: $458.98</p>
+            <button onclick="selectComponent('CPU', 'AMD Ryzen 7 7800X3D', 458.98)">Selecionar</button>
+        </div>
+        <div class="option">
+            <h3>AMD Ryzen 5 7600X</h3>
+            <p>Preço: $194.00</p>
+            <button onclick="selectComponent('CPU', 'AMD Ryzen 5 7600X', 194.00)">Selecionar</button>
+        </div>
+        <!-- Adicione mais CPUs aqui -->
+    </div>
+
+    <script>
+        function selectComponent(type, name, price) {
+            // Obter os itens existentes no localStorage ou inicializar vazio
+            let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
+
+            // Atualizar ou adicionar o novo componente
+            storedItems[type] = { name, price };
+
+            // Salvar no localStorage
+            localStorage.setItem('selectedItems', JSON.stringify(storedItems));
+
+            // Retornar para a página inicial
+            window.location.href = 'teste.html';
+        }
+    </script>
+</body>
+</html>
