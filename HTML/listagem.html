@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selecionar CPU</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>Escolha uma CPU</h1>
     <!--<div id="cpu-options">
@@ -30,7 +32,7 @@
 
     <script>
 
-            // Lista de componentes
+        // Lista de componentes
         const components = [
             { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 458.98 },
             { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 194.00 },
@@ -43,45 +45,42 @@
         const params = new URLSearchParams(window.location.search);
         const filterType = params.get('valor'); // Nome do parâmetro que você passou na URL
 
-        // Filtrar os componentes com base no tipo (se fornecido)
-        const filteredComponents = filterType
-            ? components.filter(component => component.type === filterType)
-            : components;
-
         // Selecionar o contêiner onde os itens serão renderizados
         const optionsContainer = document.getElementById('component-options');
 
-        // Verificar se há componentes para exibir
-        if (filteredComponents.length === 0) {
-            optionsContainer.textContent = 'Nenhum componente disponível para esta categoria.';
+        // Filtrar os componentes com base no tipo (se fornecido)
+        if (filterType) {
+            // Filtra os componentes para exibir apenas os do tipo especificado na URL
+            const filteredComponents = components.filter(component => component.type === filterType);
+
+            // Verificar se há componentes para exibir
+            if (filteredComponents.length === 0) {
+                optionsContainer.textContent = `Nenhum componente disponível para o tipo "${filterType}".`;
+            } else {
+                // Gerar os elementos dinamicamente
+                filteredComponents.forEach(component => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.classList.add('option');
+
+                    const title = document.createElement('h3');
+                    title.textContent = component.name;
+
+                    const price = document.createElement('p');
+                    price.textContent = `Preço: $${component.price.toFixed(2)}`;
+
+                    const button = document.createElement('button');
+                    button.textContent = 'Selecionar';
+                    button.onclick = () => selectComponent(component.type, component.name, component.price);
+
+                    optionDiv.appendChild(title);
+                    optionDiv.appendChild(price);
+                    optionDiv.appendChild(button);
+
+                    optionsContainer.appendChild(optionDiv);
+                });
+            }
         } else {
-            // Gerar os elementos dinamicamente
-            filteredComponents.forEach(component => {
-                // Criar o div do item
-                const optionDiv = document.createElement('div');
-                optionDiv.classList.add('option');
-
-                // Criar o título
-                const title = document.createElement('h3');
-                title.textContent = component.name;
-
-                // Criar o parágrafo do preço
-                const price = document.createElement('p');
-                price.textContent = `Preço: $${component.price.toFixed(2)}`;
-
-                // Criar o botão de selecionar
-                const button = document.createElement('button');
-                button.textContent = 'Selecionar';
-                button.onclick = () => selectComponent(component.type, component.name, component.price);
-
-                // Adicionar os elementos ao div
-                optionDiv.appendChild(title);
-                optionDiv.appendChild(price);
-                optionDiv.appendChild(button);
-
-                // Adicionar o div ao contêiner
-                optionsContainer.appendChild(optionDiv);
-            });
+            optionsContainer.textContent = 'Parâmetro "valor" não fornecido na URL.';
         }
 
 
@@ -101,4 +100,5 @@
         }
     </script>
 </body>
+
 </html>
