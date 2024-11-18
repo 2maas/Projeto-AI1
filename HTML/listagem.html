@@ -51,41 +51,33 @@
         const optionsContainer = document.getElementById('component-options');
 
         // Filtrar os componentes com base no tipo (se fornecido)
-        if (filterType) {
-            // Filtra os componentes para exibir apenas os do tipo especificado na URL
-            const filteredComponents = components.filter(component => component.type === filterType);
 
-            // Verificar se há componentes para exibir
-            if (filteredComponents.length === 0) {
-                optionsContainer.textContent = `Nenhum componente disponível para o tipo "${filterType}".`;
-            } else {
-                // Gerar os elementos dinamicamente
-                filteredComponents.forEach(component => {
-                    const optionDiv = document.createElement('div');
-                    optionDiv.classList.add('option');
+        // Filtra os componentes para exibir apenas os do tipo especificado na URL
+        const filteredComponents = components.filter(component => component.type === filterType);
 
-                    const title = document.createElement('h3');
-                    title.textContent = component.name;
+        
+        // Gerar os elementos dinamicamente
+        filteredComponents.forEach(component => {
+            const optionDiv = document.createElement('div');
+            optionDiv.classList.add('option');
 
-                    const price = document.createElement('p');
-                    price.textContent = `Preço: $${component.price.toFixed(2)}`;
+            const title = document.createElement('h3');
+            title.textContent = component.name;
 
-                    const button = document.createElement('button');
-                    button.textContent = 'Selecionar';
-                    button.onclick = () => selectComponent(component.type, component.name, component.price);
+            const price = document.createElement('p');
+            price.textContent = `Preço: $${component.price.toFixed(2)}`;
 
-                    optionDiv.appendChild(title);
-                    optionDiv.appendChild(price);
-                    optionDiv.appendChild(button);
+            const button = document.createElement('button');
+            button.textContent = 'Selecionar';
+            button.onclick = () => selectComponent(component.type, component.name, component.price);
 
-                    optionsContainer.appendChild(optionDiv);
-                });
-            }
-        } else {
-            optionsContainer.textContent = 'Parâmetro "valor" não fornecido na URL.';
-        }
+            optionDiv.appendChild(title);
+            optionDiv.appendChild(price);
+            optionDiv.appendChild(button);
 
-
+            optionsContainer.appendChild(optionDiv);
+        });
+    
 
         function selectComponent(type, name, price) {
             // Obter os itens existentes no localStorage ou inicializar vazio
