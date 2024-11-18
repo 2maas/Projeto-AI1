@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Escolha uma CPU</h1>
-    <div id="cpu-options">
+    <!--<div id="cpu-options">
         <div class="option">
             <h3>AMD Ryzen 7 7800X3D</h3>
             <p>Preço: $458.98</p>
@@ -24,10 +24,67 @@
             <p>Preço: $294.00</p>
             <button onclick="selectComponent('GPU', 'RTX 3060', 294.00)">Selecionar</button>
         </div>
-        <!-- Adicione mais CPUs aqui -->
-    </div>
+         Adicione mais CPUs aqui 
+    </div>-->
 
     <script>
+
+            // Lista de componentes
+        const components = [
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 458.98 },
+            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 194.00 },
+            { type: 'GPU', name: 'RTX 3060', price: 294.00 },
+            { type: 'GPU', name: 'RTX 4070', price: 599.00 },
+            // Adicione mais componentes aqui
+        ];
+
+        // Obter o parâmetro da URL
+        const params = new URLSearchParams(window.location.search);
+        const filterType = params.get('valor'); // Nome do parâmetro que você passou na URL
+
+        // Filtrar os componentes com base no tipo (se fornecido)
+        const filteredComponents = filterType
+            ? components.filter(component => component.type === filterType)
+            : components;
+
+        // Selecionar o contêiner onde os itens serão renderizados
+        const optionsContainer = document.getElementById('component-options');
+
+        // Verificar se há componentes para exibir
+        if (filteredComponents.length === 0) {
+            optionsContainer.textContent = 'Nenhum componente disponível para esta categoria.';
+        } else {
+            // Gerar os elementos dinamicamente
+            filteredComponents.forEach(component => {
+                // Criar o div do item
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+
+                // Criar o título
+                const title = document.createElement('h3');
+                title.textContent = component.name;
+
+                // Criar o parágrafo do preço
+                const price = document.createElement('p');
+                price.textContent = `Preço: $${component.price.toFixed(2)}`;
+
+                // Criar o botão de selecionar
+                const button = document.createElement('button');
+                button.textContent = 'Selecionar';
+                button.onclick = () => selectComponent(component.type, component.name, component.price);
+
+                // Adicionar os elementos ao div
+                optionDiv.appendChild(title);
+                optionDiv.appendChild(price);
+                optionDiv.appendChild(button);
+
+                // Adicionar o div ao contêiner
+                optionsContainer.appendChild(optionDiv);
+            });
+        }
+
+
+
         function selectComponent(type, name, price) {
             // Obter os itens existentes no localStorage ou inicializar vazio
             let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
