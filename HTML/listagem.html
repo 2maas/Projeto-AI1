@@ -69,6 +69,8 @@
             imgElement.src = component.img;
             imgElement.alt = 'Imagem Exemplo';
 
+            const br = document.createElement('br');
+
             const button = document.createElement('button');
             button.textContent = 'Selecionar';
             button.onclick = () => selectComponent(component.type, component.name, component.price);
@@ -77,6 +79,7 @@
             optionDiv.appendChild(price);
             optionDiv.appendChild(button);
             optionDiv.appendChild(imgElement);
+            optionDiv.appendChild(br);
 
             optionsContainer.appendChild(optionDiv);
         });
