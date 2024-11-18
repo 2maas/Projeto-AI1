@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,25 +16,25 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #a9a9af;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             flex-direction: column;
             padding: 20px;
         }
 
         h1 {
             font-size: 2rem;
-            color: #007BFF;
+            color: #333;
             margin-bottom: 30px;
         }
 
         table {
-            width: 90%;
+            
+            width: 70%;
             border-collapse: collapse;
             margin-bottom: 20px;
             border-radius: 10px;
@@ -50,14 +51,20 @@
         }
 
         th {
-            background-color: #007BFF;
-            color: white;
+            background-color: #99999d;
+            color: #333;
             text-transform: uppercase;
         }
 
         td {
             background-color: white;
             border-bottom: 1px solid #ddd;
+            overflow: hidden;       
+            text-overflow: ellipsis; 
+        }
+
+        th[id="componentes"]{
+            min-width: 30%;    
         }
 
         tr:hover td {
@@ -65,7 +72,7 @@
         }
 
         button {
-            background-color: #28a745;
+            background-color: #99999d;
             color: white;
             padding: 8px 15px;
             font-size: 1rem;
@@ -73,10 +80,19 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+
         }
 
         button:hover {
-            background-color: #218838;
+            background-color: #99999d85;
+        }
+
+        .icon-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
         }
 
         #labelteste {
@@ -88,50 +104,128 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
-            table {
-                width: 100%;
-                font-size: 0.9rem;
+
+            thead
+            {
+                display: none;
             }
 
-            button {
-                padding: 6px 12px;
-                font-size: 0.9rem;
-            }
 
-            #labelteste {
-                font-size: 1rem;
-            }
         }
+
+        
     </style>
 
 </head>
+
 <body>
     <h1>Monte o Seu PC</h1>
     <table>
         <thead>
             <tr>
-                <th>Tipo</th>
-                <th>Componente Selecionado</th>
-                <th>Ação</th>
+                <th>Componente</th>
+                <th id="componentes">Componente Selecionado</th>
+                <th>Preço</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="component-table">
             <tr>
                 <td>CPU</td>
-                <td id="cpu-cell">Nenhum</td>
-                <td><button onclick="redirectTo('CPU')">Escolher CPU</button></td>
+                <td id="CPU-td">
+                    <img src="" alt="CPU imagem" id="CPU-img" style="display: none;width: 50px;">     
+                    <label id="CPU-info">Nenhum</label>
+                </td>
+                <td id="CPU-preco"></td>
+                <td>
+                    <button onclick="redirectTo('CPU')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('CPU')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>CPU COOLER</td>
+                <td id="COOLER-td">
+                    <img src="" alt="COOLER imagem" id="COOLER-img" style="display: none;width: 50px;">     
+                    <label id="COOLER-info">Nenhum</label>
+                </td>
+                <td id="COOLER-preco"></td>
+                <td>
+                    <button onclick="redirectTo('COOLER')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('COOLER')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>   
+            </tr>
+            <tr>
+                <td>MOTHERBOARD</td>
+                <td id="MOTHERBOARD-td">
+                    <img src="" alt="MOTHERBOARD imagem" id="MOTHERBOARD-img" style="display: none;width: 50px;">     
+                    <label id="MOTHERBOARD-info">Nenhum</label>
+                </td>
+                <td id="MOTHERBOARD-preco"></td>
+                <td>
+                    <button onclick="redirectTo('MOTHERBOARD')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td id="RAM-td">
+                    <img src="" alt="RAM imagem" id="RAM-img" style="display: none;width: 50px;">     
+                    <label id="RAM-info">Nenhum</label>
+                </td>
+                <td id="RAM-preco"></td>
+                <td>
+                    <button onclick="redirectTo('RAM')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('RAM')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>ARMAZENAMENTO</td>
+                <td id="ARMAZENAMENTO-td">
+                    <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img" style="display: none;width: 50px;">     
+                    <label id="ARMAZENAMENTO-info">Nenhum</label>
+                </td>
+                <td id="ARMAZENAMENTO-preco"></td>
+                <td>
+                    <button onclick="redirectTo('ARMAZENAMENTO')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
             </tr>
             <tr>
                 <td>GPU</td>
-                <td id="gpu-cell">Nenhum</td>
-                <td><button onclick="redirectTo('GPU')">Escolher GPU</button></td>
+                <td id="GPU-td">
+                    <img src="" alt="GPU imagem" id="GPU-img" style="display: none;width: 50px;">     
+                    <label id="GPU-info">Nenhum</label>
+                </td>
+                <td id="GPU-preco"></td>
+                <td>
+                    <button onclick="redirectTo('GPU')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('GPU')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
             </tr>
             <tr>
-              <td>RAM</td>
-              <td id="ram-cell">Nenhum</td>
-              <td><button onclick="redirectTo('RAM')">Escolher RAM</button></td>
-          </tr>
-            <!-- Adicione mais componentes se necessário -->
+                <td>CAIXA</td>
+                <td id="CAIXA-td">
+                    <img src="" alt="CAIXA imagem" id="CAIXA-img" style="display: none;width: 50px;">     
+                    <label id="CAIXA-info">Nenhum</label>
+                </td>
+                <td id="CAIXA-preco"></td>
+                <td>
+                    <button onclick="redirectTo('CAIXA')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('CAIXA')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>FONTE</td>
+                <td id="FONTE-td">
+                    <img src="" alt="Fonte imagem" id="FONTE-img" style="display: none;width: 50px;">     
+                    <label id="FONTE-info">Nenhum</label>
+                </td>
+                <td id="FONTE-preco"></td>
+                <td>
+                    <button onclick="redirectTo('FONTE')"><img src="imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
+                    <button onclick="RemoverComponenteTabela('FONTE')"><img src="imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                </td>
+            </tr>
         </tbody>
     </table>
 
@@ -139,32 +233,83 @@
 
     <script>
         let precototal = 0;
-        // Redirecionar para a página de seleção do componente
+
+        window.onload = loadComponents;        
         function redirectTo(pagina) {
             window.location.href = `HTML/listagem.html?valor=${encodeURIComponent(pagina)}`;
         }
 
-        // Recuperar os componentes salvos no localStorage e preencher a tabela
         function loadComponents() {
+            
             const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
             if (storedItems['CPU']) {
-                document.getElementById('cpu-cell').textContent = `${storedItems['CPU'].name} - ${storedItems['CPU'].price}€`;
-                precototal+=storedItems['CPU'].price;
+                mostrarNaTabela(storedItems['CPU'],'CPU');
             }
-            if (storedItems['GPU']) {
-                document.getElementById('gpu-cell').textContent = `${storedItems['GPU'].name} - ${storedItems['GPU'].price}€`;
-                precototal+=storedItems['GPU'].price;
+            if (storedItems['COOLER']) {
+                mostrarNaTabela(storedItems['COOLER'],'COOLER');
+            }
+            if (storedItems['MOTHERBOARD']) {
+                mostrarNaTabela(storedItems['MOTHERBOARD'],'MOTHERBOARD');
             }
             if (storedItems['RAM']) {
-                document.getElementById('ram-cell').textContent = `${storedItems['RAM'].name} - ${storedItems['RAM'].price}€`;
-                precototal+=storedItems['RAM'].price;
+                mostrarNaTabela(storedItems['RAM'],'RAM');
+            }
+            if (storedItems['ARMAZENAMENTO']) {
+                mostrarNaTabela(storedItems['ARMAZENAMENTO'],'ARMAZENAMENTO');
+            }
+            if (storedItems['GPU']) {
+                mostrarNaTabela(storedItems['GPU'],'GPU');
+            }
+            if (storedItems['CAIXA']) {
+                mostrarNaTabela(storedItems['CAIXA'],'CAIXA');
+            }
+            if (storedItems['FONTE']) {
+                mostrarNaTabela(storedItems['FONTE'],'FONTE');
             }
 
-            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal + '€';
+            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
         }
 
-        // Carregar os componentes ao abrir a página
-        window.onload = loadComponents;
+        function mostrarNaTabela(Componente,Tipo)
+        {
+            document.getElementById(Tipo +'-img').style.display = 'block';
+            document.getElementById(Tipo +'-img').src = Componente.img;
+            document.getElementById(Tipo +'-info').textContent = `${Componente.name}`;
+            document.getElementById(Tipo +'-preco').textContent = `${Componente.price.toFixed(2)}€`;
+            precototal += Componente.price;
+
+            StyleComponentes(Tipo);
+        }
+
+        function StyleComponentes(Tipo)
+        {
+            document.getElementById(Tipo +'-td').style.display = 'flex';
+            document.getElementById(Tipo +'-td').style.gap = '5px';
+            document.getElementById(Tipo +'-td').style.alignItems = 'center';
+        }
+
+        function RemoverComponenteTabela(tipo) {
+            const teste = document.getElementById(tipo + '-info').textContent;
+            const teste1 = document.getElementById(tipo + '-preco').textContent;
+
+            if (teste != '' && teste1 != '') {
+                let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
+
+                if (storedItems[tipo]) {         
+                    precototal-= storedItems[tipo].price;
+                    document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
+
+                    delete storedItems[tipo];
+                    localStorage.setItem('selectedItems', JSON.stringify(storedItems));
+
+                    document.getElementById(tipo + '-info').innerHTML = 'Nenhum';
+                    document.getElementById(tipo + '-preco').innerHTML = '';
+                    document.getElementById(tipo + '-img').style.display= 'none';
+                    document.getElementById(tipo + '-td').style.display = 'table-cell';
+                }
+            }
+        }
     </script>
 </body>
+
 </html>

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Reset básico para garantir um visual consistente */
         * {
             margin: 0;
             padding: 0;
@@ -16,8 +15,8 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #a9a9af;
             color: #333;
             display: flex;
             justify-content: center;
@@ -40,7 +39,7 @@
         }
 
         .option {
-            background-color: white;
+            background-color: #ffffffb3;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -73,7 +72,7 @@
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #99999d;
             color: white;
             font-size: 1rem;
             padding: 10px 20px;
@@ -84,17 +83,15 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #99999d85;
         }
 
-        /* Estilo para a mensagem de título */
         #testeh1 {
             margin-bottom: 30px;
             font-size: 1.8rem;
             color: #333;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -110,59 +107,34 @@
 
 <body>
     <h1 id="testeh1"></h1>
-    <!--<div id="cpu-options">
-        <div class="option">
-            <h3>AMD Ryzen 7 7800X3D</h3>
-            <p>Preço: $458.98</p>
-            <button onclick="selectComponent('CPU', 'AMD Ryzen 7 7800X3D', 458.98)">Selecionar</button>
-        </div>
-        <div class="option">
-            <h3>AMD Ryzen 5 7600X</h3>
-            <p>Preço: $194.00</p>
-            <button onclick="selectComponent('CPU', 'AMD Ryzen 5 7600X', 194.00)">Selecionar</button>
-        </div>
-        <div class="option">
-            <h3>RTX 3060</h3>
-            <p>Preço: $294.00</p>
-            <button onclick="selectComponent('GPU', 'RTX 3060', 294.00)">Selecionar</button>
-        </div>
-         Adicione mais CPUs aqui 
-    </div>-->
     <div id="component-options"></div>
     <script>
-
-        // Lista de componentes
         const components = [
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'GPU', name: 'Placa Gráfica Gigabyte NVIDIA GeForce RTX 3060', price: 299.90, img: '../imagens/3.jpg' },
-            { type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4070 SUPER', price: 729.90, img: '../imagens/4.jpg' },
-            { type: 'RAM', name: 'Memória RAM Kingston Fury Beast (AMD Expo) 16GB (2x8GB) DDR5-6000MHz', price: 74.90, img: '../imagens/6.jpg' },
-            { type: 'RAM', name: 'Memória RAM SO-DIMM Kingston Fury Impact 32GB (2x16GB) DDR5-5600MHz', price: 118.90, img: '../imagens/5.jpg'},
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
+            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: 'imagens/2.jpg'},
+            { type: 'COOLER', name: 'Water Cooler CPU Arctic Liquid Freezer III 360 All-In-One Preto', price: 74.90, img: 'imagens/7.jpg' },
+            { type: 'MOTHERBOARD', name: 'AMD Ryzen 5 7600X', price: 219.90, img: 'imagens/2.jpg'},
+            { type: 'ARMAZENAMENTO', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
+            { type: 'CAIXA', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
+            { type: 'FONTE', name: 'AMD Ryzen 5 7600X', price: 219.90, img: 'imagens/2.jpg'},
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
+            { type: 'GPU', name: 'Placa Gráfica Gigabyte NVIDIA GeForce RTX 3060', price: 299.90, img: 'imagens/3.jpg' },
+            { type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4070 SUPER', price: 729.90, img: 'imagens/4.jpg' },
+            { type: 'RAM', name: 'Memória RAM Kingston Fury Beast (AMD Expo) 16GB (2x8GB) DDR5-6000MHz', price: 74.90, img: 'imagens/6.jpg' },
+            { type: 'RAM', name: 'Memória RAM SO-DIMM Kingston Fury Impact 32GB (2x16GB) DDR5-5600MHz', price: 118.90, img: 'imagens/5.jpg'},
         ];
 
         // Obter o parâmetro da URL
         const params = new URLSearchParams(window.location.search);
-        const filterType = params.get('valor'); // Nome do parâmetro que você passou na URL
+        const filterType = params.get('valor');
 
         document.getElementById("testeh1").innerHTML = 'Escolha uma ' + filterType ;
 
-        // Selecionar o contêiner onde os itens serão renderizados
         const optionsContainer = document.getElementById('component-options');
 
-        // Filtrar os componentes com base no tipo (se fornecido)
-
-        // Filtra os componentes para exibir apenas os do tipo especificado na URL
+        // Mostrar Todos os compomentes do tipo passado pela url
         const filteredComponents = components.filter(component => component.type === filterType);
 
-        
-        // Gerar os elementos dinamicamente
         filteredComponents.forEach(component => {
             const optionDiv = document.createElement('div');
             optionDiv.classList.add('option');
@@ -174,14 +146,14 @@
             price.textContent = `Preço: ${component.price.toFixed(2)}€`;
 
             const imgElement = document.createElement('img');
-            imgElement.src = component.img;
+            imgElement.src = '../' + component.img;
             imgElement.alt = 'Imagem Exemplo';
             imgElement.style.maxWidth = '40%';
             imgElement.style.maxHeight = '40%';
 
             const button = document.createElement('button');
             button.textContent = 'Selecionar';
-            button.onclick = () => selectComponent(component.type, component.name, component.price);
+            button.onclick = () => selectComponent(component.type, component.name, component.price,component.img);
 
             optionDiv.appendChild(imgElement);
             optionDiv.appendChild(title);
@@ -191,18 +163,11 @@
             optionsContainer.appendChild(optionDiv);
         });
     
-
-        function selectComponent(type, name, price) {
-            // Obter os itens existentes no localStorage ou inicializar vazio
+        function selectComponent(type, name, price,img) {
+            // Pega os componentes da lista
             let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-
-            // Atualizar ou adicionar o novo componente
-            storedItems[type] = { name, price };
-
-            // Salvar no localStorage
+            storedItems[type] = { name, price, img};
             localStorage.setItem('selectedItems', JSON.stringify(storedItems));
-
-            // Retornar para a página inicial
             window.location.href = '../index.html';
         }
     </script>
