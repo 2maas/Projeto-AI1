@@ -6,6 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selecionar CPU</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Reset básico para garantir um visual consistente */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        #component-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .option {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .option:hover {
+            transform: translateY(-10px);
+        }
+
+        .option img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo para a mensagem de título */
+        #testeh1 {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            #component-options {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -34,7 +134,13 @@
         // Lista de componentes
         const components = [
             { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.00, img: '../imagens/2.jpg'},
+            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
+            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
+            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
+            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
             { type: 'GPU', name: 'Placa Gráfica Gigabyte NVIDIA GeForce RTX 3060', price: 299.90, img: '../imagens/3.jpg' },
             { type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4070 SUPER', price: 729.90, img: '../imagens/4.jpg' },
             { type: 'RAM', name: 'Memória RAM Kingston Fury Beast (AMD Expo) 16GB (2x8GB) DDR5-6000MHz', price: 74.90, img: '../imagens/6.jpg' },
@@ -65,25 +171,22 @@
             title.textContent = component.name;
 
             const price = document.createElement('p');
-            price.textContent = `Preço: $${component.price.toFixed(2)}`;
+            price.textContent = `Preço: ${component.price.toFixed(2)}€`;
 
             const imgElement = document.createElement('img');
             imgElement.src = component.img;
             imgElement.alt = 'Imagem Exemplo';
-            imgElement.style.maxWidth = '10%';
-            imgElement.style.maxHeight = '10%';
-
-            const br = document.createElement('br');
+            imgElement.style.maxWidth = '40%';
+            imgElement.style.maxHeight = '40%';
 
             const button = document.createElement('button');
             button.textContent = 'Selecionar';
             button.onclick = () => selectComponent(component.type, component.name, component.price);
 
+            optionDiv.appendChild(imgElement);
             optionDiv.appendChild(title);
             optionDiv.appendChild(price);
             optionDiv.appendChild(button);
-            optionDiv.appendChild(imgElement);
-            optionDiv.appendChild(br);
 
             optionsContainer.appendChild(optionDiv);
         });

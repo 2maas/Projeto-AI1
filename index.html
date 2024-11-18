@@ -5,10 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Builder</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Reset básico e formatação geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #007BFF;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        td {
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover td {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #labelteste {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+
+            #labelteste {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
 </head>
 <body>
     <h1>Monte o Seu PC</h1>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Tipo</th>
@@ -49,19 +148,19 @@
         function loadComponents() {
             const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
             if (storedItems['CPU']) {
-                document.getElementById('cpu-cell').textContent = `${storedItems['CPU'].name} - $${storedItems['CPU'].price}`;
+                document.getElementById('cpu-cell').textContent = `${storedItems['CPU'].name} - ${storedItems['CPU'].price}€`;
                 precototal+=storedItems['CPU'].price;
             }
             if (storedItems['GPU']) {
-                document.getElementById('gpu-cell').textContent = `${storedItems['GPU'].name} - $${storedItems['GPU'].price}`;
+                document.getElementById('gpu-cell').textContent = `${storedItems['GPU'].name} - ${storedItems['GPU'].price}€`;
                 precototal+=storedItems['GPU'].price;
             }
             if (storedItems['RAM']) {
-                document.getElementById('ram-cell').textContent = `${storedItems['RAM'].name} - $${storedItems['RAM'].price}`;
+                document.getElementById('ram-cell').textContent = `${storedItems['RAM'].name} - ${storedItems['RAM'].price}€`;
                 precototal+=storedItems['RAM'].price;
             }
 
-            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2);
+            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal + '€';
         }
 
         // Carregar os componentes ao abrir a página
