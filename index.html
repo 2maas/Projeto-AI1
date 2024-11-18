@@ -41,7 +41,7 @@
     <script>
         // Redirecionar para a página de seleção do componente
         function redirectTo(pagina) {
-            window.location.href = 'listagem.html?valor=${encodeURLComponent(pagina)}';
+            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
         }
 
         // Recuperar os componentes salvos no localStorage e preencher a tabela
