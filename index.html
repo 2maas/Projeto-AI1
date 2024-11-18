@@ -49,15 +49,16 @@
             const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
             if (storedItems['CPU']) {
                 document.getElementById('cpu-cell').textContent = `${storedItems['CPU'].name} - $${storedItems['CPU'].price}`;
+                precoTotal+=storedItems['CPU'].price;
             }
             if (storedItems['GPU']) {
                 document.getElementById('gpu-cell').textContent = `${storedItems['GPU'].name} - $${storedItems['GPU'].price}`;
+                precoTotal+=storedItems['GPU'].price;
             }
             if (storedItems['RAM']) {
                 document.getElementById('ram-cell').textContent = `${storedItems['RAM'].name} - $${storedItems['RAM'].price}`;
+                precoTotal+=storedItems['RAM'].price;
             }
-
-            let precototal = (storedItems['CPU'].price + storedItems['GPU'].price);
 
             document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal;
         }
