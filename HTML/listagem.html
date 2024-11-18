@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Escolha uma CPU</h1>
+    <h1 id="testeh1"></h1>
     <!--<div id="cpu-options">
         <div class="option">
             <h3>AMD Ryzen 7 7800X3D</h3>
@@ -44,6 +44,8 @@
         // Obter o parâmetro da URL
         const params = new URLSearchParams(window.location.search);
         const filterType = params.get('valor'); // Nome do parâmetro que você passou na URL
+
+        document.getElementById("testeh1").innerHTML = 'Escolha uma ' + filterType ;
 
         // Selecionar o contêiner onde os itens serão renderizados
         const optionsContainer = document.getElementById('component-options');
