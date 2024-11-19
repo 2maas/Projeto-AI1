@@ -8,19 +8,22 @@ body{
 
 /*NAVBAR*/
 .navbar{
-    display: flex;
+	display: flex;
     background-color: #282828;
     color: white;
 }
 
-.nav-conteudo ul{
-    display:flex;
-    gap:20px;
-}
-
 .nav-conteudo{
-    padding-top: 2%;
+	display: flex;        
+    flex-direction: column;   
+    justify-content: center;  
+	padding-left: 30px;
 } 
+
+.nav-conteudo ul{
+	display:flex;
+    gap:30px;
+}
 
 .navbar a {
     color:white;
@@ -29,7 +32,7 @@ body{
 }
 
 .nav-titulo{
-    padding: 1.5%;
+    padding: 10px;
     display: flex;
     align-items: center;
 }
@@ -42,9 +45,15 @@ body{
     padding-top: 10%;
 }
 
+.nav-cont-ul a .imagem {
+	display: none;
+	width: 24px; 
+}
+
 
 
 /*FOOTER*/
+
 *{
 	margin:0;
 	padding:0;
@@ -63,7 +72,7 @@ ul{
 }
 .footer{
 	background-color: #282828;
-    padding: 70px 0;
+  padding: 70px;
 }
 .footer-col{
    width: 25%;
@@ -91,7 +100,6 @@ ul{
 }
 .footer-col ul li a{
 	font-size: 16px;
-	text-transform: capitalize;
 	color: #ffffff;
 	text-decoration: none;
 	font-weight: 300;
@@ -115,26 +123,78 @@ ul{
 	transition: all 0.5s ease;
 }
 
-.footer-col .social-links img{
+.footer-col .social-links a img{
     width: 20px;
     padding-top: 22%;
-
 }
 
 .footer-col .social-links a:hover{
-	color: #24262b;
 	background-color: #ffffff;
 }
 
+
+.ScrolBar, ::-webkit-scrollbar-thumb {
+    padding-top: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 25%;
+    overflow-x: auto;
+    height: 520px;
+    width: 80%;
+    margin: 0 auto;
+    scrollbar-width:auto;
+}
+
+::-webkit-scrollbar {
+    width: 0.5vw;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px;
+    border-radius: 10px;
+    background-color: #151517;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5e5e5f;
+    border-radius: 10px;
+}
+
 /*responsive*/
-@media(max-width: 767px){
+@media(max-width: 840px){
+
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
+	}
+
+	
 }
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
+  
+@media(max-width: 500px){
+
+	.nav-cont-ul a .texto {
+		display: none; 
+	}
+
+	.nav-cont-ul a .imagem {
+	display: block;
+	}
+	
+
+	.footer-col {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.footer-col h4 {
+		margin-bottom: 20px; 
+	}
+
+	.footer-col h4::before{
+	left:50%;
+	transform: translateX(-50%);
+	}
 }

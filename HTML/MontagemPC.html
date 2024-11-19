@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Builder</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
 
     <style>
         /* Reset básico e formatação geral */
@@ -15,16 +15,6 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #a9a9af;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-        }
 
         h1 {
             font-size: 2rem;
@@ -32,14 +22,12 @@
             margin-bottom: 30px;
         }
 
-        table{
-            
-            width: 70%;
+        table {
+            width: 80%;
             border-collapse: collapse;
             margin-bottom: 20px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         th,
@@ -51,20 +39,20 @@
         }
 
         th {
-            background-color: #99999d;
-            color: #333;
+            background-color: #333;
+            color: #ffffff;
             text-transform: uppercase;
         }
 
-        td{
+        td {
             background-color: white;
             border-bottom: 1px solid #ddd;
-            overflow: hidden;       
-            text-overflow: ellipsis; 
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        th[id="componentes"]{
-            min-width: 30%;    
+        th[id="componentes"] {
+            min-width: 30%;
         }
 
         tr:hover td {
@@ -99,193 +87,271 @@
             margin-top: 20px;
             font-size: 1.2rem;
             font-weight: bold;
-            color: #333;
+            color: #ffffff;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
 
-            thead
-            {
+            #thead {
                 display: none;
             }
 
 
         }
-
-        
     </style>
 
 </head>
 
 <body>
-    <h1>Monte o Seu PC</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Componente</th>
-                <th id="componentes">Selecionado</th>
-                <th>Preço</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody id="component-table">
-            <tr>
-                <td>CPU</td>
-                <td id="CPU-td">
-                    <img src="" alt="CPU imagem" id="CPU-img" style="display: none;width: 50px;">     
-                    <label id="CPU-info">Nenhum</label>
-                </td>
-                <td id="CPU-preco"></td>
-                <td>
-                    <button onclick="redirectTo('CPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('CPU')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>CPU COOLER</td>
-                <td id="COOLER-td">
-                    <img src="" alt="COOLER imagem" id="COOLER-img" style="display: none;width: 50px;">     
-                    <label id="COOLER-info">Nenhum</label>
-                </td>
-                <td id="COOLER-preco"></td>
-                <td>
-                    <button onclick="redirectTo('COOLER')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('COOLER')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>   
-            </tr>
-            <tr>
-                <td>MOTHERBOARD</td>
-                <td id="MOTHERBOARD-td">
-                    <img src="" alt="MOTHERBOARD imagem" id="MOTHERBOARD-img" style="display: none;width: 50px;">     
-                    <label id="MOTHERBOARD-info">Nenhum</label>
-                </td>
-                <td id="MOTHERBOARD-preco"></td>
-                <td>
-                    <button onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>RAM</td>
-                <td id="RAM-td">
-                    <img src="" alt="RAM imagem" id="RAM-img" style="display: none;width: 50px;">     
-                    <label id="RAM-info">Nenhum</label>
-                </td>
-                <td id="RAM-preco"></td>
-                <td>
-                    <button onclick="redirectTo('RAM')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('RAM')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>ARMAZENAMENTO</td>
-                <td id="ARMAZENAMENTO-td">
-                    <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img" style="display: none;width: 50px;">     
-                    <label id="ARMAZENAMENTO-info">Nenhum</label>
-                </td>
-                <td id="ARMAZENAMENTO-preco"></td>
-                <td>
-                    <button onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>GPU</td>
-                <td id="GPU-td">
-                    <img src="" alt="GPU imagem" id="GPU-img" style="display: none;width: 50px;">     
-                    <label id="GPU-info">Nenhum</label>
-                </td>
-                <td id="GPU-preco"></td>
-                <td>
-                    <button onclick="redirectTo('GPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('GPU')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>CAIXA</td>
-                <td id="CAIXA-td">
-                    <img src="" alt="CAIXA imagem" id="CAIXA-img" style="display: none;width: 50px;">     
-                    <label id="CAIXA-info">Nenhum</label>
-                </td>
-                <td id="CAIXA-preco"></td>
-                <td>
-                    <button onclick="redirectTo('CAIXA')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('CAIXA')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>FONTE</td>
-                <td id="FONTE-td">
-                    <img src="" alt="Fonte imagem" id="FONTE-img" style="display: none;width: 50px;">     
-                    <label id="FONTE-info">Nenhum</label>
-                </td>
-                <td id="FONTE-preco"></td>
-                <td>
-                    <button onclick="redirectTo('FONTE')"><img src="../imagens/plus-solid.svg" alt="Adicionar" class="icon-button"></button>
-                    <button onclick="RemoverComponenteTabela('FONTE')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <nav class="navbar">
+        <div class="nav-titulo">
+            <img src="imagens/desktop-solid.svg" style="width: 30px;padding-right: 5px;">
+            <a>
+                <h2>PcChip8</h2>
+                <p>Builder!</p>
+            </a>
+        </div>
+        <div class="nav-conteudo">
+            <ul class="nav-cont-ul">
+                <li>
+                    <a href="HTML/MontagemPC.html">Monte o seu pc</a>
 
-    <label id="labelteste"></label>
+                </li>
+                <li>
+                    <a href="HTML/SobreNos.html">Sobre nos</a>
+                </li>
+                <li>
+                    <a href="HTML/ProdutosDisponiveis.html">Produtos disponiveis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;padding: 20px;">
+        <h1>Monte o Seu PC</h1>
+        <table>
+            <thead id="thead">
+                <tr>
+                    <th>Componente</th>
+                    <th id="componentes">Selecionado</th>
+                    <th>Preço</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="component-table">
+                <tr>
+                    <td>CPU</td>
+                    <td id="CPU-td">
+                        <img src="" alt="CPU imagem" id="CPU-img" style="display: none;width: 50px;">
+                        <label id="CPU-info">Nenhum</label>
+                    </td>
+                    <td id="CPU-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('CPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('CPU')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CPU COOLER</td>
+                    <td id="COOLER-td">
+                        <img src="" alt="COOLER imagem" id="COOLER-img" style="display: none;width: 50px;">
+                        <label id="COOLER-info">Nenhum</label>
+                    </td>
+                    <td id="COOLER-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('COOLER')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('COOLER')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MOTHERBOARD</td>
+                    <td id="MOTHERBOARD-td">
+                        <img src="" alt="MOTHERBOARD imagem" id="MOTHERBOARD-img" style="display: none;width: 50px;">
+                        <label id="MOTHERBOARD-info">Nenhum</label>
+                    </td>
+                    <td id="MOTHERBOARD-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>RAM</td>
+                    <td id="RAM-td">
+                        <img src="" alt="RAM imagem" id="RAM-img" style="display: none;width: 50px;">
+                        <label id="RAM-info">Nenhum</label>
+                    </td>
+                    <td id="RAM-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('RAM')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('RAM')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ARMAZENAMENTO</td>
+                    <td id="ARMAZENAMENTO-td">
+                        <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img"
+                            style="display: none;width: 50px;">
+                        <label id="ARMAZENAMENTO-info">Nenhum</label>
+                    </td>
+                    <td id="ARMAZENAMENTO-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/plus-solid.svg"
+                                alt="Adicionar" class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GPU</td>
+                    <td id="GPU-td">
+                        <img src="" alt="GPU imagem" id="GPU-img" style="display: none;width: 50px;">
+                        <label id="GPU-info">Nenhum</label>
+                    </td>
+                    <td id="GPU-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('GPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('GPU')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CAIXA</td>
+                    <td id="CAIXA-td">
+                        <img src="" alt="CAIXA imagem" id="CAIXA-img" style="display: none;width: 50px;">
+                        <label id="CAIXA-info">Nenhum</label>
+                    </td>
+                    <td id="CAIXA-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('CAIXA')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('CAIXA')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>FONTE</td>
+                    <td id="FONTE-td">
+                        <img src="" alt="Fonte imagem" id="FONTE-img" style="display: none;width: 50px;">
+                        <label id="FONTE-info">Nenhum</label>
+                    </td>
+                    <td id="FONTE-preco"></td>
+                    <td>
+                        <button onclick="redirectTo('FONTE')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                                class="icon-button"></button>
+                        <button onclick="RemoverComponenteTabela('FONTE')"><img src="../imagens/trash-solid.svg"
+                                alt="Remover" class="icon-button"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <label id="labelteste"></label>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Companhia</h4>
+                    <ul>
+                        <li><a href="#">Sobre nós</a></li>
+                        <li><a href="#">Nossos serviços</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Obter ajuda</h4>
+                    <ul>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Diz-nos a tua Opinão</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Loja Online</h4>
+                    <ul>
+                        <li><a href="#">Computadores</a></li>
+                        <li><a href="#">Componentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#"><img src="../imagens/facebook-f-brands-solid.svg" alt="" style="width:15px;"></a>
+                        <a href="#"><img src="../imagens/instagram-brands-solid.svg" alt=""></a>
+                        <a href="#"><img src="../imagens/twitter-brands-solid.svg" alt="" style="width:22px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div>
+        <p
+            style="padding-top: 14px; color: white; background-color: #161616; height: 50px; display: flex; justify-content: center; align-items: center">
+            @2024 Informatic. Todos os direitos reservados.</p>
+    </div>
 
     <script>
         let precototal = 0;
-        window.onload = loadComponents;    
+        window.onload = loadComponents;
 
         function redirectTo(pagina) {
             window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
         }
 
         function loadComponents() {
-            
+
             const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
             if (storedItems['CPU']) {
-                mostrarNaTabela(storedItems['CPU'],'CPU');
+                mostrarNaTabela(storedItems['CPU'], 'CPU');
             }
             if (storedItems['COOLER']) {
-                mostrarNaTabela(storedItems['COOLER'],'COOLER');
+                mostrarNaTabela(storedItems['COOLER'], 'COOLER');
             }
             if (storedItems['MOTHERBOARD']) {
-                mostrarNaTabela(storedItems['MOTHERBOARD'],'MOTHERBOARD');
+                mostrarNaTabela(storedItems['MOTHERBOARD'], 'MOTHERBOARD');
             }
             if (storedItems['RAM']) {
-                mostrarNaTabela(storedItems['RAM'],'RAM');
+                mostrarNaTabela(storedItems['RAM'], 'RAM');
             }
             if (storedItems['ARMAZENAMENTO']) {
-                mostrarNaTabela(storedItems['ARMAZENAMENTO'],'ARMAZENAMENTO');
+                mostrarNaTabela(storedItems['ARMAZENAMENTO'], 'ARMAZENAMENTO');
             }
             if (storedItems['GPU']) {
-                mostrarNaTabela(storedItems['GPU'],'GPU');
+                mostrarNaTabela(storedItems['GPU'], 'GPU');
             }
             if (storedItems['CAIXA']) {
-                mostrarNaTabela(storedItems['CAIXA'],'CAIXA');
+                mostrarNaTabela(storedItems['CAIXA'], 'CAIXA');
             }
             if (storedItems['FONTE']) {
-                mostrarNaTabela(storedItems['FONTE'],'FONTE');
+                mostrarNaTabela(storedItems['FONTE'], 'FONTE');
             }
 
             document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
         }
 
-        function mostrarNaTabela(Componente,Tipo)
-        {
-            document.getElementById(Tipo +'-img').style.display = 'block';
-            document.getElementById(Tipo +'-img').src = Componente.img;
-            document.getElementById(Tipo +'-info').textContent = `${Componente.name}`;
-            document.getElementById(Tipo +'-preco').textContent = `${Componente.price.toFixed(2)}€`;
+        function mostrarNaTabela(Componente, Tipo) {
+            document.getElementById(Tipo + '-img').style.display = 'block';
+            document.getElementById(Tipo + '-img').src = Componente.img;
+            document.getElementById(Tipo + '-info').textContent = `${Componente.name}`;
+            document.getElementById(Tipo + '-preco').textContent = `${Componente.price.toFixed(2)}€`;
             precototal += Componente.price;
 
             StyleComponentes(Tipo);
         }
 
-        function StyleComponentes(Tipo)
-        {
-            document.getElementById(Tipo +'-td').style.display = 'flex';
-            document.getElementById(Tipo +'-td').style.gap = '5px';
-            document.getElementById(Tipo +'-td').style.alignItems = 'center';
+        function StyleComponentes(Tipo) {
+            document.getElementById(Tipo + '-td').style.display = 'flex';
+            document.getElementById(Tipo + '-td').style.gap = '5px';
+            document.getElementById(Tipo + '-td').style.alignItems = 'center';
         }
 
         function RemoverComponenteTabela(tipo) {
@@ -295,8 +361,8 @@
             if (Info != '' && Preco != '') {
                 let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
 
-                if (storedItems[tipo]) {         
-                    precototal-= storedItems[tipo].price;
+                if (storedItems[tipo]) {
+                    precototal -= storedItems[tipo].price;
                     document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
 
                     delete storedItems[tipo];
@@ -304,7 +370,7 @@
 
                     document.getElementById(tipo + '-info').innerHTML = 'Nenhum';
                     document.getElementById(tipo + '-preco').innerHTML = '';
-                    document.getElementById(tipo + '-img').style.display= 'none';
+                    document.getElementById(tipo + '-img').style.display = 'none';
                     document.getElementById(tipo + '-td').style.display = 'table-cell';
                 }
             }
