@@ -110,18 +110,18 @@
     <div id="component-options"></div>
     <script>
         const components = [
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
-            { type: 'CPU', name: 'AMD Ryzen 5 7600X', price: 219.90, img: 'imagens/2.jpg'},
-            { type: 'COOLER', name: 'Water Cooler CPU Arctic Liquid Freezer III 360 All-In-One Preto', price: 74.90, img: 'imagens/7.jpg' },
-            { type: 'MOTHERBOARD', name: 'AMD Ryzen 5 7600X', price: 219.90, img: 'imagens/2.jpg'},
-            { type: 'ARMAZENAMENTO', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
-            { type: 'CAIXA', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
-            { type: 'FONTE', name: 'AMD Ryzen 5 7600X', price: 219.90, img: 'imagens/2.jpg'},
-            { type: 'CPU', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: 'imagens/1.jpg' },
-            { type: 'GPU', name: 'Placa Gráfica Gigabyte NVIDIA GeForce RTX 3060', price: 299.90, img: 'imagens/3.jpg' },
-            { type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4070 SUPER', price: 729.90, img: 'imagens/4.jpg' },
-            { type: 'RAM', name: 'Memória RAM Kingston Fury Beast (AMD Expo) 16GB (2x8GB) DDR5-6000MHz', price: 74.90, img: 'imagens/6.jpg' },
-            { type: 'RAM', name: 'Memória RAM SO-DIMM Kingston Fury Impact 32GB (2x16GB) DDR5-5600MHz', price: 118.90, img: 'imagens/5.jpg'},
+            { type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
+            { type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
+            { type: 'COOLER', name: 'Water Cooler CPU Arctic Liquid Freezer III 360 All-In-One Preto', price: 74.90, img: '../imagens/7.jpg' },
+            { type: 'MOTHERBOARD', name: 'Motherboard ATX MSI MPG Z790 Carbon WiFi Skt1700', price: 299.90, img: '../imagens/10.jpg'},
+            { type: 'CAIXA', name: 'Caixa ATX Zolyd Rivexa Tempered Glass ARGB Branca', price: 59.90, img: '../imagens/12.jpg' },
+            { type: 'FONTE', name: 'Fonte de Alimentação Seasonic Focus GX-850W 80 Plus Gold Full Modular', price: 129.90, img: '../imagens/11.jpg'},
+            { type: 'ARMAZENAMENTO', name: 'SSD M.2 2280 Western Digital WD Black SN770 1TB 3D NAND NVMe PCIe', price: 79.90, img: '../imagens/8.jpg' },
+            { type: 'ARMAZENAMENTO', name: 'SSD 2.5" Samsung 870 EVO 500GB MLC V-NAND SATA', price: 64.90, img: '../imagens/9.jpg' },
+            { type: 'GPU', name: 'Placa Gráfica Gigabyte NVIDIA GeForce RTX 3060', price: 299.90, img: '../imagens/3.jpg' },
+            { type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4070 SUPER', price: 729.90, img: '../imagens/4.jpg' },
+            { type: 'RAM', name: 'Memória RAM Kingston Fury Beast (AMD Expo) 16GB (2x8GB) DDR5-6000MHz', price: 74.90, img: '../imagens/6.jpg' },
+            { type: 'RAM', name: 'Memória RAM SO-DIMM Kingston Fury Impact 32GB (2x16GB) DDR5-5600MHz', price: 118.90, img: '../imagens/5.jpg'},
         ];
 
         // Obter o parâmetro da URL
@@ -146,7 +146,7 @@
             price.textContent = `Preço: ${component.price.toFixed(2)}€`;
 
             const imgElement = document.createElement('img');
-            imgElement.src = '../' + component.img;
+            imgElement.src = component.img;
             imgElement.alt = 'Imagem Exemplo';
             imgElement.style.maxWidth = '40%';
             imgElement.style.maxHeight = '40%';
@@ -168,7 +168,7 @@
             let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
             storedItems[type] = { name, price, img};
             localStorage.setItem('selectedItems', JSON.stringify(storedItems));
-            window.location.href = '../index.html';
+            window.location.href = 'MontagemPC.html';
         }
     </script>
 </body>
