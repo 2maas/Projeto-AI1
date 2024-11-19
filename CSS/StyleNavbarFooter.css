@@ -18,6 +18,7 @@ body{
     flex-direction: column;   
     justify-content: center;  
 	padding-left: 30px;
+	flex: 1
 } 
 
 .nav-conteudo ul{
@@ -47,6 +48,11 @@ body{
 
 .nav-titulo p{
     padding-top: 10%;
+}
+
+.nav-cont-ul .teste {
+    margin-left: auto; /* Empurra o elemento com as horas para a direita */
+	margin-right: 3vh;
 }
 
 /* esconder neste caso a imagem para depois se a pagina tiver tipo 500px colocar a imagem*/
