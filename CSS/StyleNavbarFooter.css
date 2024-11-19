@@ -25,6 +25,10 @@ body{
     gap:30px;
 }
 
+.nav-conteudo ul .teste{
+	justify-content: right;
+}
+
 .navbar a {
     color:white;
     text-decoration: none;
@@ -45,6 +49,7 @@ body{
     padding-top: 10%;
 }
 
+/* esconder neste caso a imagem para depois se a pagina tiver tipo 500px colocar a imagem*/
 .nav-cont-ul a .imagem {
 	display: none;
 	width: 24px; 

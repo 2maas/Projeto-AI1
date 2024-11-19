@@ -71,15 +71,19 @@
 }
 
 #radio1:checked ~ .um{
-    margin-left: 200%;
+    margin-left: 300%;
 }
 
 #radio2:checked ~ .um{
-    margin-left: 0%;
+    margin-left: 100%;
 }
 
 #radio3:checked ~ .um{
-    margin-left: -200%;
+    margin-left: -100%;
+}
+
+#radio4:checked ~ .um{
+    margin-left: -300%;
 }
 
 .navigation-auto div{
