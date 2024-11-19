@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página principal</title>
     <link rel="stylesheet" href="CSS/stylePp.css">
     <link rel="stylesheet" href="CSS/StyleNavbarFooter.css">
+    <link rel="stylesheet" href="CSS/Carrousel.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-titulo">
             <img src="imagens/desktop-solid.svg" style="width: 30px;padding-right: 5px;">
-            <a><h2>PcChip8</h2><p>Builder!</p></a>
+            <a>
+                <h2>PcChip8</h2>
+                <p>Builder!</p>
+            </a>
         </div>
         <div class="nav-conteudo">
             <ul class="nav-cont-ul">
                 <li>
                     <a href="HTML/MontagemPC.html">Monte o seu pc</a>
-                    
+
                 </li>
                 <li>
                     <a href="HTML/SobreNos.html">Sobre nos</a>
@@ -29,71 +35,43 @@
         </div>
     </nav>
 
+    <br>
 
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-              <img src="" style="width:100%;height: auto;;object-fit: none;">
-              <div class="text">Caption one</div>
-            </div>
-            
-            <div class="mySlides fade">
-              <img src="" style="width:100%;height: auto;;object-fit: none;">
-              <div class="text">Caption Two</div>
-            </div>
-            
-            <div class="mySlides fade">
-              <img src="" style="width:100%;height: auto;;object-fit: none;">
-              <div class="text">Caption Three</div>
-            </div>
-            
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-            
-            </div>
-            <br>
-            
-            <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span> 
-              <span class="dot" onclick="currentSlide(2)"></span> 
-              <span class="dot" onclick="currentSlide(3)"></span> 
-            </div>
-            <br>
-            
-            <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-            
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
-            
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
-            
-            function showSlides(n) {
-              let i;
-              let slides = document.getElementsByClassName("mySlides");
-              let dots = document.getElementsByClassName("dot");
-              if (n > slides.length) {slideIndex = 1}    
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-              }
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
-            }
+    <div class="div_slider">
+        <div class="slider">
+            <div class="slides">
+                <!--Botões Radio-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <!--Slides-->
+                <div class="slide um">
+                    <img src="imagens/WallpaperInicio/fire_tiger_in_the_dark-wallpaper-1920x1080.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="imagens/WallpaperInicio/crescent_moon_in_starry_sky-wallpaper-1920x1080.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="imagens/WallpaperInicio/243956.jpg" alt="">
+                </div>
 
-            setInterval(function() {
-                plusSlides(1);
-            }, 3000);
-            </script>
+                <!--Navegação automatica-->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+            </div>
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
         </div>
-                   
+    </div>
 
+    <br>
 
     <footer class="footer">
         <div class="container">
@@ -122,16 +100,20 @@
                 <div class="footer-col">
                     <h4>Siga-nos</h4>
                     <div class="social-links">
-                        <a href="#"><img src="imagens/facebook-f-brands-solid.svg" alt="" style="width:15px;" ></a>
-                        <a href="#"><img src="imagens/instagram-brands-solid.svg" alt="" ></a>
+                        <a href="#"><img src="imagens/facebook-f-brands-solid.svg" alt="" style="width:15px;"></a>
+                        <a href="#"><img src="imagens/instagram-brands-solid.svg" alt=""></a>
                         <a href="#"><img src="imagens/twitter-brands-solid.svg" alt="" style="width:22px;"></a>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </footer>
     <div>
-        <p style="padding-top: 14px; color: white; background-color: #161616; height: 50px; display: flex; justify-content: center; align-items: center">@2024 Informatic. Todos os direitos reservados.</p>
+        <p
+            style="padding-top: 14px; color: white; background-color: #161616; height: 50px; display: flex; justify-content: center; align-items: center">
+            @2024 Informatic. Todos os direitos reservados.</p>
     </div>
+
+    <script src="JS/Carrousel.js"></script>
 </body>
 </html>
