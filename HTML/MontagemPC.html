@@ -46,13 +46,17 @@
 
         td {
             background-color: white;
-            border-bottom: 1px solid #ddd;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         th[id="componentes"] {
             min-width: 30%;
+        }
+
+        tr:not(:last-child){
+            
+            border-bottom: 1px solid #ddd;
         }
 
         tr:hover td {
@@ -88,6 +92,11 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: #ffffff;
+        }
+
+        .botaoRemove
+        {
+            display: none;
         }
 
         /* Responsividade */
@@ -146,10 +155,9 @@
                     </td>
                     <td id="CPU-preco"></td>
                     <td>
-                        <button onclick="redirectTo('CPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="CPU-botaoAdd" onclick="redirectTo('CPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('CPU')"><img src="../imagens/trash-solid.svg"
-                                alt="Remover" class="icon-button"></button>
+                        <button id="CPU-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('CPU')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
                 <tr>
@@ -160,9 +168,9 @@
                     </td>
                     <td id="COOLER-preco"></td>
                     <td>
-                        <button onclick="redirectTo('COOLER')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="COOLER-botaoAdd" onclick="redirectTo('COOLER')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('COOLER')"><img src="../imagens/trash-solid.svg"
+                        <button id="COOLER-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('COOLER')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -174,9 +182,9 @@
                     </td>
                     <td id="MOTHERBOARD-preco"></td>
                     <td>
-                        <button onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="MOTHERBOARD-botaoAdd" onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="../imagens/trash-solid.svg"
+                        <button id="MOTHERBOARD-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -188,9 +196,9 @@
                     </td>
                     <td id="RAM-preco"></td>
                     <td>
-                        <button onclick="redirectTo('RAM')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="RAM-botaoAdd" onclick="redirectTo('RAM')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('RAM')"><img src="../imagens/trash-solid.svg"
+                        <button id="RAM-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('RAM')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -203,9 +211,9 @@
                     </td>
                     <td id="ARMAZENAMENTO-preco"></td>
                     <td>
-                        <button onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/plus-solid.svg"
+                        <button  id="ARMAZENAMENTO-botaoAdd" onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/plus-solid.svg"
                                 alt="Adicionar" class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="../imagens/trash-solid.svg"
+                        <button id="ARMAZENAMENTO-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -217,9 +225,9 @@
                     </td>
                     <td id="GPU-preco"></td>
                     <td>
-                        <button onclick="redirectTo('GPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button  id="GPU-botaoAdd" onclick="redirectTo('GPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('GPU')"><img src="../imagens/trash-solid.svg"
+                        <button id="GPU-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('GPU')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -231,9 +239,9 @@
                     </td>
                     <td id="CAIXA-preco"></td>
                     <td>
-                        <button onclick="redirectTo('CAIXA')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button  id="CAIXA-botaoAdd" onclick="redirectTo('CAIXA')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('CAIXA')"><img src="../imagens/trash-solid.svg"
+                        <button id="CAIXA-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('CAIXA')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -245,9 +253,9 @@
                     </td>
                     <td id="FONTE-preco"></td>
                     <td>
-                        <button onclick="redirectTo('FONTE')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button  id="FONTE-botaoAdd" onclick="redirectTo('FONTE')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button onclick="RemoverComponenteTabela('FONTE')"><img src="../imagens/trash-solid.svg"
+                        <button id="FONTE-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('FONTE')"><img src="../imagens/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -341,6 +349,10 @@
             document.getElementById(Tipo + '-img').src = Componente.img;
             document.getElementById(Tipo + '-info').textContent = `${Componente.name}`;
             document.getElementById(Tipo + '-preco').textContent = `${Componente.price.toFixed(2)}€`;
+            
+            document.getElementById(Tipo + '-botaoAdd').style.display = 'none';
+            document.getElementById(Tipo + '-botaoRemove').style.display = 'inline';
+
             precototal += Componente.price;
 
             StyleComponentes(Tipo);
@@ -370,6 +382,8 @@
                     document.getElementById(tipo + '-preco').innerHTML = '';
                     document.getElementById(tipo + '-img').style.display = 'none';
                     document.getElementById(tipo + '-td').style.display = 'table-cell';
+                    document.getElementById(tipo + '-botaoAdd').style.display = 'inline';
+                    document.getElementById(tipo + '-botaoRemove').style.display = 'none';
                 }
             }
         }

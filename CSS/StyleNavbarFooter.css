@@ -229,7 +229,6 @@ ul{
 	background-color: #282828;
 	color: white;
 	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-	overflow: hidden;	
 	/* Animação suave ao abrir/fechar */
 	transition: right 0.3s ease;
 	z-index: 999;
@@ -250,13 +249,6 @@ ul{
 	cursor: pointer;
 }
 
-.sidebar .button-close:hover {
-	color:#000000;
-}
-
-
-
-
 
 /*responsive*/
 @media(max-width: 840px){
@@ -269,7 +261,7 @@ ul{
 	
 }
   
-@media(max-width: 500px){
+@media(max-width: 755px){
 
 	.nav-cont-ul a .texto {
 		display: none; 
@@ -282,7 +274,15 @@ ul{
 	.nav-conteudo .nav-cont-ul{
 		display: none;
 	}
+	.button-toggle{
+		display: inline;
+	}
 
+}
+
+
+@media(max-width: 500px)
+{
 	.footer-col {
 		width: 100%;
 		text-align: center;
@@ -297,10 +297,4 @@ ul{
 	left:50%;
 	transform: translateX(-50%);
 	}
-
-	.button-toggle{
-		display: inline;
-	}
-	
-
 }

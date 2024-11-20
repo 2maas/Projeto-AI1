@@ -15,9 +15,9 @@
         }
         
         #component-options {
-        display: flex; /* Use flexbox for list-like structure */
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the left */
+            display: flex; /* Use flexbox for list-like structure */
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-start; /* Align items to the left */
         }
 
         .option {
@@ -126,9 +126,14 @@
         }
     </style>
 
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+
 </head>
 
 <body>
+    
     <nav class="navbar">
         <div class="nav-titulo">
             <a href="../index.html">
@@ -150,63 +155,14 @@
             </ul>
         </div>
     </nav>
+   
     <h1 id="testeh1"></h1>
-    <div id="component-options"></div>
+    <div id="teste"></div>
+
+    <script src="../JS/React.js"></script>
+
+
     <script>
-        const components = [
-            { type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/1.jpg' },
-            { type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/2.jpg'},
-            { type: 'COOLER', name: 'Water Cooler CPU Arctic Liquid Freezer III 360 All-In-One Preto', price: 74.90, img: '../imagens/7.jpg' },
-            { type: 'MOTHERBOARD', name: 'Motherboard ATX MSI MPG Z790 Carbon WiFi Skt1700', price: 299.90, img: '../imagens/10.jpg'},
-            { type: 'CAIXA', name: 'Caixa ATX Zolyd Rivexa Tempered Glass ARGB Branca', price: 59.90, img: '../imagens/12.jpg' },
-            { type: 'FONTE', name: 'Fonte de Alimentação Seasonic Focus GX-850W 80 Plus Gold Full Modular', price: 129.90, img: '../imagens/11.jpg'},
-            { type: 'ARMAZENAMENTO', name: 'SSD M.2 2280 Western Digital WD Black SN770 1TB 3D NAND NVMe PCIe', price: 79.90, img: '../imagens/8.jpg' },
-            { type: 'ARMAZENAMENTO', name: 'SSD 2.5" Samsung 870 EVO 500GB MLC V-NAND SATA', price: 64.90, img: '../imagens/9.jpg' },
-            { type: 'GPU', name: 'Placa Gráfica Gigabyte NVIDIA GeForce RTX 3060', price: 299.90, img: '../imagens/3.jpg' },
-            { type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4070 SUPER', price: 729.90, img: '../imagens/4.jpg' },
-            { type: 'RAM', name: 'Memória RAM Kingston Fury Beast (AMD Expo) 16GB (2x8GB) DDR5-6000MHz', price: 74.90, img: '../imagens/6.jpg' },
-            { type: 'RAM', name: 'Memória RAM SO-DIMM Kingston Fury Impact 32GB (2x16GB) DDR5-5600MHz', price: 118.90, img: '../imagens/5.jpg'},
-        ];
-
-        // Obter o parâmetro da URL
-        const params = new URLSearchParams(window.location.search);
-        const filterType = params.get('valor');
-
-        document.getElementById("testeh1").innerHTML = 'Escolha uma ' + filterType ;
-
-        const optionsContainer = document.getElementById('component-options');
-
-        // Mostrar Todos os compomentes do tipo passado pela url
-        const filteredComponents = components.filter(component => component.type === filterType);
-
-        filteredComponents.forEach(component => {
-            const optionDiv = document.createElement('div');
-            optionDiv.classList.add('option');
-
-            const title = document.createElement('h3');
-            title.textContent = component.name;
-
-            const price = document.createElement('p');
-            price.textContent = `Preço: ${component.price.toFixed(2)}€`;
-
-            const imgElement = document.createElement('img');
-            imgElement.src = component.img;
-            imgElement.alt = 'Imagem Exemplo';
-            imgElement.style.maxWidth = '40%';
-            imgElement.style.maxHeight = '40%';
-
-            const button = document.createElement('button');
-            button.textContent = 'Selecionar';
-            button.onclick = () => selectComponent(component.type, component.name, component.price,component.img);
-
-            optionDiv.appendChild(imgElement);
-            optionDiv.appendChild(title);
-            optionDiv.appendChild(price);
-            optionDiv.appendChild(button);
-
-            optionsContainer.appendChild(optionDiv);
-        });
-    
         function selectComponent(type, name, price,img) {
             // Pega os componentes da lista
             let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
@@ -215,6 +171,7 @@
             window.location.href = 'MontagemPC.html';
         }
     </script>
+    
 </body>
 
 </html>
