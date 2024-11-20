@@ -22,10 +22,12 @@ data_horaF();
 
 function abrirSidebar() {
     document.getElementById("mySidebar").classList.add("open");
+    document.getElementById("overlay").style.display = "block";
     document.body.style.overflow = "hidden"; 
   }
   
   function fecharSidebar() {
     document.getElementById("mySidebar").classList.remove("open");
+    document.getElementById("overlay").style.display = "none";
     document.body.style.overflow = ""; 
   }

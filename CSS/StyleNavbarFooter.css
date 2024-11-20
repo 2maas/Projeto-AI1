@@ -19,7 +19,7 @@ body{
 	flex: 1
 } 
 
-.nav-conteudo ul{
+.nav-conteudo .nav-cont-ul{
 	display:flex;
     gap:30px;
 }
@@ -53,11 +53,35 @@ body{
 	margin-right: 3vh;
 }
 
+.nav-cont-ul-sideBar
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-cont-ul-sideBar a
+{
+	padding-left: 1vh;
+}
+
+.nav-cont-ul-sideBar li:not(:last-child)
+{
+	width: 100%;
+	padding: 10px;
+}
+
+.nav-cont-ul-sideBar li:not(:last-child)
+{
+	border-bottom: 0.5px solid #b7b6b6;
+}
+
 /* esconder neste caso a imagem para depois se a pagina tiver tipo 500px colocar a imagem*/
 .nav-cont-ul a .imagem {
 	display: none;
 	width: 24px; 
 }
+
+
 
 
 
@@ -170,6 +194,17 @@ ul{
 }
 
 /* Sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 998; 
+    display: none;
+}
+
 .button-toggle {
 	font-size: 20px;
 	background-color: transparent;
@@ -197,15 +232,15 @@ ul{
 	background-color: #282828;
 	color: white;
 	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	transition: right 0.3s ease;
+	overflow: hidden;	
 	/* Animação suave ao abrir/fechar */
+	transition: right 0.3s ease;
 	z-index: 999;
 }
 
 .sidebar.open {
-	right: 0;
 	/* Mostra a sidebar */
+	right: 0;	
 }
 
 .sidebar .button-close {
@@ -247,7 +282,7 @@ ul{
 	display: block;
 	}
 
-	.nav-conteudo ul{
+	.nav-conteudo .nav-cont-ul{
 		display: none;
 	}
 

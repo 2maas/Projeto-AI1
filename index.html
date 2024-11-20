@@ -36,15 +36,24 @@
                 </li>
             </ul>
             <button class="button-toggle" id="botao" onclick="abrirSidebar()"><img src="imagens/Menu.svg" alt=""></button>
+            <div class="overlay" id="overlay" onclick="fecharSidebar()"></div>
             <div class="sidebar" id="mySidebar">
-                <button class="button-close" onclick="fecharSidebar()"><img src="imagens/SetaVoltar.svg" alt="" style="width: 15px;"></button>
-                <div style="display: flex;flex-direction: column;text-align: center;">
-                    <a href="HTML/MontagemPC.html" style="padding: 5px;">Monte o seu pc</a>
-                    <a href="HTML/SobreNos.html" style="padding: 5px;">Sobre nos</a>
-                    <a href="HTML/ProdutosDisponiveis.html" style="padding: 5px;">Produtos disponiveis</a>
-                </div>
-                        
-
+                <button class="button-close" onclick="fecharSidebar()"><img src="imagens/X_voltar.svg" alt="" style="width: 20px;padding-top: 10px;"></button>
+                <ul class="nav-cont-ul-sideBar">
+                    <li>
+                        <a href="HTML/MontagemPC.html">Monte o seu pc</a>
+    
+                    </li>
+                    <li>
+                        <a href="HTML/SobreNos.html">Sobre nos</a>
+                    </li>
+                    <li>
+                        <a href="HTML/ProdutosDisponiveis.html">Produtos disponiveis</a>
+                    </li>
+                    <li class="data_hora">
+                        <label id="data_hora_texto"></label>
+                    </li>
+                </ul>
             </div>
 
         </div>
