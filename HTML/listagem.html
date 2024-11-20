@@ -13,17 +13,24 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        .container
+
+        h3, p
+        {
+            color: #ffffff;
+        }
         
         #component-options {
-            display: flex; /* Use flexbox for list-like structure */
-            flex-direction: column; /* Stack items vertically */
-            align-items: flex-start; /* Align items to the left */
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start;
         }
 
         .option {
             display: flex; /* Flex layout for each option */
+            margin: 10px;
             width: 100%; /* Make each item span the full width */
-            margin-bottom: 10px; /* Space between each item */
             border-bottom: 1px solid #ddd; /* Add a line between items */
             padding: 10px;
             align-items: center; /* Align items horizontally */
@@ -31,7 +38,7 @@
 
         /* Style for the image */
         .option img {
-            width: 100px; /* Set fixed width for image */
+            width: 60px; /* Set fixed width for image */
             height: auto;
             margin-right: 20px; /* Space between image and text */
         }
@@ -47,6 +54,17 @@
             margin-top: 10px;
         }
 
+        .Tabelacao
+        {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .container
+        {
+            width: 100%;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -56,73 +74,78 @@
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
 
+            .Tabelacao
+            {
+                display: none;
+            }
+
             h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: #007BFF;
-        }
+            }
 
-        #component-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-        }
+            #component-options {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+                width: 100%;
+                max-width: 1200px;
+            }
 
-        .option {
-            background-color: #ffffffb3;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+            .option {
+                background-color: #ffffffb3;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                padding: 20px;
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
 
-        .option:hover {
-            transform: translateY(-10px);
-        }
+            .option:hover {
+                transform: translateY(-10px);
+            }
 
-        .option img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
+            .option img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
 
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+                color: #333;
+            }
 
-        p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            color: #666;
-        }
+            p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                color: #666;
+            }
 
-        button {
-            background-color: #99999d;
-            color: white;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+            button {
+                background-color: #99999d;
+                color: white;
+                font-size: 1rem;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
 
-        button:hover {
-            background-color: #99999d85;
-        }
+            button:hover {
+                background-color: #99999d85;
+            }
 
-        #testeh1 {
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-            color: #333;
-        }
+            #testeh1 {
+                margin-bottom: 30px;
+                font-size: 1.8rem;
+                color: #333;
+            }
         }
     </style>
 

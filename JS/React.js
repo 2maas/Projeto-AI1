@@ -2,12 +2,18 @@
 
 // Mostrar Componentes
 function App(props) {
-    return React.createElement('div',{ className: 'option'},
+    return React.createElement('div', {className: 'container'},
+            React.createElement('div',{ className: 'Tabelacao'},
+                React.createElement('h3', null, 'Nome'),
+                React.createElement('h3', null, 'Preco')
+            ),
+            React.createElement('div',{ className: 'option'},
                 React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
-                React.createElement('h3', null, props.name),
+                React.createElement('p', null, props.name),
                 React.createElement('p', null, props.price),
                 React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img)},'Selecionar')
-            );
+            )
+    );
 }
 
 function App1() {
