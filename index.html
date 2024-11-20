@@ -10,31 +10,6 @@
     <link rel="stylesheet" href="CSS/Carrousel.css">
     <link rel="stylesheet" href="CSS/style.css">
 
-
-    <style>
-        /*.card-text {
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* Colocar ... depois de certo limite de caracteres
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        }
-        .title:hover {
-            color: rgb(22,22,22);
-            transition: 0.3s;
-        }
-
-        .img-container img {
-        -webkit-transition: -webkit-transform .5s ease;
-        transition: transform .5s ease;
-        }
-
-        .img-container:hover img {
-            -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-        }*/
-
-    </style>
 </head>
 
 <body>
@@ -56,10 +31,22 @@
                 <li>
                     <a href="HTML/ProdutosDisponiveis.html">Produtos disponiveis</a>
                 </li>
-                <li class="teste">
-                    <label id="data_hora"></label>
+                <li class="data_hora">
+                    <label id="data_hora_texto"></label>
                 </li>
             </ul>
+            <button class="button-toggle" id="botao" onclick="abrirSidebar()"><img src="imagens/Menu.svg" alt=""></button>
+            <div class="sidebar" id="mySidebar">
+                <button class="button-close" onclick="fecharSidebar()"><img src="imagens/SetaVoltar.svg" alt="" style="width: 15px;"></button>
+                <div style="display: flex;flex-direction: column;text-align: center;">
+                    <a href="HTML/MontagemPC.html" style="padding: 5px;">Monte o seu pc</a>
+                    <a href="HTML/SobreNos.html" style="padding: 5px;">Sobre nos</a>
+                    <a href="HTML/ProdutosDisponiveis.html" style="padding: 5px;">Produtos disponiveis</a>
+                </div>
+                        
+
+            </div>
+
         </div>
     </nav>
 

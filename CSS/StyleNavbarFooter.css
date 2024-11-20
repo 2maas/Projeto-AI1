@@ -24,7 +24,7 @@ body{
     gap:30px;
 }
 
-.nav-conteudo ul .teste{
+.nav-conteudo ul .data_hora{
 	justify-content: right;
 }
 
@@ -48,7 +48,7 @@ body{
     padding-top: 10%;
 }
 
-.nav-cont-ul .teste {
+.nav-cont-ul .data_hora {
     margin-left: auto; /* Empurra o elemento com as horas para a direita */
 	margin-right: 3vh;
 }
@@ -169,6 +169,63 @@ ul{
     border-radius: 10px;
 }
 
+/* Sidebar */
+.button-toggle {
+	font-size: 20px;
+	background-color: transparent;
+	color: white;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 4px;
+	display: none;
+	margin-left: auto; /* Empurra o elemento com as horas para a direita */
+	margin-right: 3vh;
+}
+
+.button-toggle img{
+	width: 20px;
+}
+
+.sidebar {
+	position: fixed;
+	right: -80%;
+	/* Inicialmente escondida no lado direito */
+	top: 0;
+	width: 80%;
+	height: 100%;
+	background-color: #282828;
+	color: white;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	transition: right 0.3s ease;
+	/* Animação suave ao abrir/fechar */
+	z-index: 999;
+}
+
+.sidebar.open {
+	right: 0;
+	/* Mostra a sidebar */
+}
+
+.sidebar .button-close {
+	font-size: 18px;
+	background-color: transparent;
+	color: white;
+	border: none;
+	text-align: left;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.sidebar .button-close:hover {
+	color:#000000;
+}
+
+
+
+
+
 /*responsive*/
 @media(max-width: 840px){
 
@@ -189,7 +246,10 @@ ul{
 	.nav-cont-ul a .imagem {
 	display: block;
 	}
-	
+
+	.nav-conteudo ul{
+		display: none;
+	}
 
 	.footer-col {
 		width: 100%;
@@ -205,4 +265,10 @@ ul{
 	left:50%;
 	transform: translateX(-50%);
 	}
+
+	.button-toggle{
+		display: inline;
+	}
+	
+
 }

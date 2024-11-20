@@ -1,5 +1,5 @@
 function data_horaF(){
-    const dateTimeElement = document.getElementById('data_hora');
+    const dateTimeElement = document.getElementById('data_hora_texto');
     const now = new Date();
 
     // Formatar a hora
@@ -18,3 +18,14 @@ function data_horaF(){
 setInterval(data_horaF, 1000);
 
 data_horaF();
+
+
+function abrirSidebar() {
+    document.getElementById("mySidebar").classList.add("open");
+    document.body.style.overflow = "hidden"; 
+  }
+  
+  function fecharSidebar() {
+    document.getElementById("mySidebar").classList.remove("open");
+    document.body.style.overflow = ""; 
+  }
