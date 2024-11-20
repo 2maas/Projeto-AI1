@@ -1,5 +1,5 @@
 function data_horaF(){
-    const dateTimeElement = document.getElementById('data_hora_texto');
+    const dateTimeElement = document.querySelectorAll('.data_hora_texto');
     const now = new Date();
 
     // Formatar a hora
@@ -12,7 +12,9 @@ function data_horaF(){
     const formattedDateTime = `${hour} - ${date}`;
 
     // Atualizar o elemento com a data e hora formatada
-    dateTimeElement.textContent = formattedDateTime;
+    dateTimeElement.forEach((element) => {
+      element.textContent = formattedDateTime;
+  });
 }
 
 setInterval(data_horaF, 1000);
