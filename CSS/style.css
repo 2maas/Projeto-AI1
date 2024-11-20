@@ -1,0 +1,93 @@
+.DivMontagens
+{
+    background-color: #282828;
+    text-align: center;
+}
+
+.DivMontagens h1
+{
+    color: #ffffff;
+    padding-top: 20px;
+}
+
+.DivMedioMontagens
+{
+    text-align:left;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ImagemPrincipal {
+    width: 50%;
+}
+
+.card-body h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card-body p {
+    color: #333;
+    font-size: 14px;
+    margin: 5px 0;
+
+    /* Colocar ... dependo do numero de linhas para baixo*/
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card-footer .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2b7a3a;
+}
+
+.card-footer .comments {
+    font-size: 14px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@media(max-width: 500px){
+    .DivMontagens
+    {
+        padding-bottom: 10px;
+    }
+    .DivMedioMontagens
+    {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card {
+        width: 250px;
+        padding: 20px;
+    }
+}
