@@ -3,7 +3,7 @@ function data_horaF(){
     const now = new Date();
 
     // Formatar a hora
-    const hour = now.toLocaleString('pt-PT', { hour: '2-digit', minute: '2-digit' });
+    const hour = now.toLocaleString('pt-PT', { hour: '2-digit', minute: '2-digit' , second: '2-digit' });
 
     // Formatar a data
     const date = now.toLocaleString('pt-PT', { year: 'numeric', month: 'numeric', day: 'numeric' });
