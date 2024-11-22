@@ -7,30 +7,13 @@
     <title>PC Builder</title>
     <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
     <link rel="stylesheet" href="../CSS/styleMontagemPc.css">
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-titulo">
-            <a href="../index.html">
-                <img src="../imagens/logo.svg" style="width:130px;padding-right: 5px;">
-            </a>
-        </div>
-        <div class="nav-conteudo">
-            <ul class="nav-cont-ul">
-                <li>
-                    <a href="MontagemPC.html">Monte o seu pc</a>
-
-                </li>
-                <li>
-                    <a href="SobreNos.html">Sobre nos</a>
-                </li>
-                <li>
-                    <a href="ProdutosDisponiveis.html">Produtos disponiveis</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="Nav"></div>
 
     <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;padding: 20px;">
         <h1>Monte o Seu PC</h1>
@@ -160,48 +143,13 @@
 
         <label id="labelteste"></label>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Companhia</h4>
-                    <ul>
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Nossos serviços</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Obter ajuda</h4>
-                    <ul>
-                        <li><a href="#">Perguntas Frequentes</a></li>
-                        <li><a href="#">Diz-nos a tua Opinão</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Loja Online</h4>
-                    <ul>
-                        <li><a href="#">Computadores</a></li>
-                        <li><a href="#">Componentes</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Siga-nos</h4>
-                    <div class="social-links">
-                        <a href="#"><img src="../imagens/facebook-f-brands-solid.svg" alt="" style="width:15px;"></a>
-                        <a href="#"><img src="../imagens/instagram-brands-solid.svg" alt=""></a>
-                        <a href="#"><img src="../imagens/twitter-brands-solid.svg" alt="" style="width:22px;"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div>
-        <p
-            style="padding-top: 14px; color: white; background-color: #161616; height: 50px; display: flex; justify-content: center; align-items: center">
-            @2024 Informatic. Todos os direitos reservados.</p>
-    </div>
+    
+    <div id="Footer"></div>
+    <div id="Direitos"></div>
 
     <script src="../JS/Scriptprodutos.js"></script>
+    <script src="../JS/ReactNavBar_Footer.js"></script>
+    <script src="../JS/Abrir_FecharSideBar_Data_Hora.js"></script>
 </body>
 
 </html>
