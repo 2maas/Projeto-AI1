@@ -45,12 +45,12 @@ th[id="componentes"] {
     min-width: 30%;
 }
 
+/*
 tr:not(:last-child){
     
     border-bottom: 1px solid #ddd;
 }
 
-/*
 tr:hover td {
     background-color: #616161;
 }
@@ -92,36 +92,9 @@ button:hover {
     display: none;
 }
 
-
-
-/* Tooltip container */
-.Tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
-  
-  /* Tooltip text */
-  .Tooltip .TooltipText {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-   
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .Tooltip:hover .TooltipText {
-    visibility: visible;
-  }
-
-
+.component-table-componente{
+    margin: 2% 0% 1% 0%;
+}
 
 /* Responsividade */
 @media (max-width: 768px) {

@@ -53,7 +53,6 @@ let precototal = 0;
         function StyleComponentes(Tipo) {
             document.getElementById(Tipo + '-td').style.display = 'flex';
             document.getElementById(Tipo + '-td').style.gap = '5px';
-            document.getElementById(Tipo + '-td').style.alignItems = 'center';
         }
 
         function RemoverComponenteTabela(tipo) {
