@@ -140,16 +140,17 @@ ul{
 	color: #ffffff;
 	padding-left: 8px;
 }
+
 .footer-col .social-links a{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
 	background-color: rgba(255,255,255,0.2);
-
 	text-align: center;
 	border-radius: 50%;
 	color: #ffffff;
 	transition: all 0.5s ease;
+	margin-right: 5px;
 }
 
 .footer-col .social-links a img{

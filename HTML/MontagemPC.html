@@ -7,30 +7,13 @@
     <title>PC Builder</title>
     <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
     <link rel="stylesheet" href="../CSS/styleMontagemPc.css">
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-titulo">
-            <a href="../index.html">
-                <img src="../imagens/logo.svg" style="width:130px;padding-right: 5px;">
-            </a>
-        </div>
-        <div class="nav-conteudo">
-            <ul class="nav-cont-ul">
-                <li>
-                    <a href="MontagemPC.html">Monte o seu pc</a>
-
-                </li>
-                <li>
-                    <a href="SobreNos.html">Sobre nos</a>
-                </li>
-                <li>
-                    <a href="ProdutosDisponiveis.html">Produtos disponiveis</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="Nav"></div>
 
     <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;padding: 20px;">
         <h1>Monte o Seu PC</h1>
@@ -61,9 +44,9 @@
                         </div>
                     </td>
                     <td>
-                        <button id="CPU-botaoAdd" onclick="redirectTo('CPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="CPU-botaoAdd" onclick="redirectTo('CPU')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="CPU-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('CPU')"><img src="../imagens/trash-solid.svg" alt="Remover" class="icon-button"></button>
+                        <button id="CPU-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('CPU')"><img src="../imagens/SVG/trash-solid.svg" alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
                 <tr>
@@ -83,9 +66,9 @@
                         </div>
                     </td>
                     <td>
-                        <button id="COOLER-botaoAdd" onclick="redirectTo('COOLER')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="COOLER-botaoAdd" onclick="redirectTo('COOLER')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="COOLER-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('COOLER')"><img src="../imagens/trash-solid.svg"
+                        <button id="COOLER-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('COOLER')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -107,9 +90,9 @@
                         </div>
                     </td>
                     <td>
-                        <button id="MOTHERBOARD-botaoAdd" onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="MOTHERBOARD-botaoAdd" onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="MOTHERBOARD-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="../imagens/trash-solid.svg"
+                        <button id="MOTHERBOARD-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('MOTHERBOARD')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -131,9 +114,9 @@
                         </div>
                     </td>
                     <td>
-                        <button id="RAM-botaoAdd" onclick="redirectTo('RAM')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button id="RAM-botaoAdd" onclick="redirectTo('RAM')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="RAM-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('RAM')"><img src="../imagens/trash-solid.svg"
+                        <button id="RAM-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('RAM')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -155,9 +138,9 @@
                         </div>
                     </td>
                     <td>
-                        <button  id="ARMAZENAMENTO-botaoAdd" onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/plus-solid.svg"
+                        <button  id="ARMAZENAMENTO-botaoAdd" onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/SVG/plus-solid.svg"
                                 alt="Adicionar" class="icon-button"></button>
-                        <button id="ARMAZENAMENTO-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="../imagens/trash-solid.svg"
+                        <button id="ARMAZENAMENTO-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('ARMAZENAMENTO')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -179,9 +162,9 @@
                         </div>
                     </td>
                     <td>
-                        <button  id="GPU-botaoAdd" onclick="redirectTo('GPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button  id="GPU-botaoAdd" onclick="redirectTo('GPU')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="GPU-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('GPU')"><img src="../imagens/trash-solid.svg"
+                        <button id="GPU-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('GPU')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -203,9 +186,9 @@
                         </div>
                     </td>
                     <td>
-                        <button  id="CAIXA-botaoAdd" onclick="redirectTo('CAIXA')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button  id="CAIXA-botaoAdd" onclick="redirectTo('CAIXA')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="CAIXA-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('CAIXA')"><img src="../imagens/trash-solid.svg"
+                        <button id="CAIXA-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('CAIXA')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -227,9 +210,9 @@
                         </div>
                     </td>
                     <td>
-                        <button  id="FONTE-botaoAdd" onclick="redirectTo('FONTE')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
+                        <button  id="FONTE-botaoAdd" onclick="redirectTo('FONTE')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
-                        <button id="FONTE-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('FONTE')"><img src="../imagens/trash-solid.svg"
+                        <button id="FONTE-botaoRemove" class="botaoRemove" onclick="RemoverComponenteTabela('FONTE')"><img src="../imagens/SVG/trash-solid.svg"
                                 alt="Remover" class="icon-button"></button>
                     </td>
                 </tr>
@@ -238,48 +221,13 @@
 
         <label id="labelteste"></label>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Companhia</h4>
-                    <ul>
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Nossos serviços</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Obter ajuda</h4>
-                    <ul>
-                        <li><a href="#">Perguntas Frequentes</a></li>
-                        <li><a href="#">Diz-nos a tua Opinão</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Loja Online</h4>
-                    <ul>
-                        <li><a href="#">Computadores</a></li>
-                        <li><a href="#">Componentes</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Siga-nos</h4>
-                    <div class="social-links">
-                        <a href="#"><img src="../imagens/facebook-f-brands-solid.svg" alt="" style="width:15px;"></a>
-                        <a href="#"><img src="../imagens/instagram-brands-solid.svg" alt=""></a>
-                        <a href="#"><img src="../imagens/twitter-brands-solid.svg" alt="" style="width:22px;"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div>
-        <p
-            style="padding-top: 14px; color: white; background-color: #161616; height: 50px; display: flex; justify-content: center; align-items: center">
-            @2024 Informatic. Todos os direitos reservados.</p>
-    </div>
+    
+    <div id="Footer"></div>
+    <div id="Direitos"></div>
 
     <script src="../JS/Scriptprodutos.js"></script>
+    <script src="../JS/ReactNavBar_Footer.js"></script>
+    <script src="../JS/Abrir_FecharSideBar_Data_Hora.js"></script>
 </body>
 
 </html>
