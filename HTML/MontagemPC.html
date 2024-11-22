@@ -37,20 +37,29 @@
         <table>
             <thead id="thead">
                 <tr>
-                    <th>Componente</th>
-                    <th id="componentes">Selecionado</th>
-                    <th>Preço</th>
+                    <th id="componentes">Componente</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody id="component-table">
                 <tr>
-                    <td>CPU</td>
-                    <td id="CPU-td">
-                        <img src="" alt="CPU imagem" id="CPU-img" style="display: none;width: 50px;">
-                        <label id="CPU-info">Nenhum</label>
+                    <td><h2>CPU</h2> 
+                        <hr>
+                        <div id="CPU-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="CPU imagem" id="CPU-img" style="width: 100%;">
+                            </div>
+                            <div style="margin: 0px 10px 0px 10px; width: 100%;">
+                                <div style="margin-bottom: 20px; display: flex;">
+                                    <div style="width: 85%;">
+                                        <label id="CPU-info">Nenhum</label>
+                                    </div>
+                                    <label id="CPU-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="CPU-preco"></td>
                     <td>
                         <button id="CPU-botaoAdd" onclick="redirectTo('CPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
@@ -58,12 +67,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>CPU COOLER</td>
-                    <td id="COOLER-td">
-                        <img src="" alt="COOLER imagem" id="COOLER-img" style="display: none;width: 50px;">
-                        <label id="COOLER-info">Nenhum</label>
+                    <td><h2>CPU COOLER</h2> 
+                        <hr>
+                        <div id="COOLER-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="COOLER imagem" id="COOLER-img" style="width: 100%;">
+                            </div>
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px;">
+                                    <label id="COOLER-info">Nenhum</label>
+                                    <label id="COOLER-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="COOLER-preco"></td>
                     <td>
                         <button id="COOLER-botaoAdd" onclick="redirectTo('COOLER')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
@@ -72,12 +90,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>MOTHERBOARD</td>
-                    <td id="MOTHERBOARD-td">
-                        <img src="" alt="MOTHERBOARD imagem" id="MOTHERBOARD-img" style="display: none;width: 50px;">
-                        <label id="MOTHERBOARD-info">Nenhum</label>
+                    <td><h2>MOTHERBOARD</h2>
+                        <hr>
+                        <div id="MOTHERBOARD-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="MOTHERBOARD imagem" id="MOTHERBOARD-img" style="width: 100%;">
+                            </div>
+                            <img src="" >
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px; margin-top: -35px; ">
+                                    <label id="MOTHERBOARD-info">Nenhum</label>
+                                    <label id="MOTHERBOARD-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="MOTHERBOARD-preco"></td>
                     <td>
                         <button id="MOTHERBOARD-botaoAdd" onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
@@ -86,12 +114,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>RAM</td>
-                    <td id="RAM-td">
-                        <img src="" alt="RAM imagem" id="RAM-img" style="display: none;width: 50px;">
-                        <label id="RAM-info">Nenhum</label>
+                    <td><h2>RAM</h2>
+                        <hr>
+                        <div id="RAM-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="RAM imagem" id="RAM-img" style="width: 100%;">
+                            </div>
+                            <img src="" >
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px; margin-top: -35px; ">
+                                    <label id="RAM-info">Nenhum</label>
+                                    <label id="RAM-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="RAM-preco"></td>
                     <td>
                         <button id="RAM-botaoAdd" onclick="redirectTo('RAM')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
@@ -100,12 +138,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>ARMAZENAMENTO</td>
-                    <td id="ARMAZENAMENTO-td">
-                        <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img" style="display: none;width: 50px;">
-                        <label id="ARMAZENAMENTO-info">Nenhum</label>
+                    <td><h2>ARMAZENAMENTO</h2>
+                        <hr>
+                        <div id="ARMAZENAMENTO-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img" style="width: 100%;">
+                            </div>
+                            <img src="" >
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px; margin-top: -35px; ">
+                                    <label id="ARMAZENAMENTO-info">Nenhum</label>
+                                    <label id="ARMAZENAMENTO-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="ARMAZENAMENTO-preco"></td>
                     <td>
                         <button  id="ARMAZENAMENTO-botaoAdd" onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/plus-solid.svg"
                                 alt="Adicionar" class="icon-button"></button>
@@ -114,12 +162,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>GPU</td>
-                    <td id="GPU-td">
-                        <img src="" alt="GPU imagem" id="GPU-img" style="display: none;width: 50px;">
-                        <label id="GPU-info">Nenhum</label>
+                    <td><h2>GPU</h2>
+                        <hr>
+                        <div id="GPU-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="GPU imagem" id="GPU-img" style="width: 100%;">
+                            </div>
+                            <img src="" >
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px; margin-top: -35px; ">
+                                    <label id="GPU-info">Nenhum</label>
+                                    <label id="GPU-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="GPU-preco"></td>
                     <td>
                         <button  id="GPU-botaoAdd" onclick="redirectTo('GPU')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
@@ -128,12 +186,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>CAIXA</td>
-                    <td id="CAIXA-td">
-                        <img src="" alt="CAIXA imagem" id="CAIXA-img" style="display: none;width: 50px;">
-                        <label id="CAIXA-info">Nenhum</label>
+                    <td><h2>CAIXA</h2>
+                        <hr>
+                        <div id="CAIXA-td" class="component-table-componente">
+                            <div style="width: 125px;">
+                                <img src="" alt="CAIXA imagem" id="CAIXA-img" style="width: 100%;">
+                            </div>
+                            <img src="" >
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px; margin-top: -35px; ">
+                                    <label id="CAIXA-info">Nenhum</label>
+                                    <label id="CAIXA-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="CAIXA-preco"></td>
                     <td>
                         <button  id="CAIXA-botaoAdd" onclick="redirectTo('CAIXA')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
@@ -142,12 +210,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>FONTE</td>
-                    <td id="FONTE-td">
-                        <img src="" alt="Fonte imagem" id="FONTE-img" style="display: none;width: 50px;">
-                        <label id="FONTE-info">Nenhum</label>
+                    <td><h2>FONTE</h2>
+                        <hr>
+                        <div id="FONTE-td" class="component-table-componente">
+                            <img src="">
+                            <div style="width: 125px;">
+                                <img src="" alt="Fonte imagem" id="FONTE-img" style="width: 100%;">
+                            </div>
+                            <div style="padding-left: 20px;">
+                                <div style="margin-bottom: 20px; margin-top: -35px; ">
+                                    <label id="FONTE-info">Nenhum</label>
+                                    <label id="FONTE-preco"></label>
+                                </div>
+                                <p>Descrição</p>
+                            </div>
+                        </div>
                     </td>
-                    <td id="FONTE-preco"></td>
                     <td>
                         <button  id="FONTE-botaoAdd" onclick="redirectTo('FONTE')"><img src="../imagens/plus-solid.svg" alt="Adicionar"
                                 class="icon-button"></button>
