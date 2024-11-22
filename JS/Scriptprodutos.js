@@ -36,23 +36,23 @@ let precototal = 0;
             document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
         }
 
-        function mostrarNaTabela(Componente, Tipo) {
-            document.getElementById(Tipo + '-img').style.display = 'block';
-            document.getElementById(Tipo + '-img').src = Componente.img;
-            document.getElementById(Tipo + '-info').textContent = `${Componente.name}`;
-            document.getElementById(Tipo + '-preco').textContent = `${Componente.price.toFixed(2)}€`;
+        function mostrarNaTabela(Componente, tipo) {
+            document.getElementById(tipo + '-img').style.display = 'block';
+            document.getElementById(tipo + '-img').src = Componente.img;
+            document.getElementById(tipo + '-info').textContent = `${Componente.name}`;
+            document.getElementById(tipo + '-preco').textContent = `${Componente.price.toFixed(2)}€`;
             
-            document.getElementById(Tipo + '-botaoAdd').style.display = 'none';
-            document.getElementById(Tipo + '-botaoRemove').style.display = 'inline';
+            document.getElementById(tipo + '-botaoAdd').style.display = 'none';
+            document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
 
             precototal += Componente.price;
 
-            StyleComponentes(Tipo);
+            StyleComponentes(tipo);
         }
 
-        function StyleComponentes(Tipo) {
-            document.getElementById(Tipo + '-td').style.display = 'flex';
-            document.getElementById(Tipo + '-td').style.gap = '5px';
+        function StyleComponentes(tipo) {
+            document.getElementById(tipo + '-td').style.display = 'flex';
+            document.getElementById(tipo + '-td').style.gap = '5px';
         }
 
         function RemoverComponenteTabela(tipo) {
@@ -71,10 +71,12 @@ let precototal = 0;
 
                     document.getElementById(tipo + '-info').innerHTML = 'Nenhum';
                     document.getElementById(tipo + '-preco').innerHTML = '';
-                    document.getElementById(tipo + '-img').style.display = 'none';
+                    document.getElementById(tipo + '-img').src = '../imagens/Componentes/SemComponente.png';
                     document.getElementById(tipo + '-td').style.display = 'table-cell';
                     document.getElementById(tipo + '-botaoAdd').style.display = 'inline';
                     document.getElementById(tipo + '-botaoRemove').style.display = 'none';
+
+                    StyleComponentes(tipo);
                 }
             }
         }

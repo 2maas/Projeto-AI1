@@ -94,6 +94,7 @@ button:hover {
 
 .component-table-componente{
     margin: 2% 0% 1% 0%; 
+    display: flex;
 }
 
 /* Responsividade */
