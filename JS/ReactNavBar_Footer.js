@@ -29,7 +29,7 @@ function NavBar() {
     return React.createElement('nav', {className: 'navbar'},
         React.createElement('div', { className: 'nav-titulo' },
             React.createElement('a', { href: CaminhoDaPagina('index.html') },
-                React.createElement('img', { src: CaminhoDaImagem('logo.svg'), style: { width: '130px', paddingRight: '5px' } })
+                React.createElement('img', { src: CaminhoDaImagem('SVG/logo.svg'), style: { width: '130px', paddingRight: '5px' } })
             )
         ),
         React.createElement('div', { className: 'nav-conteudo' },
@@ -48,12 +48,12 @@ function NavBar() {
                 )
             ),
             React.createElement('button', { className: 'button-toggle', id: 'botao', onClick: () => abrirSidebar() },
-                React.createElement('img', { src: CaminhoDaImagem('Menu.svg'), alt: 'Botão SideBar' })
+                React.createElement('img', { src: CaminhoDaImagem('SVG/Menu.svg'), alt: 'Botão SideBar' })
             ),
             React.createElement('div', { className: 'overlay', id: 'overlay', onClick: () => fecharSidebar() }),
             React.createElement('div', { className: 'sidebar', id: 'mySidebar' },
                 React.createElement('button', { className: 'button-close', onClick: () => fecharSidebar() },
-                    React.createElement('img', { src: CaminhoDaImagem('X_voltar.svg'), alt: 'Botão Fechar SideBar', style: { width: '20px', paddingTop: '10px' } })
+                    React.createElement('img', { src: CaminhoDaImagem('SVG/X_voltar.svg'), alt: 'Botão Fechar SideBar', style: { width: '20px', paddingTop: '10px' } })
                 ),
                 React.createElement('ul', { className: 'nav-cont-ul-sideBar' },
                     React.createElement('li', null,
@@ -110,13 +110,13 @@ function Footer() {
                     React.createElement('h4', null, 'Siga-nos'),
                     React.createElement('div', {className: 'social-links'}, 
                         React.createElement('a', {href: '#'}, 
-                            React.createElement('img', {src: CaminhoDaImagem('facebook-f-brands-solid.svg'), alt: '', style: {width: '15px'}})
+                            React.createElement('img', {src: CaminhoDaImagem('SVG/facebook-f-brands-solid.svg'), alt: '', style: {width: '15px'}})
                         ),
                         React.createElement('a', {href: '#'}, 
-                            React.createElement('img', {src: CaminhoDaImagem('instagram-brands-solid.svg'), alt: ''})
+                            React.createElement('img', {src: CaminhoDaImagem('SVG/instagram-brands-solid.svg'), alt: ''})
                         ),
                         React.createElement('a', {href: '#'}, 
-                            React.createElement('img', {src: CaminhoDaImagem('twitter-brands-solid.svg'), alt: '', style: {width: '22px'}})
+                            React.createElement('img', {src: CaminhoDaImagem('SVG/twitter-brands-solid.svg'), alt: '', style: {width: '22px'}})
                         )
                     )
                 )
