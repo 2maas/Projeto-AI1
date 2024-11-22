@@ -6,110 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Builder</title>
     <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
-
-    <style>
-        /* Reset básico e formatação geral */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-        h1 {
-            font-size: 2rem;
-            color: #ffffff;
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th,
-        td {
-            padding: 12px;
-            text-align: left;
-            font-size: 1rem;
-            color: #555;
-        }
-
-        th {
-            background-color: #333;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
-
-        td {
-            background-color: white;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        th[id="componentes"] {
-            min-width: 30%;
-        }
-
-        tr:not(:last-child){
-            
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:hover td {
-            background-color: #f4f4f4;
-        }
-
-        button {
-            background-color: #99999d;
-            color: white;
-            padding: 8px 15px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-
-        }
-
-        button:hover {
-            background-color: #99999d85;
-        }
-
-        .icon-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 20px;
-            height: 20px;
-        }
-
-        #labelteste {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .botaoRemove
-        {
-            display: none;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-
-            #thead {
-                display: none;
-            }
-
-
-        }
-    </style>
-
+    <link rel="stylesheet" href="../CSS/styleMontagemPc.css">
 </head>
 
 <body>
@@ -205,8 +102,7 @@
                 <tr>
                     <td>ARMAZENAMENTO</td>
                     <td id="ARMAZENAMENTO-td">
-                        <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img"
-                            style="display: none;width: 50px;">
+                        <img src="" alt="ARMAZENAMENTO imagem" id="ARMAZENAMENTO-img" style="display: none;width: 50px;">
                         <label id="ARMAZENAMENTO-info">Nenhum</label>
                     </td>
                     <td id="ARMAZENAMENTO-preco"></td>
@@ -305,89 +201,7 @@
             @2024 Informatic. Todos os direitos reservados.</p>
     </div>
 
-    <script>
-        let precototal = 0;
-        window.onload = loadComponents;
-
-        function redirectTo(pagina) {
-            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
-        }
-
-        function loadComponents() {
-
-            const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-            if (storedItems['CPU']) {
-                mostrarNaTabela(storedItems['CPU'], 'CPU');
-            }
-            if (storedItems['COOLER']) {
-                mostrarNaTabela(storedItems['COOLER'], 'COOLER');
-            }
-            if (storedItems['MOTHERBOARD']) {
-                mostrarNaTabela(storedItems['MOTHERBOARD'], 'MOTHERBOARD');
-            }
-            if (storedItems['RAM']) {
-                mostrarNaTabela(storedItems['RAM'], 'RAM');
-            }
-            if (storedItems['ARMAZENAMENTO']) {
-                mostrarNaTabela(storedItems['ARMAZENAMENTO'], 'ARMAZENAMENTO');
-            }
-            if (storedItems['GPU']) {
-                mostrarNaTabela(storedItems['GPU'], 'GPU');
-            }
-            if (storedItems['CAIXA']) {
-                mostrarNaTabela(storedItems['CAIXA'], 'CAIXA');
-            }
-            if (storedItems['FONTE']) {
-                mostrarNaTabela(storedItems['FONTE'], 'FONTE');
-            }
-
-            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
-        }
-
-        function mostrarNaTabela(Componente, Tipo) {
-            document.getElementById(Tipo + '-img').style.display = 'block';
-            document.getElementById(Tipo + '-img').src = Componente.img;
-            document.getElementById(Tipo + '-info').textContent = `${Componente.name}`;
-            document.getElementById(Tipo + '-preco').textContent = `${Componente.price.toFixed(2)}€`;
-            
-            document.getElementById(Tipo + '-botaoAdd').style.display = 'none';
-            document.getElementById(Tipo + '-botaoRemove').style.display = 'inline';
-
-            precototal += Componente.price;
-
-            StyleComponentes(Tipo);
-        }
-
-        function StyleComponentes(Tipo) {
-            document.getElementById(Tipo + '-td').style.display = 'flex';
-            document.getElementById(Tipo + '-td').style.gap = '5px';
-            document.getElementById(Tipo + '-td').style.alignItems = 'center';
-        }
-
-        function RemoverComponenteTabela(tipo) {
-            const Info = document.getElementById(tipo + '-info').textContent;
-            const Preco = document.getElementById(tipo + '-preco').textContent;
-
-            if (Info != '' && Preco != '') {
-                let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-
-                if (storedItems[tipo]) {
-                    precototal -= storedItems[tipo].price;
-                    document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
-
-                    delete storedItems[tipo];
-                    localStorage.setItem('selectedItems', JSON.stringify(storedItems));
-
-                    document.getElementById(tipo + '-info').innerHTML = 'Nenhum';
-                    document.getElementById(tipo + '-preco').innerHTML = '';
-                    document.getElementById(tipo + '-img').style.display = 'none';
-                    document.getElementById(tipo + '-td').style.display = 'table-cell';
-                    document.getElementById(tipo + '-botaoAdd').style.display = 'inline';
-                    document.getElementById(tipo + '-botaoRemove').style.display = 'none';
-                }
-            }
-        }
-    </script>
+    <script src="../JS/Scriptprodutos.js"></script>
 </body>
 
 </html>

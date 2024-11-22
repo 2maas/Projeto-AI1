@@ -1,0 +1,134 @@
+/* Reset básico e formatação geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+}
+
+th {
+    background-color: #333;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+th[id="componentes"] {
+    min-width: 30%;
+}
+
+tr:not(:last-child){
+    
+    border-bottom: 1px solid #ddd;
+}
+
+/*
+tr:hover td {
+    background-color: #616161;
+}
+*/
+
+button {
+    background-color: #505050;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+button:hover {
+    background-color: #e4e3e385;
+}
+
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+#labelteste {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.botaoRemove
+{
+    display: none;
+}
+
+
+
+/* Tooltip container */
+.Tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .Tooltip .TooltipText {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .Tooltip:hover .TooltipText {
+    visibility: visible;
+  }
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    #thead {
+        display: none;
+    }
+
+
+}
