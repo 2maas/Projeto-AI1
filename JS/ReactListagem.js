@@ -10,7 +10,7 @@ function App(props) {
             React.createElement('div',{ className: 'option'},
                 React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
                 React.createElement('p', null, props.name),
-                React.createElement('p', null, props.price),
+                React.createElement('p', null, props.price + '€'),
                 React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img)},'Selecionar')
             )
     );
@@ -37,7 +37,7 @@ function App1() {
     const params = new URLSearchParams(window.location.search);
     const filterType = params.get('valor');
 
-    document.getElementById("testeh1").innerHTML = 'Escolha uma ' + filterType ;    
+    document.getElementById("titulo").innerHTML = 'Escolha uma ' + filterType ;    
 
     const filteredComponents = filterType ? 
         components.filter(component => component.type === filterType) : 
@@ -47,4 +47,4 @@ function App1() {
         filteredComponents.map((component, index) => React.createElement(App,{type: component.type,name: component.name,price: component.price,img: component.img, })));
 }
 
-ReactDOM.render(App1(), document.getElementById('teste'));
+ReactDOM.render(App1(), document.getElementById('listar'));
