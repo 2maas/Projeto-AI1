@@ -8,29 +8,21 @@
     <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container
-
         h3, p
         {
             color: #ffffff;
         }
-        
-        #component-options {
+
+        .Tabelacao
+        {
             display: flex;
-            flex-direction: column; 
-            align-items: flex-start;
+            justify-content: space-evenly;
         }
+        
 
         .option {
             display: flex; 
-            margin: 10px;
-            width: 100%; 
+            margin-top: 10px;
             border-bottom: 1px solid #ddd; 
             padding: 10px;
             align-items: center; /* Align items horizontally */
@@ -39,27 +31,34 @@
         .option img {
             width: 60px; 
             height: auto;
-            margin-left: 2vw;
+            margin-left: 3vw;
         }
 
-        .option h3, .option p {
-            margin: 0;
-            text-align: left; 
+        .option #NomeComponente
+        {
+            padding-left: 15px;
+            width: 45%;
+        }
+
+        .option #PrecoComponente
+        {
+            padding-left: 100px;
+            width: 30%;
         }
 
         button {
-            margin-top: 10px;
+            background-color: #505050;
+            color: white;
+            padding: 8px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .Tabelacao
-        {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .container
-        {
-            width: 100%;
+        button:hover {
+            background-color: #e4e3e385;
         }
 
         @media (max-width: 600px) {
@@ -77,9 +76,9 @@
             }
 
             h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #007BFF;
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #007BFF;
             }
 
             #component-options {
@@ -87,7 +86,7 @@
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
                 gap: 20px;
                 width: 100%;
-                max-width: 1200px;
+                max-width: 1100px;
             }
 
             .option {
@@ -122,21 +121,6 @@
                 margin-bottom: 20px;
                 color: #666;
             }
-
-            button {
-                background-color: #99999d;
-                color: white;
-                font-size: 1rem;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-
-            button:hover {
-                background-color: #99999d85;
-            }
         }
     </style>
 
@@ -150,6 +134,10 @@
     <div id="Nav"></div>
    
     <h1 id="titulo" style="margin-top: 20px;margin-bottom: 20px;font-size: 1.8rem;color: #ffffff;text-align: center;"></h1>
+    <div class="Tabelacao">
+        <h3>Nome</h3>
+        <h3>Preco</h3>
+    </div>
     <div id="listar"></div>
 
     <div id="Footer"></div>
