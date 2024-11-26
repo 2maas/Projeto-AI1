@@ -5,7 +5,7 @@ p {
 
 .Tabelacao {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .option {
@@ -17,7 +17,7 @@ p {
 }
 
 .option img {
-    width: 60px;
+    width: 85px;
     height: auto;
     margin-left: 3vw;
 }
