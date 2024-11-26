@@ -20,11 +20,19 @@
     padding: 20px;
 }
 .card {
-    background-color: #ffffff;
+    background-color: #4b4b4b;
     border-radius: 10px;
+    color:white;
     width: 30%;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card:hover{
+    transform: scale(1.03);
 }
 
 .card-header {
@@ -44,7 +52,6 @@
 }
 
 .card-body p {
-    color: #333;
     font-size: 14px;
     margin: 5px 0;
 
@@ -65,7 +72,7 @@
 .card-footer .price {
     font-size: 20px;
     font-weight: bold;
-    color: #2b7a3a;
+    color: #41b857;
 }
 
 .card-footer .comments {

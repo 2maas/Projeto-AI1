@@ -1,0 +1,117 @@
+h3,
+p {
+    color: #ffffff;
+}
+
+.Tabelacao {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.option {
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    align-items: center;
+    /* Align items horizontally */
+}
+
+.option img {
+    width: 60px;
+    height: auto;
+    margin-left: 3vw;
+}
+
+.option #NomeComponente {
+    padding-left: 15px;
+    width: 45%;
+}
+
+.option #PrecoComponente {
+    padding-left: 100px;
+    width: 30%;
+}
+
+button {
+    background-color: #505050;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e4e3e385;
+}
+
+#listar{
+    margin: 0 0 2% 7.5%;
+    width: 85%;
+}
+
+@media (max-width: 600px) {
+    body {
+    }
+
+    hr{
+        display: none;
+    }
+
+    #component-options {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .Tabelacao {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #007BFF;
+    }
+
+    #component-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1100px;
+    }
+
+    .option {
+        background-color: #ffffffb3;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .option:hover {
+        transform: translateY(-10px);
+    }
+
+    .option img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #666;
+    }
+}

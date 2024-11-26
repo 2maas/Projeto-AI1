@@ -8,7 +8,8 @@ function App(props) {
                 React.createElement('p', {id:'NomeComponente'}, props.name),
                 React.createElement('p', {id:'PrecoComponente'}, props.price + '€'),
                 React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img)},'Selecionar')
-            )
+            ),
+            React.createElement('hr')
     );
 }
 
@@ -18,8 +19,12 @@ function App1() {
         { type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 7 7800X3D', price: 489.90, img: '../imagens/Componentes/1.png' },
         { type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 5 7600X', price: 219.90, img: '../imagens/Componentes/2.png'},
         { type: 'COOLER', name: 'Water Cooler CPU Arctic Liquid Freezer III 360 All-In-One Preto', price: 74.90, img: '../imagens/Componentes/7.png' },
+        { type: 'COOLER', name: 'Water Cooler CPU Arctic Liquid Freezer III 360 All-In-One Preto', price: 74.90, img: '../imagens/Componentes/7.png' },
+        { type: 'MOTHERBOARD', name: 'Motherboard ATX MSI MPG Z790 Carbon WiFi Skt1700', price: 299.90, img: '../imagens/Componentes/10.png'},
         { type: 'MOTHERBOARD', name: 'Motherboard ATX MSI MPG Z790 Carbon WiFi Skt1700', price: 299.90, img: '../imagens/Componentes/10.png'},
         { type: 'CAIXA', name: 'Caixa ATX Zolyd Rivexa Tempered Glass ARGB Branca', price: 59.90, img: '../imagens/Componentes/12.png' },
+        { type: 'CAIXA', name: 'Caixa ATX Zolyd Rivexa Tempered Glass ARGB Branca', price: 59.90, img: '../imagens/Componentes/12.png' },
+        { type: 'FONTE', name: 'Fonte de Alimentação Seasonic Focus GX-850W 80 Plus Gold Full Modular', price: 129.90, img: '../imagens/Componentes/11.png'},
         { type: 'FONTE', name: 'Fonte de Alimentação Seasonic Focus GX-850W 80 Plus Gold Full Modular', price: 129.90, img: '../imagens/Componentes/11.png'},
         { type: 'ARMAZENAMENTO', name: 'SSD M.2 2280 Western Digital WD Black SN770 1TB 3D NAND NVMe PCIe', price: 79.90, img: '../imagens/Componentes/8.png' },
         { type: 'ARMAZENAMENTO', name: 'SSD 2.5" Samsung 870 EVO 500GB MLC V-NAND SATA', price: 64.90, img: '../imagens/Componentes/9.png' },
@@ -44,3 +49,11 @@ function App1() {
 }
 
 ReactDOM.render(App1(), document.getElementById('listar'));
+
+function selectComponent(type, name, price,img) {
+    // Pega os componentes da lista
+    let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
+    storedItems[type] = { name, price, img};
+    localStorage.setItem('selectedItems', JSON.stringify(storedItems));
+    window.location.href = 'MontagemPC.html';
+}
