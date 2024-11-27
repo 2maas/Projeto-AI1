@@ -5,8 +5,17 @@ p {
 
 .Tabelacao {
     display: flex;
-    justify-content: center;
+    width: 85%;
+    margin: 0 0 0 7.5%;
 }
+/*
+#NomeComponente{
+
+}
+
+#PrecoComponente{
+
+}*/
 
 .option {
     display: flex;
