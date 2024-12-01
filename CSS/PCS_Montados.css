@@ -1,3 +1,7 @@
+body{
+    color:white
+}
+
 .container-conteudo{
     display: flex;
     padding: 50px 0 50px 100px;
@@ -21,9 +25,8 @@
 }
 
 button{
-    height: 90%;
+    height: 100%;
     background-color: transparent;
-    width: 30px;
     border: none;
     cursor: pointer;
     z-index: 1;
@@ -59,12 +62,20 @@ button{
 }
 
 
-
 #teste1 img, #teste2 img {
     width: 20px; /* Ajusta o tamanho do ícone */
 }
 
 @media(max-width: 775px){
+    
+
+    .conteudo{
+        margin: 15px;
+    }
+
+}
+@media(max-width: 500px){
+    
     .container-conteudo{
         display: flex;
         justify-content: center;
@@ -72,19 +83,9 @@ button{
         padding: 0px;
         flex-wrap: wrap;
     }
-
-
-}
-@media(max-width: 500px){
-    .conteudo{
-        display: inline;
-        margin: 15px;
-    }
     
     .imgs-secundarias{
         display: none;
     }
-
-    
 }
 
