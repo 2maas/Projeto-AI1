@@ -30,7 +30,7 @@ button{
 }
 
 .img-primaria img{
-    width: 300px;
+    width: 100%;
 }
 
 .imgs-secundarias{
@@ -72,20 +72,15 @@ button{
         padding: 0px;
         flex-wrap: wrap;
     }
-    .conteudo{
-        margin: 30px;
-    }
+
 
 }
 @media(max-width: 500px){
-    .container-conteudo{
-        display: inline;
-        padding: 0px;
-        
-    }
     .conteudo{
-        margin: 30px;
+        display: inline;
+        margin: 15px;
     }
+    
     .imgs-secundarias{
         display: none;
     }
