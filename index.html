@@ -58,7 +58,7 @@
     <div class="DivMontagens">
         <h1>Algumas Montagens</h1>
         <div class="DivMedioMontagens">
-            <a class="card" href="HTML/PCS_Montados.html">
+            <a class="card" onclick="Teste()" href="HTML/PCS_Montados.html">
                 <div class="card-header">
                     <img src="imagens/Componentes/12.png" alt="PC" class="ImagemPrincipal">
                 </div>
@@ -105,6 +105,21 @@
     <br>
     <div id="Footer"></div>
     <div id="Direitos"></div>
+
+    <script>
+        function teste()
+        {
+            // pegar a referencia do card
+            const PC = {
+                img: "teste" ,
+                Nome: "teste" ,
+                cpu : "teste" ,
+            }
+
+            localStorage.setItem('selectedItems', JSON.stringify(storedItems));
+            window.location.href = 'MontagemPC.html';
+        }
+    </script>
 
     <script src="JS/ReactNavBar_Footer.js"></script>
     <script src="JS/Carrousel.js"></script>
