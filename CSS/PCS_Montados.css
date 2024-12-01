@@ -45,7 +45,6 @@
         padding: 0px;
         flex-wrap: wrap;
     }
-
     .conteudo{
         margin: 30px;
     }
@@ -60,4 +59,46 @@
     .conteudo{
         margin: 30px;
     }
+    .imgs-secundarias{
+        display: none;
+    }
+
+    #teste1{
+        height: 48%;
+        width: 10%;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        left:8%;
+        cursor: pointer;
+    }
+
+    #teste1 img{
+        width: 10px;
+    }
+    
+    #teste1:hover{
+        background-color: #817f7f57;
+    }
+
+    #teste2{
+        height: 48%;
+        width: 10%;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        right:8%;
+        cursor: pointer;
+    }
+
+    #teste2 img{
+        width: 10px;
+    }
+    
+    #teste2:hover{
+        background-color: #817f7f57;
+    }
 }
+
