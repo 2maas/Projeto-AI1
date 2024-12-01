@@ -22,7 +22,7 @@
                 <button id="teste2" onclick="MudarimagemSetas(1)" style="margin-left:10px;"><img src="../imagens/SVG/chevron-right-solid.svg" alt=""></button>
             </div>
             <div class="imgs-secundarias">
-                <div class="border-imgs"><img src="../imagens/Componentes/1.png" onmouseover="Mudarimagem(this)" alt=""></div>
+                <div class="border-imgs" style="border-color: #41b857;"><img src="../imagens/Componentes/1.png" onmouseover="Mudarimagem(this)" alt=""></div>
                 <div class="border-imgs"><img src="../imagens/Componentes/3.png" onmouseover="Mudarimagem(this)" alt=""></div>
                 <div class="border-imgs"><img src="../imagens/Componentes/4.png" onmouseover="Mudarimagem(this)" alt=""></div>
                 <div class="border-imgs"><img src="../imagens/Componentes/6.png" onmouseover="Mudarimagem(this)" alt=""></div>
@@ -54,7 +54,12 @@
         const ImagemPrincipal = document.getElementById("ImagemPrincipal");
 
         function Mudarimagem(img){
-            ImagemPrincipal.src = img.src;
+            ImagemPrincipal.style.opacity = 0;
+
+            setTimeout(() => {
+                ImagemPrincipal.src = img.src; 
+                ImagemPrincipal.style.opacity = 1;
+            }, 300);
 
             const borderImgs = document.querySelectorAll(".border-imgs");
 
