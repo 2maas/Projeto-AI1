@@ -262,7 +262,7 @@ ul{
 	
 }
   
-@media(max-width: 755px){
+@media(max-width: 775px){
 
 	.nav-cont-ul a .texto {
 		display: none; 

@@ -6,22 +6,75 @@
     <title>Descricao</title>
 
     <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
-    <link rel="stylesheet" href="CSS/StyleNavbarFooter.css">
+    <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
+    <link rel="stylesheet" href="../CSS/PCS_Montados.css">
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 </head>
 <body>
     <div id="Nav"></div>
 
-    <div>
-        <div>
-            <fieldset>
-                <img src="../imagens/Componentes/12.png">
-            </fieldset>
+    <div class="container-conteudo">
+        <div class="conteudo">
+            <div class="img-primaria">
+                <img id="ImagemPrincipal" src="../imagens/Componentes/1.png" alt="">
+            </div>
+            <div class="imgs-secundarias">
+                <div class="border-imgs"><img src="../imagens/Componentes/1.png" onmouseover="Mudarimagem(this)" alt=""></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/3.png" onmouseover="Mudarimagem(this)" alt=""></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/4.png" onmouseover="Mudarimagem(this)" alt=""></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/6.png" onmouseover="Mudarimagem(this)" alt=""></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/7.png" onmouseover="Mudarimagem(this)" alt=""></div>
+            </div>
+            <button onclick="MudarimagemSetas(-1)">Previous</button>
+            <button onclick="MudarimagemSetas(1)">Next</button>
+        </div>
+        <div class="descricao">
+            <h2>TESTE</h2>
         </div>
     </div>
     <div id="Footer"></div>
     <div id="Direitos"></div>
     <script src="../JS/ReactNavBar_Footer.js"></script>
+
+
+    <script>
+        let imagens = [];
+        let index = 0;
+        const ImagemPrincipal = document.getElementById("ImagemPrincipal");
+
+        function Mudarimagem(img){
+            ImagemPrincipal.src = img.src;
+
+            const borderImgs = document.querySelectorAll(".border-imgs");
+
+            //Restaurar a cor para a cor default
+            borderImgs.forEach(imgs => {imgs.style.borderColor = "#5f5d5d"})
+
+            img.parentElement.style.borderColor = "#41b857";
+
+            index = imagens.indexOf(img.src);
+        }
+
+        function MudarimagemSetas(teste){
+            index += teste;
+
+            if (index < 0) {
+                index = imagens.length - 1;
+            } else if (index >= imagens.length) {
+                index = 0; 
+            }
+
+            const imgteste = document.querySelectorAll(".imgs-secundarias img")[index];
+            Mudarimagem(imgteste);
+        }
+
+        
+        const imagensSecundarias = document.querySelectorAll('.imgs-secundarias img'); 
+        for (let i = 0; i < imagensSecundarias.length; i++) {
+            imagens.push(imagensSecundarias[i].src);
+        }
+        
+    </script>
 </body>
 </html>
