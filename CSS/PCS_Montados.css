@@ -87,8 +87,12 @@ body{
         display: none;
     }
     .descricao
-{
-    padding: 0;
-}
+    {
+        padding: 0;
+    }
+
+    .img-primaria img{
+        width: 80%;
+    }
 }
 
