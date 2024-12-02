@@ -45,17 +45,6 @@ th[id="componentes"] {
     min-width: 30%;
 }
 
-/*
-tr:not(:last-child){
-    
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover td {
-    background-color: #616161;
-}
-*/
-
 button {
     background-color: #505050;
     color: white;

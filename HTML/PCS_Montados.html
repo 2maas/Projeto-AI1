@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../CSS/PCS_Montados.css">
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
 </head>
 <body>
     <div id="Nav"></div>
@@ -17,9 +18,9 @@
     <div class="container-conteudo">
         <div class="conteudo">
             <div class="img-primaria">
-                <button id="teste1" onclick="MudarimagemSetas(-1)" style="margin-right:10px;"><img src="../imagens/SVG/chevron-left-solid.svg" alt=""></button>
+                <button class="botaoImgs" id="teste1" onclick="MudarimagemSetas(-1)" style="margin-right:10px;"><img src="../imagens/SVG/chevron-left-solid.svg" alt=""></button>
                 <img id="ImagemPrincipal" src="../imagens/Componentes/1.png" alt="">
-                <button id="teste2" onclick="MudarimagemSetas(1)" style="margin-left:10px;"><img src="../imagens/SVG/chevron-right-solid.svg" alt=""></button>
+                <button class="botaoImgs" id="teste2" onclick="MudarimagemSetas(1)" style="margin-left:10px;"><img src="../imagens/SVG/chevron-right-solid.svg" alt=""></button>
             </div>
             <div class="imgs-secundarias">
                 <div class="border-imgs" style="border-color: #41b857;"><img src="../imagens/Componentes/1.png" onmouseover="Mudarimagem(this)" alt=""></div>
@@ -43,6 +44,12 @@
             <p>Gráficos Integrados: AMD Radeon™ Graphics</p>
         </div>
     </div>
+    
+    <div style="display: flex; justify-content: center;"><hr style="width: 90%;"></div>
+
+
+    
+    <br>
     <div id="Footer"></div>
     <div id="Direitos"></div>
     <script src="../JS/ReactNavBar_Footer.js"></script>
