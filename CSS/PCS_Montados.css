@@ -23,7 +23,7 @@ body{
 }
 
 .botaoImgs{ 
-    height: 100%;
+    height: 300px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -71,6 +71,9 @@ body{
     .conteudo{
         margin: 15px;
     }
+    .img-primaria img{
+        width: 80%;
+    }
 
 }
 @media(max-width: 500px){
@@ -91,8 +94,6 @@ body{
         padding: 0;
     }
 
-    .img-primaria img{
-        width: 100%;
-    }
+
 }
 
