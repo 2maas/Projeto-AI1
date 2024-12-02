@@ -20,8 +20,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-
 }
 
 button{
@@ -73,8 +71,6 @@ button{
 
 
 @media(max-width: 775px){
-    
-
     .conteudo{
         margin: 15px;
     }
