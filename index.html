@@ -55,10 +55,10 @@
         </div>
     </div>
     <br>
-    <div class="DivMontagens">
+    <div class="DivMontagens" id="pcs">
         <h1>Algumas Montagens</h1>
         <div class="DivMedioMontagens">
-            <a class="card" onclick="Teste()" href="HTML/PCS_Montados.html">
+            <a class="card" href="HTML/PCS_Montados.html">
                 <div class="card-header">
                     <img src="imagens/Componentes/12.png" alt="PC" class="ImagemPrincipal">
                 </div>
@@ -72,7 +72,7 @@
                     <span class="price">558.39€</span>
                 </div>
             </a>
-            <a class="card">
+            <a class="card" href="HTML/PCS_Montados.html">
                 <div class="card-header">
                     <img src="imagens/Componentes/12.png" alt="PC" class="ImagemPrincipal">
                 </div>
@@ -86,7 +86,7 @@
                     <span class="price">558.39€</span>
                 </div>
             </a>
-            <a class="card">
+            <a class="card" href="HTML/PCS_Montados.html">
                 <div class="card-header">
                     <img src="imagens/Componentes/12.png" alt="PC" class="ImagemPrincipal">
                 </div>
@@ -106,21 +106,7 @@
     <div id="Footer"></div>
     <div id="Direitos"></div>
 
-    <script>
-        function teste()
-        {
-            // pegar a referencia do card
-            const PC = {
-                img: "teste" ,
-                Nome: "teste" ,
-                cpu : "teste" ,
-            }
-
-            localStorage.setItem('selectedItems', JSON.stringify(storedItems));
-            window.location.href = 'MontagemPC.html';
-        }
-    </script>
-
+    
     <script src="JS/ReactNavBar_Footer.js"></script>
     <script src="JS/Carrousel.js"></script>
     

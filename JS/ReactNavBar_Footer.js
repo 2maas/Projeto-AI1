@@ -47,13 +47,13 @@ function CaminhoDaImagem(NomeImagem) {
 function CaminhoDaPagina(NomePagina) {
     const path = window.location.pathname;
     if (path.includes('/HTML/')) {
-        if(NomePagina == 'index.html')
+        if(NomePagina.includes('index.html'))
             return '../' + NomePagina;
         else
             return NomePagina;
     }
     else
-        if(NomePagina == 'index.html')
+        if(NomePagina.includes('index.html'))
             return NomePagina;
         else
         return 'HTML/' + NomePagina;
@@ -74,10 +74,10 @@ function NavBar() {
                     React.createElement('a', { href: CaminhoDaPagina('MontagemPC.html') }, 'Monte o seu pc')
                 ),
                 React.createElement('li', null,
-                    React.createElement('a', { href: CaminhoDaPagina('SobreNos.html') }, 'Sobre nós')
+                    React.createElement('a', { href: CaminhoDaPagina('listagem.html?valor=todos') }, 'Produtos disponíveis')
                 ),
                 React.createElement('li', null,
-                    React.createElement('a', { href: CaminhoDaPagina('ProdutosDisponiveis.html') }, 'Produtos disponíveis')
+                    React.createElement('a', { href: CaminhoDaPagina('SobreNos.html') }, 'Sobre nós')
                 ),
                 React.createElement('li', { className: 'data_hora' },
                     React.createElement('label', { className: "data_hora_texto" })
@@ -121,8 +121,7 @@ function Footer() {
                 React.createElement('div', {className: 'footer-col'},
                     React.createElement('h4', null, 'Companhia'),
                     React.createElement('ul', {style: {paddingLeft: '0px'}}, 
-                        React.createElement('li', null, React.createElement('a', {href: '#'}, 'Sobre nós')),
-                        React.createElement('li', null, React.createElement('a', {href: '#'}, 'Nossos serviços'))
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós')),
                     )
                 ),
                 // Obter ajuda Section
@@ -137,8 +136,8 @@ function Footer() {
                 React.createElement('div', {className: 'footer-col'},
                     React.createElement('h4', null, 'Loja Online'),
                     React.createElement('ul', {style: {paddingLeft: '0px'}}, 
-                        React.createElement('li', null, React.createElement('a', {href: '#'}, 'Computadores')),
-                        React.createElement('li', null, React.createElement('a', {href: '#'}, 'Componentes'))
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('index.html#pcs')}, 'Computadores')),
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=todos')}, 'Componentes'))
                     )
                 ),
                 // Siga-nos Section

@@ -86,11 +86,20 @@ function App1() {
     const params = new URLSearchParams(window.location.search);
     const filterType = params.get('valor');
 
-    document.getElementById("titulo").innerHTML = 'Escolha um ' + filterType ;    
+    let filteredComponents;
 
-    const filteredComponents = filterType ? 
+    if(filterType != "todos")
+    {
+        document.getElementById("titulo").innerHTML = 'Escolha um ' + filterType ;    
+    
+        filteredComponents = filterType ? 
         components.filter(component => component.type === filterType) : 
         [];
+    }
+    {
+        document.getElementById("titulo").innerHTML = 'Listagem de todos os Componentes';
+        filteredComponents = components;
+    }
 
     return React.createElement("div", { id: 'component-options' },
         filteredComponents.map((component, index) => React.createElement(App,{type: component.type,name: component.name,price: component.price,img: component.img, })));
