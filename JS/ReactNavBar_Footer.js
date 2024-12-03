@@ -96,10 +96,10 @@ function NavBar() {
                         React.createElement('a', { href: CaminhoDaPagina('MontagemPC.html') }, 'Monte o seu pc')
                     ),
                     React.createElement('li', null,
-                        React.createElement('a', { href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós')
+                        React.createElement('a', { href: CaminhoDaPagina('listagem.html?valor=todos') }, 'Produtos disponíveis')
                     ),
                     React.createElement('li', null,
-                        React.createElement('a', { href: CaminhoDaPagina('ProdutosDisponiveis.html') }, 'Produtos disponíveis')
+                        React.createElement('a', { href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós')
                     )
                 ),
                 React.createElement('div', { style: { textAlign: 'center', padding: '10px', fontWeight: 'bold' } },

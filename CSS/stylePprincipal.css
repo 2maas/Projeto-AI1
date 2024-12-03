@@ -87,6 +87,10 @@ html{
     gap: 5px;
 }
 
+#pcs{
+    scroll-margin-top: 90px;
+}
+
 @media(max-width: 755px) {
     .DivMedioMontagens {
         flex-wrap: wrap;
