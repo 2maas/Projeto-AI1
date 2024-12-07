@@ -1,5 +1,4 @@
 
-
 // Mostrar Componentes
 function App(props) {
     return  React.createElement('div',null,
@@ -13,7 +12,23 @@ function App(props) {
     );
 }
 
+function App1(props) {
+    return  React.createElement('a',{className: 'card', href: ''},
+                React.createElement('div',{ className: 'card-header'},
+                    React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
+                ),
+                React.createElement('div',{ className: 'card-body'},
+                    React.createElement('h3', null, props.name),
+                ),
+                React.createElement('div',{ className: 'card-body'},
+                    React.createElement('span', {className: 'price'}, `${props.price.toFixed(2)}€`),
+                )
+    );
+}
+
 function App1() {
+    
+
     const components = [
         { ID:"1", type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 9 7950X', price: 699.90, img: '../imagens/Componentes/1.png' },
         { ID:"2", type: 'CPU', Socket: 'AM5', name: 'AMD Ryzen 7 5800X', price: 429.90, img: '../imagens/Componentes/2.png' },
@@ -103,8 +118,21 @@ function App1() {
         filteredComponents = components;
     }
 
-    return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component, index) => React.createElement(App,{type: component.type,name: component.name,price: component.price,img: component.img, })));
+    const isMobile = window.innerWidth;
+    
+    // ver isto
+    if(isMobile >= 500)
+    {
+        return React.createElement("div", { id: 'component-options' },
+            filteredComponents.map((component, index) => React.createElement(App,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
+    }
+    else
+    {
+        return React.createElement("div", { className: 'DivMedioMontagens' },
+            filteredComponents.map((component, index) => React.createElement(App1,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
+    
+    }
+
 }
 
 ReactDOM.render(App1(), document.getElementById('listar'));
