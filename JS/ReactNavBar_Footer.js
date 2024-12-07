@@ -127,9 +127,8 @@ function Footer() {
                 // Obter ajuda Section
                 React.createElement('div', {className: 'footer-col'},
                     React.createElement('h4', null, 'Obter ajuda'),
-                    React.createElement('ul', {style: {paddingLeft: '0px'}}, 
-                        React.createElement('li', null, React.createElement('a', {href: '#'}, 'Perguntas Frequentes')),
-                        React.createElement('li', null, React.createElement('a', {href: '#'}, 'Diz nos o que achas'))
+                    React.createElement('ul', {style: {paddingLeft: '0px'}},
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('EnviarEmail.html')}, 'Fala connosco!'))
                     )
                 ),
                 // Loja Online Section
@@ -162,7 +161,7 @@ function Footer() {
 
 function Direitos() {
     return React.createElement('div', null, 
-        React.createElement('p', {style: {paddingTop: '14px', color: 'white', backgroundColor: '#161616', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}, '@2024 Informatic. Todos os direitos reservados.')
+        React.createElement('p', {style: {color: 'white', backgroundColor: '#161616', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}, '@2024 Informatic. Todos os direitos reservados.')
     )
 }
 
