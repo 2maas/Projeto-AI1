@@ -1,6 +1,13 @@
 'use strict';
 
-function data_horaF(){
+document.addEventListener('DOMContentLoaded', function() {
+    // Chama a função logo após o conteúdo da página ser carregado
+    data_horaF();
+    // Atualiza a data e hora a cada segundo
+    setInterval(data_horaF, 1000);
+});
+
+function data_horaF() {
     const dateTimeElement = document.querySelectorAll('.data_hora_texto');
     const now = new Date();
 
@@ -15,8 +22,8 @@ function data_horaF(){
 
     // Atualizar o elemento com a data e hora formatada
     dateTimeElement.forEach((element) => {
-      element.textContent = formattedDateTime;
-  });
+        element.textContent = formattedDateTime;
+    });
 }
 
 setInterval(data_horaF, 1000);

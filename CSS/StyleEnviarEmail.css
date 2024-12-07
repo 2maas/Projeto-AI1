@@ -53,3 +53,15 @@ input[type=submit]:hover {
     border-color: #25b800;
     color: white;
 }
+
+#div_button{
+    justify-content: center;
+    display: flex; justify-content: flex-end;
+}
+
+
+@media(max-width: 500px){
+    #div_button{
+        justify-content: center;
+    }
+}
