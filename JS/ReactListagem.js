@@ -119,19 +119,19 @@ function App1() {
     }
 
     const isMobile = window.innerWidth;
-    
+
     // ver isto
-    if(isMobile >= 500)
-    {
+    //if(isMobile >= 500)
+    //{
         return React.createElement("div", { id: 'component-options' },
             filteredComponents.map((component, index) => React.createElement(App,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
-    }
-    else
-    {
-        return React.createElement("div", { className: 'DivMedioMontagens' },
-            filteredComponents.map((component, index) => React.createElement(App1,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
+    //}
+    //else
+    //{
+        //return React.createElement("div", { className: 'DivMedioMontagens' },
+            //filteredComponents.map((component, index) => React.createElement(App1,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
     
-    }
+    //}
 
 }
 
