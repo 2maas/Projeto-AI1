@@ -69,7 +69,60 @@ body{
 {
 	width: 100%;
 	padding: 20px;
-	border-bottom: 0.5px solid #b7b6b6;
+
+	/*talvez colocar so no ultimo para separa a data do resto*/
+	/*border-bottom: 0.5px solid #b7b6b6;*/	
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.TipoComponente 
+{
+	max-height: 0; /* Começa com altura 0 (oculto) */
+    overflow: hidden; /* Impede o conteúdo de aparecer fora da área visível */
+    opacity: 0; /* Inicialmente invisível */
+    transition: max-height 0.8s ease, opacity 0.5s ease; /
+}
+
+.TipoComponente.visivel {
+	max-height: 200px; /* Ajuste conforme o conteúdo do menu */
+    opacity: 1; 
+}
+
+.TipoComponente li 
+{
+	display: inline;
+	padding: 0;
+}
+
+.TipoComponente li a
+{
+	padding-left: 7vh;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+
+.TipoComponente li a img
+{
+	padding-right: 10px;
+}
+
+.aba
+{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+}
+
+.aba img
+{
+	transition: transform 0.3s ease-in-out; 
 }
 
 /* esconder neste caso a imagem para depois se a pagina tiver tipo 500px colocar a imagem*/

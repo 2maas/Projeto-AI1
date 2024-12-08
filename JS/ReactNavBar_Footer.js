@@ -35,13 +35,29 @@ function abrirSidebar() {
     document.getElementById("mySidebar").classList.add("open");
     document.getElementById("overlay").style.display = "block";
     document.body.style.overflow = "hidden"; 
-  }
+}
   
-  function fecharSidebar() {
+function fecharSidebar() {
     document.getElementById("mySidebar").classList.remove("open");
     document.getElementById("overlay").style.display = "none";
     document.body.style.overflow = ""; 
-  }
+}
+
+function AbrirAba(event){
+    const botao = event.currentTarget;
+    const imagem = botao.querySelector('img'); 
+    const tipoC = document.querySelector('.TipoComponente');
+
+    if (imagem.style.transform === 'rotate(-180deg)') {
+        imagem.style.transform = 'rotate(0deg)';
+        tipoC.classList.remove('visivel');
+    }
+    else {
+        imagem.style.transform = 'rotate(-180deg)';
+        tipoC.classList.add('visivel');
+    }
+}
+
 
 function CaminhoDaImagem(NomeImagem) {
     const path = window.location.pathname;
@@ -100,13 +116,25 @@ function NavBar() {
                 ),
                 React.createElement('ul', { className: 'nav-cont-ul-sideBar' },
                     React.createElement('li', null,
-                        React.createElement('a', { href: CaminhoDaPagina('MontagemPC.html') }, 'Monte o seu pc')
+                        React.createElement('a', { href: CaminhoDaPagina('MontagemPC.html') }, 'Monte o seu pc'),
+                   ),
+                    React.createElement('li', null,
+                        React.createElement('a', { href: CaminhoDaPagina('listagem.html?valor=todos') }, 'Produtos disponíveis'),
+                        React.createElement('button', { className: 'aba', onClick: AbrirAba},
+                            React.createElement('img', { src: CaminhoDaImagem('SVG/chevron-down-solid.svg') })
+                        ),
+                    ),
+                    React.createElement('ul', {className: 'TipoComponente'},
+                        React.createElement('li', null,
+                            React.createElement('a', {href: '#'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'CPU'
+                            ),
+                            React.createElement('br', null,),
+                            React.createElement('a', {href: '#'}, 'GPU')
+                       ),
                     ),
                     React.createElement('li', null,
-                        React.createElement('a', { href: CaminhoDaPagina('listagem.html?valor=todos') }, 'Produtos disponíveis')
-                    ),
-                    React.createElement('li', null,
-                        React.createElement('a', { href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós')
+                        React.createElement('a', { href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós'),
                     )
                 ),
                 React.createElement('div', { style: { textAlign: 'center', padding: '10px', fontWeight: 'bold' } },
@@ -171,8 +199,6 @@ function Direitos() {
         React.createElement('p', {style: {color: 'white', backgroundColor: '#161616', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}, '@2024 Informatic. Todos os direitos reservados.')
     )
 }
-
-
 
 ReactDOM.render(React.createElement(NavBar), document.getElementById('Nav'));
 ReactDOM.render(React.createElement(Footer), document.getElementById('Footer'));
