@@ -262,14 +262,14 @@ ul{
 	
 }
   
-@media(max-width: 775px){
+@media(max-width: 782px){
 
 	.nav-cont-ul a .texto {
 		display: none; 
 	}
 
 	.nav-cont-ul a .imagem {
-	display: block;
+		display: block;
 	}
 
 	.nav-conteudo .nav-cont-ul{
