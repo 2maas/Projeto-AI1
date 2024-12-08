@@ -5,6 +5,7 @@ function ComponentesHTML(props) {
                 React.createElement('div',{ className: 'option'},
                     React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
                     React.createElement('p', {id:'NomeComponente'}, props.name),
+                    React.createElement('p', {id:'DescricaoComponente'}, props.Descricao),
                     React.createElement('p', {id:'PrecoComponente'}, `${props.price.toFixed(2)}€`),
                     React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img), id:'Selecionar'},'Selecionar')
                 ),
@@ -16,7 +17,7 @@ function App1() {
     
 
     const components = [
-        { ID:"1", type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 9 7950X', price: 699.90, img: '../imagens/Componentes/1.png' },
+        { ID:"1", type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 9 7950X', Descricao: '16 Núcleos 32 Threads | 4.5GHz Clock Base | 5.7GHz Clock Turbo' , price: 699.90, img: '../imagens/Componentes/1.png' },
         { ID:"2", type: 'CPU', Socket: 'AM5', name: 'AMD Ryzen 7 5800X', price: 429.90, img: '../imagens/Componentes/2.png' },
         { ID:"3", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i9 - 12900K (12ª Geração)', price: 339.90, img: '../imagens/Componentes/14.png' },
         { ID:"4", type: 'CPU', Socket: 'AM5', name: 'AMD Ryzen 5 5600G', price: 139.90, img: '../imagens/Componentes/15.png' },
@@ -105,7 +106,7 @@ function App1() {
     }
 
     return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component, index) => React.createElement(ComponentesHTML,{type: component.type,name: component.name,price: component.price,img: component.img})));       
+        filteredComponents.map((component, index) => React.createElement(ComponentesHTML,{type: component.type,name: component.name,Descricao: component.Descricao ,price: component.price,img: component.img})));       
 
 }
 

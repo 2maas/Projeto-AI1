@@ -28,6 +28,10 @@ p {
     width: 45%;
 }
 
+.option #DescricaoComponente {
+    display: none;
+}
+
 .option #PrecoComponente {
     padding-left: 100px;
     width: 30%;
@@ -53,6 +57,7 @@ button[id='Selecionar']:hover {
     width: 85%;
 }
 
+
 @media (max-width: 645px) {
     hr{
         display: none;
@@ -64,8 +69,8 @@ button[id='Selecionar']:hover {
 
     #listar
     {
-        margin: 0 ;
-        width: 75%;
+        margin: 0 0 2% 10%;
+        width: 80%;
     }
 
     #DivP{
@@ -85,6 +90,10 @@ button[id='Selecionar']:hover {
         width: 70%;
     }
 
+    .option p{
+        padding-left: 12px;
+    }
+
     .option #NomeComponente {
         width: 100%;
         font-Size: 17px;
@@ -92,8 +101,20 @@ button[id='Selecionar']:hover {
         margin-Top: 5px;
     }
 
+    .option #DescricaoComponente {
+        padding-top: 5px;
+        display: inline;
+    }
+
     .option #PrecoComponente {
-        font-size: 16px;
+        font-size: 20px;
+        padding: 0;
+        padding-left: 12px;
+        padding-top: 20px;
+        width: 100%;
+        font-weight: bold;
+        color: #41b857;
+        padding-bottom: 15px;
     }
 
     button[id='Selecionar']{
