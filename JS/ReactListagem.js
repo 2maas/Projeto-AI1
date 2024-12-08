@@ -18,9 +18,9 @@ function App1() {
     const components = [
         { ID:"1", type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 9 7950X', price: 699.90, img: '../imagens/Componentes/1.png' },
         { ID:"2", type: 'CPU', Socket: 'AM5', name: 'AMD Ryzen 7 5800X', price: 429.90, img: '../imagens/Componentes/2.png' },
-        { ID:"3", type: 'CPU', Socket: 'LGA1700', name: 'Intel Core i9-12900K', price: 339.90, img: '../imagens/Componentes/14.png' },
+        { ID:"3", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i9 - 12900K (12ª Geração)', price: 339.90, img: '../imagens/Componentes/14.png' },
         { ID:"4", type: 'CPU', Socket: 'AM5', name: 'AMD Ryzen 5 5600G', price: 139.90, img: '../imagens/Componentes/15.png' },
-        { ID:"5", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i7-13700K (13ª Geração)', price: 369.90, img: '../imagens/Componentes/27.png' },
+        { ID:"5", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i7 - 13700K (13ª Geração)', price: 369.90, img: '../imagens/Componentes/27.png' },
     
         { ID:"6", type: 'COOLER', name: 'Corsair iCUE H150i Elite LCD XT', price: 279.99, img: '../imagens/Componentes/3.png' },
         { ID:"7", type: 'COOLER', name: 'Cooler CPU Arctic Freezer 34 eSports DUO 120mm Cinza', price: 39.90, img: '../imagens/Componentes/4.png' },
@@ -104,10 +104,8 @@ function App1() {
         filteredComponents = components;
     }
 
-
     return React.createElement("div", { id: 'component-options' },
         filteredComponents.map((component, index) => React.createElement(ComponentesHTML,{type: component.type,name: component.name,price: component.price,img: component.img})));       
-
 
 }
 
