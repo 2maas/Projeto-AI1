@@ -33,7 +33,7 @@ p {
     width: 30%;
 }
 
-button {
+button[id='Selecionar']{
     background-color: #505050;
     color: white;
     padding: 8px 15px;
@@ -44,7 +44,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+button[id='Selecionar']:hover {
     background-color: #e4e3e385;
 }
 
@@ -58,58 +58,51 @@ button:hover {
         display: none;
     }
 
-    #component-options {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    .option:first-child{
+        margin-top: 20px;
     }
 
-    .Tabelacao {
-        display: none;
-    }
-
-    h1 {
-        font-size: 2.5rem;
+    .option{
+        display: flex;
+        flex-direction: column;
         margin-bottom: 20px;
-        color: #007BFF;
-    }
-
-    #component-options {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-        width: 100%;
-        max-width: 1100px;
-    }
-
-    .option {
-        background-color: #ffffffb3;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .option:hover {
-        transform: translateY(-10px);
     }
 
     .option img {
+        width: 70%;
+    }
+
+    .option #NomeComponente {
         width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 15px;
+        font-Size: 18px;
+        font-Weight: bold;
+        margin-Top: 5px;
     }
 
-    h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        color: #333;
+    .option #PrecoComponente {
+        font-size: 16px;
+        color: #2c3e50;
     }
 
-    p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-        color: #666;
+    button[id='Selecionar']{
+        font-size: 15px;
+        background-color: #41b857;
+        border-radius: 5px;
+        height: 40px;
+        width: 200px;
+        cursor: pointer;
+        font-Weight: bold;
+    }
+    button[id='Selecionar']:hover{
+        background-color: transparent;
+        border: 2px solid #41b857;
+        color: #41b857;
+    }
+    
+    #DivP{
+        background-color: #4b4b4b;
+        border-radius: 10px;
+        color:white;
+        cursor: pointer;
     }
 }

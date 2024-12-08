@@ -1,28 +1,14 @@
 
 // Mostrar Componentes
-function App(props) {
-    return  React.createElement('div',null,
+function ComponentesHTML(props) {
+    return  React.createElement('div', {id:'DivP'},
                 React.createElement('div',{ className: 'option'},
                     React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
                     React.createElement('p', {id:'NomeComponente'}, props.name),
                     React.createElement('p', {id:'PrecoComponente'}, `${props.price.toFixed(2)}€`),
-                    React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img)},'Selecionar')
+                    React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img), id:'Selecionar'},'Selecionar')
                 ),
             React.createElement('hr')
-    );
-}
-
-function App1(props) {
-    return  React.createElement('a',{className: 'card', href: ''},
-                React.createElement('div',{ className: 'card-header'},
-                    React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
-                ),
-                React.createElement('div',{ className: 'card-body'},
-                    React.createElement('h3', null, props.name),
-                ),
-                React.createElement('div',{ className: 'card-body'},
-                    React.createElement('span', {className: 'price'}, `${props.price.toFixed(2)}€`),
-                )
     );
 }
 
@@ -118,20 +104,10 @@ function App1() {
         filteredComponents = components;
     }
 
-    const isMobile = window.innerWidth;
 
-    // ver isto
-    //if(isMobile >= 500)
-    //{
-        return React.createElement("div", { id: 'component-options' },
-            filteredComponents.map((component, index) => React.createElement(App,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
-    //}
-    //else
-    //{
-        //return React.createElement("div", { className: 'DivMedioMontagens' },
-            //filteredComponents.map((component, index) => React.createElement(App1,{type: component.type,name: component.name,price: component.price,img: component.img, })));    
-    
-    //}
+    return React.createElement("div", { id: 'component-options' },
+        filteredComponents.map((component, index) => React.createElement(ComponentesHTML,{type: component.type,name: component.name,price: component.price,img: component.img})));       
+
 
 }
 
