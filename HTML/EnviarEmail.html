@@ -18,7 +18,7 @@
     <div class="conteudo">
         <h1 style="text-align: center;">Contacta-nos</h1>
         <div class="card">
-            <form onsubmit="enviarEmail()">        
+            <form onsubmit="enviarEmail(event)">        
                 <label for="fname">O teu Email</label>
                 <input type="text" id="email" name="email" placeholder="Email" required>
 
@@ -37,34 +37,16 @@
 
     <script>
         function enviarEmail() {
-            // Capturar os valores dos campos
-            
-            //const email = document.getElementById("email").value;
+     
+            const email = document.getElementById("email").value;
             const assunto = document.getElementById("assunto").value;
-            const mensagem = document.getElementById("subject").value;
-    
-            // Texto do e-mail formal (com uma formatação simples)
-            const corpoEmail = `Prezado(a) teste,
-            Agradecemos pelo seu contato. Este é um e-mail automático informando que recebemos sua mensagem com sucesso. Em breve, nossa equipe de suporte irá analisar sua solicitação e entrar em contato com você.
-            
-            
-            Assunto: ${assunto}
-            Mensagem:${mensagem}
-            Se tiver mais alguma dúvida ou necessidade, não hesite em entrar em contato conosco.
-            Atenciosamente,
-            Equipe de Suporte PCChip8.
+            const subject = document.getElementById("subject").value;
 
-
-
-            Este é um e-mail automático. Por favor, não responda diretamente a este e-mail.
-            `;
-    
-            // Monta o link mailto
-            const destinatarios = "faustoturtulho@gmail.com";
-            const mailtoLink = `mailto:${destinatarios}?subject=${encodeURIComponent(assunto)}`;
-    
-            // Abrir o cliente de e-mail padrão
-            window.location.href = mailtoLink;
+            google.script.run
+                .withSuccessHandler(() => alert("E-mail enviado com sucesso!"))
+                .withFailureHandler((error) => alert("Erro ao enviar e-mail: " + error.message))
+                .sendEmail(email, assunto, subject);
+            google.script.host.close();
         }
     </script>
     
