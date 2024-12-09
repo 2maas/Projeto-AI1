@@ -18,12 +18,12 @@
     <div class="conteudo">
         <h1 style="text-align: center;">Contacta-nos</h1>
         <div class="card">
-            <form action="">
+            <form onsubmit="enviarEmail()">        
                 <label for="fname">O teu Email</label>
-                <input type="text" id="email" name="email" placeholder="exemplo@exemplo.pt" required>
-        
+                <input type="text" id="email" name="email" placeholder="Email" required>
+
                 <label for="lname">Assunto</label>
-                <input type="text" id="assunto" name="assunto" placeholder="Assunto aqui.." maxlength="100" required>
+                <input type="text" id="assunto" name="assunto" placeholder="Assunto" maxlength="100" required>
         
                 <label for="subject">Mensagem</label>
                 <textarea id="subject" name="subject" placeholder="Escreva a aqui.." style="height:200px" maxlength="1500" required></textarea>
@@ -34,6 +34,40 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function enviarEmail() {
+            // Capturar os valores dos campos
+            
+            //const email = document.getElementById("email").value;
+            const assunto = document.getElementById("assunto").value;
+            const mensagem = document.getElementById("subject").value;
+    
+            // Texto do e-mail formal (com uma formatação simples)
+            const corpoEmail = `Prezado(a) teste,
+            Agradecemos pelo seu contato. Este é um e-mail automático informando que recebemos sua mensagem com sucesso. Em breve, nossa equipe de suporte irá analisar sua solicitação e entrar em contato com você.
+            
+            
+            Assunto: ${assunto}
+            Mensagem:${mensagem}
+            Se tiver mais alguma dúvida ou necessidade, não hesite em entrar em contato conosco.
+            Atenciosamente,
+            Equipe de Suporte PCChip8.
+
+
+
+            Este é um e-mail automático. Por favor, não responda diretamente a este e-mail.
+            `;
+    
+            // Monta o link mailto
+            const destinatarios = "faustoturtulho@gmail.com";
+            const mailtoLink = `mailto:${destinatarios}?subject=${encodeURIComponent(assunto)}`;
+    
+            // Abrir o cliente de e-mail padrão
+            window.location.href = mailtoLink;
+        }
+    </script>
+    
     
     <div id="Footer"></div>
     <script src="../JS/EnviarEmail.js"></script>

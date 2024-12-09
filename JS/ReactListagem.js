@@ -1,4 +1,3 @@
-
 // Mostrar Componentes
 function ComponentesHTML(props) {
     return  React.createElement('div', {id:'DivP'},
