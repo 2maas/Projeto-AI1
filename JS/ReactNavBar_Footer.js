@@ -178,13 +178,13 @@ function Footer() {
                 React.createElement('div', {className: 'footer-col'},
                     React.createElement('h4', null, 'Siga-nos'),
                     React.createElement('div', {className: 'social-links'}, 
-                        React.createElement('a', {href: '#'}, 
+                        React.createElement('a', {href: 'https://www.facebook.com', target: "_blank"},
                             React.createElement('img', {src: CaminhoDaImagem('SVG/facebook-f-brands-solid.svg'), alt: '', style: {width: '15px'}})
                         ),
-                        React.createElement('a', {href: '#'}, 
+                        React.createElement('a', {href: 'https://www.instagram.com', target: "_blank"}, 
                             React.createElement('img', {src: CaminhoDaImagem('SVG/instagram-brands-solid.svg'), alt: ''})
                         ),
-                        React.createElement('a', {href: '#'}, 
+                        React.createElement('a', {href: 'https://x.com', target: "_blank"}, 
                             React.createElement('img', {src: CaminhoDaImagem('SVG/twitter-brands-solid.svg'), alt: '', style: {width: '22px'}})
                         )
                     )
