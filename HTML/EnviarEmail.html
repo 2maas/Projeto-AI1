@@ -10,7 +10,7 @@
 
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-
+    
 </head>
 <body>
     <div id="Nav"></div>
@@ -18,15 +18,15 @@
     <div class="conteudo">
         <h1 style="text-align: center;">Contacta-nos</h1>
         <div class="card">
-            <form onsubmit="enviarEmail()">        
-                <label for="fname">O teu Email</label>
-                <input type="text" id="email" name="email" placeholder="Email" required>
+            <form id="form">        
+                <label for="email">O teu Email</label>
+                <input type="text" id="email" placeholder="Email" required>
 
-                <label for="lname" class="titulo">Assunto</label>
-                <input type="text" id="assunto" name="assunto" placeholder="Assunto" maxlength="100" required>
+                <label for="assunto" class="titulo">Assunto</label>
+                <input type="text" id="assunto" placeholder="Assunto" maxlength="100" required>
         
-                <label for="subject" class="titulo">Mensagem</label>
-                <textarea id="subject" name="subject" placeholder="Escreva a aqui.." style="height:200px" maxlength="1500" required></textarea>
+                <label for="mensagem" class="titulo">Mensagem</label>
+                <textarea id="mensagem" placeholder="Escreva a aqui.." style="height:200px" maxlength="1500" required></textarea>
                 
                 <div id="div_button"> 
                     <input type="submit" value="Submit">
@@ -35,23 +35,11 @@
         </div>
     </div>
 
-    <script>
-        function enviarEmail() {
-     
-            const email = document.getElementById("email").value;
-            const assunto = document.getElementById("assunto").value;
-            const subject = document.getElementById("subject").value;
-
-            google.script.run
-                .withSuccessHandler(() => alert("E-mail enviado com sucesso!"))
-                .withFailureHandler((error) => alert("Erro ao enviar e-mail: " + error.message))
-                .sendEmail(email, assunto, subject);
-            google.script.host.close();
-        }
-    </script>
-    
-    
     <div id="Footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init('syrdNgjeKGjsQwyNa')</script> <!-- trocar -->
+
     <script src="../JS/EnviarEmail.js"></script>
     <script src="../JS/ReactNavBar_Footer.js"></script>
 </body>
