@@ -18,8 +18,11 @@
     <div class="conteudo">
         <h1 style="text-align: center;">Contacta-nos</h1>
         <div class="card">
-            <form id="form">        
-                <label for="email">O teu Email</label>
+            <form id="form">  
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Nome" required>
+
+                <label for="email">Email</label>
                 <input type="text" id="email" placeholder="Email" required>
 
                 <label for="assunto" class="titulo">Assunto</label>
@@ -29,16 +32,17 @@
                 <textarea id="mensagem" placeholder="Escreva a aqui.." maxlength="1500" required></textarea>
                 
                 <div id="div_button"> 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" onclick="GuardarEmailLocalStorage()">
                 </div>
             </form>
         </div>
     </div>
 
     <div id="Footer"></div>
+    <div id="Direitos"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>emailjs.init('H84Hpuf7zsaHPXYfG')</script> <!-- trocar -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript"> emailjs.init('H84Hpuf7zsaHPXYfG')</script>
 
     <script src="../JS/EnviarEmail.js"></script>
     <script src="../JS/ReactNavBar_Footer.js"></script>

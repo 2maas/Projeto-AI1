@@ -1,0 +1,68 @@
+.card-emails{
+    background-color: #505050;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.card-emails-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#email{
+    padding: 0 0 0 15px;
+}
+
+#data-hora{
+    padding: 0 0 0 15px;
+    font-size: 14px;
+}
+
+.card-emails-sec button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.linha {
+    position: absolute;
+    width: 90%;
+    height: 4px;
+    background-color: white;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.linha1 {
+    transform: rotate(90deg);
+}
+
+.linha2 {
+    transform: rotate(0deg);
+}
+
+.TextArea{
+    margin: 5px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.5s ease;
+}
+
+.TextArea.visivel {
+    max-height: 200px;  /* Ajuste conforme o tamanho que você deseja para o TextArea visível */
+    opacity: 1;
+}
+
+
+
+

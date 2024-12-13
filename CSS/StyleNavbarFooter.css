@@ -83,7 +83,7 @@ body{
 	max-height: 0; /* Começa com altura 0 (oculto) */
     overflow: hidden; /* Impede o conteúdo de aparecer fora da área visível */
     opacity: 0; /* Inicialmente invisível */
-    transition: max-height 0.8s ease, opacity 0.5s ease; /
+    transition: max-height 0.8s ease, opacity 0.5s ease; 
 }
 
 .SideBarUL.visivel {

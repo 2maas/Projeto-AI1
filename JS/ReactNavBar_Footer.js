@@ -165,7 +165,7 @@ function NavBar() {
                     ),
                     React.createElement('ul', {className: 'SideBarUL', id:'PCChip'},
                         React.createElement('li', null,
-                            React.createElement('a', {href: CaminhoDaPagina('#')},
+                            React.createElement('a', {href: CaminhoDaPagina('EmailsEnviados.html')},
                                 React.createElement('p', {style: {paddingBottom: '5px'}} ,'Emails Enviados'),
                             ),
                             React.createElement('a', {href: CaminhoDaPagina('EnviarEmail.html')},
