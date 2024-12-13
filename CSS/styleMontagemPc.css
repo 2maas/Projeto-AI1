@@ -93,5 +93,8 @@ button:hover {
         display: none;
     }
 
+    .descricao{
+        display: none;
+    }
 
 }

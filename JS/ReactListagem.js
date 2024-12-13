@@ -99,8 +99,7 @@ function App1() {
         [];
     }
     else {
-        document.getElementById("titulo").style.display = 'none';
-        document.getElementById("Tab").style.display = 'none';
+        document.getElementById("titulo").style.display = 'Produtos disponíveis';
         filteredComponents = components;
     }
 

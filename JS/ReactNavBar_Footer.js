@@ -110,10 +110,15 @@ function NavBar() {
                 React.createElement('img', { src: CaminhoDaImagem('SVG/Menu.svg'), alt: 'Botão SideBar' })
             ),
             React.createElement('div', { className: 'overlay', id: 'overlay', onClick: () => fecharSidebar() }),
-            React.createElement('div', { className: 'sidebar', id: 'mySidebar' },
-                React.createElement('button', { className: 'button-close', onClick: () => fecharSidebar() },
-                    React.createElement('img', { src: CaminhoDaImagem('SVG/X_voltar.svg'), alt: 'Botão Fechar SideBar', style: { width: '20px', paddingTop: '10px' } })
-                ),
+                React.createElement('div', { className: 'sidebar', id: 'mySidebar' },
+                    React.createElement('div', { style: { display: 'flex', paddingTop: '10px'} }, 
+                        React.createElement('button', { className: 'button-close', onClick: () => fecharSidebar() },
+                            React.createElement('img', { src: CaminhoDaImagem('SVG/X_voltar.svg'), alt: 'Botão Fechar SideBar', style: { width: '20px'} })
+                        ),
+                        React.createElement('div', { style: {fontWeight: 'bold', paddingTop: '14px', width:'100%'} },
+                            React.createElement('label', { className: "data_hora_texto", style: {paddingLeft:'15%'} })
+                        )
+                    ),
                 React.createElement('ul', { className: 'nav-cont-ul-sideBar' },
                     React.createElement('li', null,
                         React.createElement('a', { href: CaminhoDaPagina('MontagemPC.html') }, 'Monte o seu pc'),
@@ -172,9 +177,7 @@ function NavBar() {
                        ),
                     ),
                 ),
-                React.createElement('div', { style: { textAlign: 'center', padding: '10px', fontWeight: 'bold' } },
-                    React.createElement('label', { className: "data_hora_texto" })
-                )
+                
             )
         )
     );
