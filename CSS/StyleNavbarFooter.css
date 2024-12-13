@@ -78,7 +78,7 @@ body{
 	align-items: center;
 }
 
-.TipoComponente 
+.SideBarUL 
 {
 	max-height: 0; /* Começa com altura 0 (oculto) */
     overflow: hidden; /* Impede o conteúdo de aparecer fora da área visível */
@@ -86,18 +86,18 @@ body{
     transition: max-height 0.8s ease, opacity 0.5s ease; /
 }
 
-.TipoComponente.visivel {
+.SideBarUL.visivel {
 	max-height: 200px; /* Ajuste conforme o conteúdo do menu */
     opacity: 1; 
 }
 
-.TipoComponente li 
+.SideBarUL li 
 {
 	display: inline;
 	padding: 0;
 }
 
-.TipoComponente li a
+.SideBarUL li a
 {
 	padding-left: 7vh;
 	cursor: pointer;
@@ -106,7 +106,7 @@ body{
 }
 
 
-.TipoComponente li a img
+.SideBarUL li a img
 {
 	padding-right: 10px;
 }

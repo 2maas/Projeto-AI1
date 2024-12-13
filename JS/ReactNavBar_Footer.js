@@ -43,10 +43,10 @@ function fecharSidebar() {
     document.body.style.overflow = ""; 
 }
 
-function AbrirAba(event){
+function AbrirAba(event,id){
     const botao = event.currentTarget;
     const imagem = botao.querySelector('img'); 
-    const tipoC = document.querySelector('.TipoComponente');
+    const tipoC = document.getElementById(id);
 
     if (imagem.style.transform === 'rotate(-180deg)') {
         imagem.style.transform = 'rotate(0deg)';
@@ -120,22 +120,57 @@ function NavBar() {
                    ),
                     React.createElement('li', null,
                         React.createElement('a', { href: CaminhoDaPagina('listagem.html?valor=todos') }, 'Produtos disponíveis'),
-                        React.createElement('button', { className: 'aba', onClick: AbrirAba},
+                        React.createElement('button', { className: 'aba', onClick: (event) => AbrirAba(event, 'Componente')},
                             React.createElement('img', { src: CaminhoDaImagem('SVG/chevron-down-solid.svg') })
                         ),
                     ),
-                    React.createElement('ul', {className: 'TipoComponente'},
+                    React.createElement('ul', {className: 'SideBarUL', id:'Componente'},
                         React.createElement('li', null,
-                            React.createElement('a', {href: '#'},
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=CPU'},
                                 React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'CPU'
                             ),
-                            React.createElement('br', null,),
-                            React.createElement('a', {href: '#'}, 'GPU')
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=COOLER'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Cooler'
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=MOTHERBOARD'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Motherboard'
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=RAM'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'RAM'
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=ARMAZENAMENTO'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Armazenamento'
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=GPU'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'GPU'
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=CAIXA'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Caixa'
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=FONTE'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Fonte'
+                            ),
                        ),
                     ),
                     React.createElement('li', null,
-                        React.createElement('a', { href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós'),
-                    )
+                        React.createElement('a', null, 'PCChip8Builder'),
+                        React.createElement('button', { className: 'aba', onClick: (event) => AbrirAba(event,'PCChip')},
+                            React.createElement('img', { src: CaminhoDaImagem('SVG/chevron-down-solid.svg') })
+                        ),
+                    ),
+                    React.createElement('ul', {className: 'SideBarUL', id:'PCChip'},
+                        React.createElement('li', null,
+                            React.createElement('a', {href: CaminhoDaPagina('#')},
+                                React.createElement('p', {style: {paddingBottom: '5px'}} ,'Emails Enviados'),
+                            ),
+                            React.createElement('a', {href: CaminhoDaPagina('EnviarEmail.html')},
+                                React.createElement('p', {style: {paddingBottom: '5px'}} ,'Fala connosco'),
+                            ),
+                            React.createElement('a', {href: CaminhoDaPagina('SobreNos.html')},
+                                React.createElement('p', {style: {paddingBottom: '5px'}} ,'Sobre Nós'),
+                            )
+                       ),
+                    ),
                 ),
                 React.createElement('div', { style: { textAlign: 'center', padding: '10px', fontWeight: 'bold' } },
                     React.createElement('label', { className: "data_hora_texto" })
