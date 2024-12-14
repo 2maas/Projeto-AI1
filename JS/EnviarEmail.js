@@ -17,15 +17,20 @@ function GuardarEmailLocalStorage(){
 
     let Emails = JSON.parse(localStorage.getItem("EmailsEnviados")) || [];
 
+    // Data e hora
+    const now = new Date();
+    const hour = now.toLocaleString('pt-PT', { hour: '2-digit', minute: '2-digit'});
+    const date = now.toLocaleString('pt-PT', { year: 'numeric', month: 'numeric', day: 'numeric' });
+    const formattedDateTime = `${hour} - ${date}`;
 
     let NovoEmail = {
-        email: document.getElementById("email"),
-        assunto: document.getElementById("assunto"),
-        mensagem: document.getElementById("mensagem"),
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        assunto: document.getElementById("assunto").value,
+        horario: formattedDateTime,
+        mensagem: document.getElementById("mensagem").value,
     };
     
     Emails.push(NovoEmail);
     localStorage.setItem("EmailsEnviados", JSON.stringify(Emails));
 }
-
-// ver isto nao sei se esta a guardar

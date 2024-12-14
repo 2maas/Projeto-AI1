@@ -1,5 +1,5 @@
-function clicado(button){
-    const card = button.closest(".card-emails");
+function clicado(event){
+    const card = event.target.closest(".card-emails");
     const linha1 = card.querySelector(".linha.linha1");
     const linha2 = card.querySelector(".linha.linha2");
     const texto = card.querySelector(".TextArea");
@@ -16,20 +16,22 @@ function clicado(button){
 }
 
 function Emails(props){
-    return  React.createElement('div',{ className: 'card-emails-sec'},
-                React.createElement('div', null,
-                    React.createElement('p', {id:'email'}, props.email),
-                    React.createElement('p', {id:'data-hora'}, "teste")
-                ),
-                React.createElement('div',{ style: {paddingRight: '20px;'}},
-                    React.createElement('button', {onClick: (e) => clicado(e)},
-                        React.createElement('span', {className:'linha linha1'}),
-                        React.createElement('span', {className:'linha linha2'})
+    return  React.createElement('div', {className:'card-emails'},
+                React.createElement('div',{ className: 'card-emails-sec'},
+                    React.createElement('div', null,
+                        React.createElement('p', {id:'assunto'}, props.assunto),
+                        React.createElement('p', {id:'data-hora-email'}, props.email + "    " + props.horario)
+                    ),
+                    React.createElement('div',{ style: {paddingRight: '20px'}},
+                        React.createElement('button', {onClick: (e) => clicado(e)},
+                            React.createElement('span', {className:'linha linha1'}),
+                            React.createElement('span', {className:'linha linha2'})
+                        )
                     )
+                ),
+                React.createElement('div',{ className:'TextArea'},
+                    React.createElement('textarea', {disabled: true}, props.mensagem)
                 )
-            ),
-            React.createElement('div',{ className:'TextArea'},
-                React.createElement('textarea', null, props.mensagem)
             );
 }
 
@@ -37,11 +39,14 @@ function Emails(props){
 function App(){
     const emails = JSON.parse(localStorage.getItem("EmailsEnviados") || "[]");
 
-    return React.createElement('div', {className:'card-emails'}, emails.map((email, index) =>
+    return React.createElement('div', null, emails.map((email, index) =>
             React.createElement(Emails, {
                 key: index, 
                 email: email.email,
-                mensagem: email.message
+                nome: email.nome,
+                assunto: email.assunto,
+                horario: email.horario,
+                mensagem: email.mensagem
             })
         )
     );
