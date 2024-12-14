@@ -19,8 +19,11 @@ function Emails(props){
     return  React.createElement('div', {className:'card-emails'},
                 React.createElement('div',{ className: 'card-emails-sec'},
                     React.createElement('div', null,
-                        React.createElement('p', {id:'assunto'}, props.assunto),
-                        React.createElement('p', {id:'data-hora-email'}, props.email + "    " + props.horario)
+                        React.createElement('p', {className:'assunto'}, props.assunto),
+                        React.createElement('div', {className: 'emails-horario'},
+                            React.createElement('label', {className:'email'}, props.email),
+                            React.createElement('label', {className:'data-hora'}, props.horario)
+                        ),
                     ),
                     React.createElement('div',{ style: {paddingRight: '20px'}},
                         React.createElement('button', {onClick: (e) => clicado(e)},

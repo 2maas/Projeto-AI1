@@ -12,14 +12,18 @@
 
 }
 
-#assunto{
+.assunto{
     padding: 0 0 0 15px;
     font-weight: bold;
 }
 
-#data-hora-email{
-    padding: 0 0 0 15px;
+.emails-horario{
+    padding-left: 15px;
     font-size: 14px;
+}
+
+.data-hora{
+    padding-left: 5px;
 }
 
 .card-emails-sec button{
@@ -73,5 +77,16 @@ textarea:disabled {
 }
 
 
+@media (max-width: 430px) { /* Ajuste o valor 600px conforme necessário */
+    .emails-horario {
+        display: flex;
+        flex-direction: column; /* Faz com que os itens fiquem empilhados */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
 
+    .data-hora{
+        padding-left: 0px;
+    }
+
+}
 

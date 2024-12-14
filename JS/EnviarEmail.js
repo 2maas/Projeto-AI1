@@ -1,4 +1,4 @@
-/*document.getElementById('form') .addEventListener('submit', function(event) {
+document.getElementById('form') .addEventListener('submit', function(event) {
    event.preventDefault();
 
    const serviceID = 'default_service';
@@ -10,7 +10,10 @@
     }, (err) => {
         alert(JSON.stringify(err));
     });
-});*/
+
+    GuardarEmailLocalStorage();
+
+});
 
 
 function GuardarEmailLocalStorage(){
