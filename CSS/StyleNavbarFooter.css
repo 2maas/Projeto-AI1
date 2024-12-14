@@ -68,7 +68,7 @@ body{
 .nav-cont-ul-sideBar li
 {
 	width: 100%;
-	padding: 20px;
+	padding: 15px 20px 15px 20px;
 
 	/*talvez colocar so no ultimo para separa a data do resto*/
 	/*border-bottom: 0.5px solid #b7b6b6;*/	
@@ -76,6 +76,10 @@ body{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.nav-cont-ul-sideBar li:hover{
+	background-color: #505050;
 }
 
 .SideBarUL 
@@ -109,6 +113,10 @@ body{
 .SideBarUL li a img
 {
 	padding-right: 10px;
+}
+
+SideBarUL li:hover{
+	background-color: #505050;
 }
 
 .aba
