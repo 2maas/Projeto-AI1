@@ -14,7 +14,7 @@ html {
 
 .column {
     float: left;
-    width: 33.3%;
+    width: 500px;
     margin-bottom: 16px;
 }
 
@@ -37,13 +37,12 @@ html {
 }
 
 .container {
-    padding: 0 16px;
+    padding-top: 10px;
+    width: 100%;
 }
 
-.container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
+.container p {
+    padding-top: 5px;
 }
 
 .title {
@@ -58,9 +57,8 @@ html {
     width: 130px;
 }
 
-@media screen and (max-width: 650px) {
+@media(max-width: 650px) {
     .column {
-        width: 100%;
-        display: block;
+        width: 320px;
     }
 }

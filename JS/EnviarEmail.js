@@ -1,3 +1,8 @@
+const now = new Date();
+const hour = now.toLocaleString('pt-PT', { hour: '2-digit', minute: '2-digit'});
+const date = now.toLocaleString('pt-PT', { year: 'numeric', month: 'numeric', day: 'numeric' });
+const formattedDateTime = `${hour} - ${date}`;
+
 document.getElementById('form') .addEventListener('submit', function(event) {
    event.preventDefault();
 
@@ -19,12 +24,6 @@ document.getElementById('form') .addEventListener('submit', function(event) {
 function GuardarEmailLocalStorage(){
 
     let Emails = JSON.parse(localStorage.getItem("EmailsEnviados")) || [];
-
-    // Data e hora
-    const now = new Date();
-    const hour = now.toLocaleString('pt-PT', { hour: '2-digit', minute: '2-digit'});
-    const date = now.toLocaleString('pt-PT', { year: 'numeric', month: 'numeric', day: 'numeric' });
-    const formattedDateTime = `${hour} - ${date}`;
 
     let NovoEmail = {
         nome: document.getElementById("nome").value,

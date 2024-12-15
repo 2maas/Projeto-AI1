@@ -62,7 +62,6 @@ html{
     /* Colocar ... dependo do numero de linhas para baixo*/
     display: -webkit-box;
     -webkit-line-clamp: 1; 
-    overflow: hidden;
     -webkit-box-orient: vertical;
 }
 

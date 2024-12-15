@@ -44,17 +44,19 @@ function fecharSidebar() {
 }
 
 function AbrirAba(event,id){
-    const botao = event.currentTarget;
-    const imagem = botao.querySelector('img'); 
+    const li = event.currentTarget;
+    const imagem = li.querySelector('img'); 
     const tipoC = document.getElementById(id);
 
     if (imagem.style.transform === 'rotate(-180deg)') {
         imagem.style.transform = 'rotate(0deg)';
         tipoC.classList.remove('visivel');
+        li.classList.remove('aberto');
     }
     else {
         imagem.style.transform = 'rotate(-180deg)';
         tipoC.classList.add('visivel');
+        li.classList.add('aberto');
     }
 }
 
@@ -188,6 +190,7 @@ function NavBar() {
                                 React.createElement('p', {style: {paddingBottom: '5px'}} ,'Fala connosco'),
                             ),
                             React.createElement('a', {href: CaminhoDaPagina('SobreNos.html')},
+                                React.createElement('img', {src: CaminhoDaImagem('SVG/exclamation-solid.svg'), style: {width: '25px', height: '25px'} }),
                                 React.createElement('p', {style: {paddingBottom: '5px'}} ,'Sobre Nós'),
                             )
                        ),
@@ -217,7 +220,8 @@ function Footer() {
                 React.createElement('div', {className: 'footer-col'},
                     React.createElement('h4', null, 'Obter ajuda'),
                     React.createElement('ul', {style: {paddingLeft: '0px'}},
-                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('EnviarEmail.html')}, 'Fala connosco!'))
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('EnviarEmail.html')}, 'Fala connosco!')),
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('EmailsEnviados.html')}, 'Emails Enviados'))
                     )
                 ),
                 // Loja Online Section
