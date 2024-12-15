@@ -98,11 +98,63 @@ function NavBar() {
                 React.createElement('li', null,
                     React.createElement('a', { href: CaminhoDaPagina('MontagemPC.html') }, 'Monte o seu pc')
                 ),
-                React.createElement('li', null,
-                    React.createElement('a', { href: CaminhoDaPagina('listagem.html?valor=todos') }, 'Produtos disponíveis')
+                React.createElement('li', { className: 'menu-item' },
+                    React.createElement('a', { className: 'menu-title', href: CaminhoDaPagina('listagem.html?valor=todos')}, 'Produtos disponíveis'),
+                    React.createElement('ul', { className: 'submenu', id:"Produtos"},
+                        React.createElement('li', null,
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=CPU'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}) ,
+                                React.createElement('p', null ,'CPU'),
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=COOLER'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('p', null ,'Cooler'),
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=MOTHERBOARD'},
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/placa-mae.png')}),
+                                React.createElement('p', null ,'Motherboard')
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=RAM'},
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/ram.png')}),
+                                React.createElement('p', null ,'RAM')
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=ARMAZENAMENTO'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('p',  null ,'Armazenamento')
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=GPU'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('p',  null ,'GPU')  
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=CAIXA'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('p', null ,'Caixa')
+                            ),
+                            React.createElement('a', {href: '../HTML/listagem.html?valor=FONTE'},
+                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('p', null ,'Fonte')
+                            )
+                        ),
+                    )
                 ),
-                React.createElement('li', null,
-                    React.createElement('a', { href: CaminhoDaPagina('SobreNos.html') }, 'Sobre nós')
+                React.createElement('li', { className: 'menu-item' },
+                    React.createElement('p', { style: {cursor: 'pointer'} }, 'PCChip8Builder'),
+                    React.createElement('ul', { className: 'submenu' },
+                        React.createElement('li', null,
+                            React.createElement('a', {href: CaminhoDaPagina('EmailsEnviados.html')},
+                                React.createElement('img', {src: CaminhoDaImagem('SVG/envelope-solid.svg')}),
+                                React.createElement('p', null ,'Emails Enviados'),
+                            ),
+                            React.createElement('a', {href: CaminhoDaPagina('EnviarEmail.html')},
+                                React.createElement('img', {src: CaminhoDaImagem('SVG/paper-plane-solid.svg')}),
+                                React.createElement('p', null ,'Fala connosco'),
+                            ),
+                            React.createElement('a', {href: CaminhoDaPagina('SobreNos.html')},
+                                React.createElement('img', {src: CaminhoDaImagem('SVG/exclamation-solid.svg')}),
+                                React.createElement('p', null ,'Sobre Nós'),
+                            )
+                       )
+                    )
                 ),
                 React.createElement('li', { className: 'data_hora' },
                     React.createElement('label', { className: "data_hora_texto" })
