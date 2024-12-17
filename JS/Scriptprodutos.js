@@ -48,6 +48,11 @@ let precototal = 0;
             precototal += Componente.price;
 
             StyleComponentes(tipo);
+
+            if(tipo == "CPU"){
+                document.getElementById("ImagemPrincipal").src = Componente.img
+            }
+            document.getElementById(tipo + '-img2').src = Componente.img;
         }
 
         function StyleComponentes(tipo) {

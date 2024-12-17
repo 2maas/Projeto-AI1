@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Builder</title>
     <link rel="icon" href="../imagens/SVG/logo.svg" type="image/svg+xml">
+    
     <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
-    <link rel="stylesheet" href="../CSS/styleMontagemPc.css">
+    <link rel="stylesheet" href="../CSS/StyleMontagemPc.css">
+    <link rel="stylesheet" href="../CSS/StyleMontagem2.css">
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 </head>
@@ -201,7 +203,6 @@
                     <td><h2>FONTE</h2>
                         <hr>
                         <div id="FONTE-td" class="component-table-componente">
-                            <img src="">
                             <div style="width: 125px;">
                                 <img src="../imagens/Componentes/SemComponente.png" alt="ERRO" id="FONTE-img" style="width: 100%;">
                             </div>
@@ -228,9 +229,55 @@
 
         <label id="labelteste"></label>
     </div>
+
+
+
+
+
+
+    <div class="container-conteudo">
+        <div class="conteudo">
+            <div class="img-primaria">
+                <button class="botaoImgs" id="teste1" onclick="MudarimagemSetas(-1)" style="margin-right:10px;"><img src="../imagens/SVG/chevron-left-solid.svg" alt=""></button>
+                <img id="ImagemPrincipal" src="../imagens/Componentes/SemComponente.png" alt="ERRO, IMG não encontrada!!!">
+                <button class="botaoImgs" id="teste2" onclick="MudarimagemSetas(1)" style="margin-left:10px;"><img src="../imagens/SVG/chevron-right-solid.svg" alt=""></button>
+            </div>
+            <div class="imgs-secundarias">
+                <div class="border-imgs" style="border-color: #41b857;"><img src="../imagens/Componentes/SemComponente.png" id="CPU-img2" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="COOLER-img2"  onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="MOTHERBOARD-img2" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="RAM-img2" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="ARMAZENAMENTO-img2" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="GPU-img2" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="CAIXA-img" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+                <div class="border-imgs"><img src="../imagens/Componentes/SemComponente.png" id="FONTE-img2" onmouseover="Mudarimagem(this)" alt="ERRO, IMG não encontrada!!!"></div>
+            </div>
+        </div>
+        <div class="descricao">
+            <h2 id="NomeSelecinado">CPU - AMD Ryzen 7 7800X3D</h2>
+            <p>Nº de Núcleos: 8</p>
+            <p>Nº de Threads: 16</p>
+            <p>Clock Base: 4.4 GHz</p>
+            <p>Clock de Max Boost: Até 5.0 GHz</p>
+            <p>Total de Cache L1: 512 KB</p>
+            <p>Total de Cache L2: 8 MB</p>
+            <p>Total de Cache L3: 96 MB</p>
+            <p>TDP Padrão: 120 W</p>
+            <p>Tecnologia de Fabrico: TSMC 5nm FinFET</p>
+            <p>Gráficos Integrados: AMD Radeon™ Graphics</p>
+        </div>
+    </div>
     
+
+
+
+
+
+
     <div id="Footer"></div>
     <div id="Direitos"></div>
+
+    <script src="../JS/ScriptMontagem2.js"></script>
 
     <script>
         function baixar() {
