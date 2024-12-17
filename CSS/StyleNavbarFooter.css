@@ -161,6 +161,7 @@ body{
 	border-radius: 3px;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(1, 1, 1, 1);
+	margin: 5px 0px 0px 40px;
 }
 
 .submenu img{
@@ -169,7 +170,7 @@ body{
 }
 
 .submenu#Produtos{
-	left: -25px;
+	left: -45px;
 } 
 
 .submenu li a {
