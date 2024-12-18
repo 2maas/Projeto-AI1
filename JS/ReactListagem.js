@@ -24,7 +24,7 @@ function App1() {
     
         { ID:"6", type: 'COOLER', name: 'Corsair iCUE H150i Elite LCD XT', price: 279.99, img: '../imagens/Componentes/3.png' },
         { ID:"7", type: 'COOLER', name: 'Cooler CPU Arctic Freezer 34 eSports DUO 120mm Cinza', price: 39.90, img: '../imagens/Componentes/4.png' },
-        { ID:"8", type: 'COOLER', name: 'Water Cooler CPU NZXT Kraken Elite 360 RGB Preto', price: 309.90, img: '../imagens/Componentes/16.png' },
+        { ID:"8", type: 'COOLER', name: 'Water Cooler CPU NZXT Kraken Elite 360 RGB Preto',Descricao: 'aaaaaaaaaaaaaaaaa | ssssssssssssss | ddddddddddddddddddd | aaaaaaaaaaaaaaaaa | ssssssssssssss | ddddddddddddddddddd', price: 309.90, img: '../imagens/Componentes/16.png' },
         { ID:"9", type: 'COOLER', name: 'Corsair iCUE H150i Elite Capellix Liquid Cooler', price: 259.90, img: '../imagens/Componentes/25.png' },
         
         { ID:"10", type: 'MOTHERBOARD', name: 'Motherboard ATX ASUS ROG STRIX B550-F Gaming', price: 199.90, img: '../imagens/Componentes/5.png' },

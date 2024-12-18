@@ -1,38 +1,27 @@
 let precototal = 0;
-// ler para a lista imgs oq esta no localstorage
 let imagens = [];
 let imagensAtuais = [];
+const componentes = ['CPU', 'COOLER', 'MOTHERBOARD', 'RAM', 'ARMAZENAMENTO', 'GPU', 'CAIXA', 'FONTE'];
+const defaultComponent = { nome: "Componente Nome", preco: "Componente Preco", descricao: "Componente Descricao", imagem: "../imagens/Componentes/SemComponente.png" };
 let index;
 const divs = document.querySelectorAll('.imgs-secundarias .border-imgs');
 window.onload = loadComponents;
 
 function loadComponents() {
 
+    let i=0;
     const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    if (storedItems['CPU']) {
-        mostrarNaTabela(storedItems['CPU'], 'CPU');
-    }
-    if (storedItems['COOLER']) {
-        mostrarNaTabela(storedItems['COOLER'], 'COOLER');
-    }
-    if (storedItems['MOTHERBOARD']) {
-        mostrarNaTabela(storedItems['MOTHERBOARD'], 'MOTHERBOARD');
-    }
-    if (storedItems['RAM']) {
-        mostrarNaTabela(storedItems['RAM'], 'RAM');
-    }
-    if (storedItems['ARMAZENAMENTO']) {
-        mostrarNaTabela(storedItems['ARMAZENAMENTO'], 'ARMAZENAMENTO');
-    }
-    if (storedItems['GPU']) {
-        mostrarNaTabela(storedItems['GPU'], 'GPU');
-    }
-    if (storedItems['CAIXA']) {
-        mostrarNaTabela(storedItems['CAIXA'], 'CAIXA');
-    }
-    if (storedItems['FONTE']) {
-        mostrarNaTabela(storedItems['FONTE'], 'FONTE');
-    }
+    componentes.forEach(componente => {
+        // cria uma copia
+        let teste = { ...defaultComponent };
+        if (storedItems[componente]) {
+            mostrarNaTabela(storedItems[componente], componente);
+        } else {
+            teste.nome =  teste.nome + i;
+            i++;
+            imagens.push(teste);
+        }
+    });
 
     document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
 
@@ -48,7 +37,7 @@ function mostrarNaTabela(Componente, tipo) {
     document.getElementById(tipo + '-botaoAdd').style.display = 'none';
     document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
 
-    precototal += Componente.price;
+    precototal += Componente.preco;
 
     StyleComponentes(tipo);
 
@@ -109,6 +98,9 @@ function MenosImagens(){
             {
                 document.getElementById("ImagemPrincipal").src = img.src;
                 document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
+
+                // substitui as | por <br> para mostrar como se fosse numa lista
+                document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
             }
                 
             if(i < 4)
@@ -142,22 +134,24 @@ function MaisImagens(){
 
         // Verificar se existe uma imagem na div
         if (img) {
-            // Atualizar o src da imagem
-            img.src = imagens[i].imagem;
-
             if(i == 4)
             {
+                img.src = imagens[i].imagem;
                 document.getElementById("ImagemPrincipal").src = img.src;
                 document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
+
+                // substitui as | por <br> para mostrar como se fosse numa lista
+                //document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
             }
                 
             if(i < 8)
+            {
+                img.src = imagens[i].imagem;
                 imagensAtuais.push({nome: imagens[i].nome, preco: imagens[i].preco, descricao: imagens[i].descricao ,imagem: img.src});
-            else
+            }else
             {
                 div.removeEventListener('click', MaisImagens);
                 div.addEventListener('click',MenosImagens);
-                img.src = imagens[0];
             }
             
             // Adicionar a borda verde apenas para o primeiro item
@@ -169,6 +163,8 @@ function MaisImagens(){
 
         }
     }
+
+    console.log(imagensAtuais);
 
 }
 
@@ -187,6 +183,7 @@ function MudarimagemSetas(teste){
 
 function Mudarimagem(img){
 
+    // ver o resto que esta a dar mal
     if(ImagemPrincipal.src != img.src)
     {
         ImagemPrincipal.style.opacity = 0;
@@ -206,9 +203,17 @@ function Mudarimagem(img){
         for (let i = 0; i < 5; i++) {
             if(img.src == imagensAtuais[i].imagem)
             {
-                document.getElementById("NomeSelecinado").innerHTML = imagensAtuais[i].nome;
-                index = i;
-                break;
+
+                const tste = document.getElementById("NomeSelecinado").innerHTML;
+                if(tste != imagensAtuais[i].nome)
+                {
+                    document.getElementById("NomeSelecinado").innerHTML = imagensAtuais[i].nome;
+
+                    // substitui as | por <br> para mostrar como se fosse numa lista
+                    //document.getElementById("descricaoSelecinada").innerHTML = imagensAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                    index = i;
+                    break;
+                }
             }
         }       
     }
