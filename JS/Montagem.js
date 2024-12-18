@@ -12,43 +12,27 @@ function loadComponents() {
     if (storedItems['CPU']) {
         mostrarNaTabela(storedItems['CPU'], 'CPU');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['COOLER']) {
         mostrarNaTabela(storedItems['COOLER'], 'COOLER');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['MOTHERBOARD']) {
         mostrarNaTabela(storedItems['MOTHERBOARD'], 'MOTHERBOARD');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['RAM']) {
         mostrarNaTabela(storedItems['RAM'], 'RAM');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['ARMAZENAMENTO']) {
         mostrarNaTabela(storedItems['ARMAZENAMENTO'], 'ARMAZENAMENTO');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['GPU']) {
         mostrarNaTabela(storedItems['GPU'], 'GPU');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['CAIXA']) {
         mostrarNaTabela(storedItems['CAIXA'], 'CAIXA');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
     if (storedItems['FONTE']) {
         mostrarNaTabela(storedItems['FONTE'], 'FONTE');
     }
-    else
-        imagens.push("../imagens/Componentes/SemComponente.png");
 
     document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
 
@@ -188,7 +172,6 @@ function MaisImagens(){
 
 }
 
-
 function MudarimagemSetas(teste){
     index += teste;
 
@@ -201,7 +184,6 @@ function MudarimagemSetas(teste){
     const imgteste = document.querySelectorAll(".imgs-secundarias img")[index];
     Mudarimagem(imgteste);
 }
-
 
 function Mudarimagem(img){
 
@@ -231,3 +213,68 @@ function Mudarimagem(img){
         }       
     }
 }
+
+function baixar() {
+    let conteudo = '';
+
+
+    // Pega o conteúdo da área de texto
+    const CPUInfo = document.getElementById("CPU-info").innerHTML;
+    const CPUPreco = document.getElementById("CPU-preco").innerHTML;
+    const CoolerInfo = document.getElementById("COOLER-info").innerHTML;
+    const CoolerPreco = document.getElementById("COOLER-preco").innerHTML;
+    const MotherboardInfo = document.getElementById("MOTHERBOARD-info").innerHTML;
+    const MotherboardPreco = document.getElementById("MOTHERBOARD-preco").innerHTML;
+    const RAMInfo = document.getElementById("RAM-info").innerHTML;
+    const RAMPreco = document.getElementById("RAM-preco").innerHTML;
+    const ArmazenamentoInfo = document.getElementById("ARMAZENAMENTO-info").innerHTML;
+    const ArmazenamentoPreco = document.getElementById("ARMAZENAMENTO-preco").innerHTML;
+    const GPUInfo = document.getElementById("GPU-info").innerHTML;
+    const GPUPreco = document.getElementById("GPU-preco").innerHTML;
+    const CaixaInfo = document.getElementById("CAIXA-info").innerHTML;
+    const CaixaPreco = document.getElementById("CAIXA-preco").innerHTML;
+    const FonteInfo = document.getElementById("FONTE-info").innerHTML;
+    const FontePreco = document.getElementById("FONTE-preco").innerHTML;
+    const Total = document.getElementById("labelteste").innerHTML;
+    
+    const now = new Date();
+
+    // Formatar a hora
+    const hour = now.toLocaleString('pt-PT', { hour: '2-digit', minute: '2-digit' , second: '2-digit' });
+
+    // Formatar a data
+    const date = now.toLocaleString('pt-PT', { year: 'numeric', month: 'numeric', day: 'numeric' });
+
+    // Combinar a hora e data na ordem desejada
+    const formattedDateTime = `${hour} - ${date}`;
+
+    if(CPUInfo != "" && CPUPreco!= "")
+        conteudo += "CPU: " + CPUInfo + " -> " + CPUPreco + '%0A';
+    if(CoolerInfo != "" && CoolerPreco != "")
+        conteudo += "Cooler: " + CoolerInfo + " -> " + CoolerPreco + '%0A';
+    if(MotherboardInfo != "" && MotherboardPreco != "")
+        "MotherBoard: " + MotherboardInfo + " -> " + MotherboardPreco + '%0A';
+    if(RAMInfo != "" && RAMPreco!= "")
+        conteudo += "RAM: " + RAMInfo + " -> " + RAMPreco + '%0A';
+    if(ArmazenamentoInfo != "" && ArmazenamentoInfo != "")
+        conteudo += "Armazenamento: " + ArmazenamentoInfo + " -> " + ArmazenamentoPreco + '%0A';
+    if(GPUInfo != "" && GPUPreco != "")
+        conteudo += "GPU: " + GPUInfo + " -> " + GPUPreco + '%0A';
+    if(FonteInfo != "" && FontePreco != "")
+        conteudo += "Fonte: " + FonteInfo + " -> " + FontePreco + '%0A';
+    if(CaixaInfo != "" && CaixaPreco != "")
+        conteudo += "Caixa: " + CaixaInfo + " -> " + CaixaPreco + '%0A';
+
+    // %0A = "\n" so que na url
+    conteudo += Total + '%0A' + "Gerado por PCChip8Builder " + formattedDateTime;
+
+    // Cria o link para download
+    const link = document.createElement("a");
+    link.href = 'data:text/plain,' + conteudo ;
+    link.download = "MontagemPC.txt";
+    
+    // Aciona o download
+    link.click();
+}
+
+
