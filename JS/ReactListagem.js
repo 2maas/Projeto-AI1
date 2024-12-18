@@ -6,7 +6,7 @@ function ComponentesHTML(props) {
                     React.createElement('p', {id:'NomeComponente'}, props.name),
                     React.createElement('p', {id:'DescricaoComponente'}, props.Descricao),
                     React.createElement('p', {id:'PrecoComponente'}, `${props.price.toFixed(2)}€`),
-                    React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img), id:'Selecionar'},'Selecionar')
+                    React.createElement('button',{onClick: () => selectComponent(props.type, props.name, props.price,props.img,props.Descricao), id:'Selecionar'},'Selecionar')
                 ),
             React.createElement('hr')
     );
@@ -110,10 +110,10 @@ function App1() {
 
 ReactDOM.render(App1(), document.getElementById('listar'));
 
-function selectComponent(type, name, price,img) {
+function selectComponent(type, nome, preco,img, desc) {
     // Pega os componentes da lista
     let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    storedItems[type] = { name, price, img};
+    storedItems[type] = { nome, preco, img, desc};
     localStorage.setItem('selectedItems', JSON.stringify(storedItems));
     window.location.href = 'MontagemPC.html';
 }
