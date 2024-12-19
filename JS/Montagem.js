@@ -29,18 +29,19 @@ function loadComponents() {
 }
 
 function mostrarNaTabela(Componente, tipo) {
-    document.getElementById(tipo + '-img').style.display = 'block';
-    document.getElementById(tipo + '-img').src = Componente.img;
-    imagens.push({nome: Componente.nome, preco:Componente.preco, descricao: Componente.desc ,imagem: Componente.img});
-    document.getElementById(tipo + '-info').textContent = Componente.nome;
-    document.getElementById(tipo + '-preco').textContent = `${Componente.preco.toFixed(2)}€`;
-    document.getElementById(tipo + '-botaoAdd').style.display = 'none';
-    document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
+    if (Componente != '' && tipo != ''){
+        document.getElementById(tipo + '-img').style.display = 'block';
+        document.getElementById(tipo + '-img').src = Componente.img;
+        imagens.push({nome: Componente.nome, preco:Componente.preco, descricao: Componente.desc ,imagem: Componente.img});
+        document.getElementById(tipo + '-info').textContent = Componente.nome;
+        document.getElementById(tipo + '-preco').textContent = `${Componente.preco.toFixed(2)}€`;
+        document.getElementById(tipo + '-botaoAdd').style.display = 'none';
+        document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
 
-    precototal += Componente.preco;
+        precototal += Componente.preco;
 
-    StyleComponentes(tipo);
-
+        StyleComponentes(tipo);
+    }
         
 }
 
