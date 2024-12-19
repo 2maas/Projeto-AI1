@@ -92,16 +92,18 @@ function MenosImagens(){
         // Verificar se existe uma imagem na div
         if (img) {
             // Atualizar o src da imagem
-            img.src = imagens[i].imagem;            
+            img.src = imagens[i].imagem;    
 
             if(i == 0)
             {
                 document.getElementById("ImagemPrincipal").src = img.src;
                 document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
 
+                
                 // substitui as | por <br> para mostrar como se fosse numa lista
-                document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
-            }
+                //document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>'); isto tá mal
+                document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao;
+            }   
                 
             if(i < 4)
                 imagensAtuais.push({nome: imagens[i].nome, preco: imagens[i].preco, descricao: imagens[i].descricao ,imagem: img.src});
