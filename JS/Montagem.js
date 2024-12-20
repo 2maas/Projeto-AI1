@@ -27,18 +27,19 @@ function loadComponents() {
 }
 
 function mostrarNaTabela(Componente, tipo) {
-    document.getElementById(tipo + '-img').style.display = 'block';
-    document.getElementById(tipo + '-img').src = Componente.img;
-    imagens.push({nome: Componente.nome, preco:Componente.preco, descricao: Componente.desc ,imagem: Componente.img});
-    document.getElementById(tipo + '-info').textContent = Componente.nome;
-    document.getElementById(tipo + '-preco').textContent = `${Componente.preco.toFixed(2)}€`;
-    document.getElementById(tipo + '-botaoAdd').style.display = 'none';
-    document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
+    if (Componente != '' && tipo != ''){
+        document.getElementById(tipo + '-img').style.display = 'block';
+        document.getElementById(tipo + '-img').src = Componente.img;
+        imagens.push({nome: Componente.nome, preco:Componente.preco, descricao: Componente.desc ,imagem: Componente.img});
+        document.getElementById(tipo + '-info').textContent = Componente.nome;
+        document.getElementById(tipo + '-preco').textContent = Componente.preco.toFixed(2)+'€';
+        document.getElementById(tipo + '-botaoAdd').style.display = 'none';
+        document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
 
-    precototal += Componente.preco;
+        precototal += Componente.preco;
 
-    StyleComponentes(tipo);
-
+        StyleComponentes(tipo);
+    }
         
 }
 
@@ -95,9 +96,10 @@ function MenosImagens(){
                 document.getElementById("ImagemPrincipal").src = img.src;
                 document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
 
+                
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
-            }
+            }   
                 
             if(i < 4)
             {
@@ -140,7 +142,7 @@ function MaisImagens(){
                 document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
-                //document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
             }
                 
             if(i < 8)
@@ -206,7 +208,7 @@ function Mudarimagem(img){
                     document.getElementById("NomeSelecinado").innerHTML = imagensAtuais[i].nome;
 
                     // substitui as | por <br> para mostrar como se fosse numa lista
-                    //document.getElementById("descricaoSelecinada").innerHTML = imagensAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                    document.getElementById("descricaoSelecinada").innerHTML = imagensAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
                     index = i;
                     break;
                 }

@@ -1,6 +1,6 @@
 // Mostrar Componentes
 function ComponentesHTML(props) {
-    return  React.createElement('div', {id:'DivP'},
+    return  React.createElement('div', {id:'DivP', key: props.ID},
                 React.createElement('div',{ className: 'option'},
                     React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
                     React.createElement('p', {id:'NomeComponente'}, props.name),
@@ -104,7 +104,7 @@ function App1() {
     }
 
     return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component, index) => React.createElement(ComponentesHTML,{type: component.type,name: component.name,Descricao: component.Descricao ,price: component.price,img: component.img})));       
+        filteredComponents.map((component, index) => React.createElement(ComponentesHTML,{key: component.ID, type: component.type,name: component.name,Descricao: component.Descricao ,price: component.price,img: component.img})));       
 
 }
 
