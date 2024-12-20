@@ -107,9 +107,7 @@ body{
         flex-wrap: wrap;
     }
     
-    .imgs-secundarias{
-        display: none;
-    }
+
     .descricao
     {
         padding: 0;

@@ -1,5 +1,3 @@
-'use strict';
-
 document.addEventListener('DOMContentLoaded', function() {
     // Chama a função logo após o conteúdo da página ser carregado
     data_horaF();
@@ -30,7 +28,6 @@ setInterval(data_horaF, 1000);
 
 data_horaF();
 
-
 function abrirSidebar() {
     document.getElementById("mySidebar").classList.add("open");
     document.getElementById("overlay").style.display = "block";
@@ -60,7 +57,6 @@ function AbrirAba(event,id){
     }
 }
 
-
 function CaminhoDaImagem(NomeImagem) {
     const path = window.location.pathname;
     if (path.includes('/HTML/')) {
@@ -83,7 +79,6 @@ function CaminhoDaPagina(NomePagina) {
         else
         return 'HTML/' + NomePagina;
 }
-
 
 // Mostrar NavBar
 function NavBar() {
@@ -254,8 +249,6 @@ function NavBar() {
     );
     
 }
-
-
 
 function Footer() {
     return React.createElement('footer', {className: 'footer'},

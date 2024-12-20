@@ -12,14 +12,12 @@ function loadComponents() {
     let i=0;
     const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
     componentes.forEach(componente => {
-        // cria uma copia
-        let teste = { ...defaultComponent };
         if (storedItems[componente]) {
             mostrarNaTabela(storedItems[componente], componente);
         } else {
-            teste.nome =  teste.nome + i;
+            const newComponent = {...defaultComponent, nome: "Componente Nome " + i};
             i++;
-            imagens.push(teste);
+            imagens.push(newComponent);
         }
     });
 
@@ -91,9 +89,7 @@ function MenosImagens(){
 
         // Verificar se existe uma imagem na div
         if (img) {
-            // Atualizar o src da imagem
-            img.src = imagens[i].imagem;            
-
+            img.src = imagens[i].imagem;    
             if(i == 0)
             {
                 document.getElementById("ImagemPrincipal").src = img.src;
@@ -104,7 +100,10 @@ function MenosImagens(){
             }
                 
             if(i < 4)
+            {
+                 
                 imagensAtuais.push({nome: imagens[i].nome, preco: imagens[i].preco, descricao: imagens[i].descricao ,imagem: img.src});
+            }
             else
             {
                 div.removeEventListener('click', MenosImagens);
@@ -146,12 +145,13 @@ function MaisImagens(){
                 
             if(i < 8)
             {
-                img.src = imagens[i].imagem;
+                img.src = imagens[i].imagem; 
                 imagensAtuais.push({nome: imagens[i].nome, preco: imagens[i].preco, descricao: imagens[i].descricao ,imagem: img.src});
             }else
             {
                 div.removeEventListener('click', MaisImagens);
                 div.addEventListener('click',MenosImagens);
+                img.src = imagens[0].imagem;   
             }
             
             // Adicionar a borda verde apenas para o primeiro item
@@ -163,9 +163,6 @@ function MaisImagens(){
 
         }
     }
-
-    console.log(imagensAtuais);
-
 }
 
 function MudarimagemSetas(teste){
@@ -182,10 +179,6 @@ function MudarimagemSetas(teste){
 }
 
 function Mudarimagem(img){
-
-    // ver o resto que esta a dar mal
-    if(ImagemPrincipal.src != img.src)
-    {
         ImagemPrincipal.style.opacity = 0;
 
         setTimeout(() => {
@@ -195,17 +188,20 @@ function Mudarimagem(img){
 
         const borderImgs = document.querySelectorAll(".border-imgs");
 
+        let teste = 0;
+
         //Restaurar a cor para a cor default
-        borderImgs.forEach(imgs => {imgs.style.borderColor = "#5f5d5d"})
+        borderImgs.forEach(imgs => {
+            imgs.style.borderColor = "#5f5d5d"; 
+        })
 
         img.parentElement.style.borderColor = "#41b857";
 
-        for (let i = 0; i < 5; i++) {
-            if(img.src == imagensAtuais[i].imagem)
-            {
-
-                const tste = document.getElementById("NomeSelecinado").innerHTML;
-                if(tste != imagensAtuais[i].nome)
+        if(!img.src.includes("imagens/Componentes/SemComponente.png"))
+        {
+            for (let i = 0; i < 5; i++) {
+                //const tste = document.getElementById("NomeSelecinado").innerHTML;
+                if(img.src == imagensAtuais[i].imagem)
                 {
                     document.getElementById("NomeSelecinado").innerHTML = imagensAtuais[i].nome;
 
@@ -214,9 +210,21 @@ function Mudarimagem(img){
                     index = i;
                     break;
                 }
+            }     
+        }
+        else
+        {
+            // verficar onde esta a borda ver para atualizar o index
+            for (let i = 0; i < borderImgs.length; i++) {
+                if (borderImgs[i].style.borderColor === "rgb(65, 184, 87)") { 
+                    index = i; 
+                    break;
+                }
             }
-        }       
-    }
+
+            document.getElementById("NomeSelecinado").innerHTML = "";
+            document.getElementById("descricaoSelecinada").innerHTML = "";
+        }
 }
 
 function baixar() {
