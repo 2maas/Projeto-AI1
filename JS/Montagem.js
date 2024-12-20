@@ -98,7 +98,7 @@ function MenosImagens(){
 
                 
                 // substitui as | por <br> para mostrar como se fosse numa lista
-                document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                //document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
             }   
                 
             if(i < 4)
@@ -142,7 +142,7 @@ function MaisImagens(){
                 document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
-                document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                //document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
             }
                 
             if(i < 8)
@@ -208,7 +208,7 @@ function Mudarimagem(img){
                     document.getElementById("NomeSelecinado").innerHTML = imagensAtuais[i].nome;
 
                     // substitui as | por <br> para mostrar como se fosse numa lista
-                    document.getElementById("descricaoSelecinada").innerHTML = imagensAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                    //document.getElementById("descricaoSelecinada").innerHTML = imagensAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
                     index = i;
                     break;
                 }
