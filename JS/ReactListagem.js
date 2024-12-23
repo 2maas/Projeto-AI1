@@ -17,19 +17,45 @@ function ComponentesHTML(props) {
 function App1() {
     // Obter o parâmetro da URL
     const params = new URLSearchParams(window.location.search);
-    const filterType = params.get('valor');
+    const [filterType, textolink] = params.get('valor').split('/');
 
     let filteredComponents;
 
     if(filterType != "todos")
     {
         document.getElementById("titulo").innerHTML = 'Escolha um ' + filterType ;    
-    
-        filteredComponents = filterType ? 
-        components.filter(component => component.type === filterType) : 
-        [];
+        
+        if (filterType === "MOTHERBOARD" && textolink) {
+            const selected = components.find(component => component.name === textolink && component.type === 'CPU');
+            if (selected) {
+                const validarSockets = selected.Socket.split(',');
+                // Aqui você precisa verificar se o socket da motherboard está na lista de sockets válidos
+                filteredComponents = components.filter(component => component.type === 'MOTHERBOARD' && validarSockets.includes(component.Socket));
+            }
+        }
+        else if (filterType == "RAM" && textolink) {
+            const selected = components.find(component => component.name === textolink && component.type === 'MOTHERBOARD');
+            if (selected) {
+                const validarDDR = selected.DDR.split(',');
+                filteredComponents = components.filter(component => component.type === 'RAM' && validarDDR.includes(component.DDR));
+            } 
+        }
+        else if (filterType == "Fonte" && textolink) {
+            /*const selected = components.find(component => component.name === textolink && component.type === 'MOTHERBOARD');
+            if (selected) {
+                const validarDDR = selected.DDR.split(',');
+                filteredComponents = components.filter(component => component.type === 'RAM' && validarDDR.includes(component.DDR));
+            } */
+        }
+        else
+        {
+            filteredComponents = filterType ? 
+            components.filter(component => component.type === filterType) : 
+            [];
+        }
     }
     else {
+        
         document.getElementById("titulo").style.display = 'Produtos disponíveis';
         filteredComponents = components;
     }
@@ -44,7 +70,7 @@ ReactDOM.render(App1(), document.getElementById('listar'));
 function selectComponent(type, nome, preco,img, desc) {
     // Pega os componentes da lista
     let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    storedItems[type] = { nome, preco, img, desc};
+    storedItems[type] = {nome, preco, img, desc};
     localStorage.setItem('selectedItems', JSON.stringify(storedItems));
     window.location.href = 'MontagemPC.html';
 }

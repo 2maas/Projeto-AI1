@@ -44,7 +44,24 @@ function mostrarNaTabela(Componente, tipo) {
 }
 
 function redirectTo(pagina) {
-    window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
+
+    if(pagina == "MOTHERBOARD")
+    {
+        if(document.getElementById("CPU-info").innerText != "Nenhum")
+            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(document.getElementById("CPU-info").innerText)}`;
+        else
+        PopUp("Tem que escolher uma CPU Primeiro");
+    }
+    else if(pagina == "RAM")
+    {
+        if(document.getElementById("MOTHERBOARD-info").innerText != "Nenhum")
+            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(document.getElementById("MOTHERBOARD-info").innerText)}`;
+        else
+            PopUp("Tem que escolher uma MotherBoard Primeiro");
+    }
+    else
+        window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
+
 }
 
 function StyleComponentes(tipo) {
@@ -292,4 +309,23 @@ function baixar() {
     link.click();
 }
 
+function PopUp(texto){
+    const container = document.querySelector(".container-popup");
+    
+    if(!container.classList.contains("abertoPopUp"))
+    {
+        document.getElementById("texto").innerText = texto;
+        container.classList.add('abertoPopUp');
+
+        setTimeout(() => {
+            container.style.animation = 'PopUpCima 0.5s ease forwards';
+            setTimeout(() => {
+                container.classList.remove("abertoPopUp");
+                container.style.animation = '';
+            }, 1000); 
+        }, 5000);
+    
+    }
+
+}
 
