@@ -1,6 +1,6 @@
 import { components } from './Lista.js';
 
-var PC1 = [{ id:"4"},
+const PC1 = [{ id:"4"},
     { id:"8"},
     { id:"10"},
     { id:"17"},
@@ -10,7 +10,7 @@ var PC1 = [{ id:"4"},
     { id:"35"}
 ];
 
-var PC2 = [{ id:"5"},
+const PC2 = [{ id:"5"},
     { id:"7"},
     { id:"12"},
     { id:"19"},
@@ -20,7 +20,7 @@ var PC2 = [{ id:"5"},
     { id:"33"}
 ];
 
-var PC3 = [{ id:"2"},
+const PC3 = [{ id:"2"},
     { id:"6"},
     { id:"15"},
     { id:"19"},
