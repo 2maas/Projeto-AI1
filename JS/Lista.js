@@ -1,9 +1,9 @@
 export const components = [
-    { ID:"1", type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 9 7950X', Descricao: '16 Núcleos 32 Threads | 4.5GHz Clock Base | 5.7GHz Clock Turbo', price: 699.90, img: '../imagens/Componentes/1.png' },
-    { ID:"2", type: 'CPU', Socket: 'AM5,AM4', name: 'AMD Ryzen 7 5800X', Descricao: '8 Núcleos 16 Threads | 3.8GHz Clock Base | 4.7GHz Clock Turbo', price: 429.90, img: '../imagens/Componentes/2.png' },
-    { ID:"3", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i9 - 12900K (12ª Geração)', Descricao: '16 Núcleos 24 Threads | 3.2GHz Clock Base | 5.2GHz Clock Turbo', price: 339.90, img: '../imagens/Componentes/14.png' },
-    { ID:"4", type: 'CPU', Socket: 'AM5,AM4', name: 'AMD Ryzen 5 5600G', Descricao: '6 Núcleos 12 Threads | 3.9GHz Clock Base | 4.4GHz Clock Turbo', price: 139.90, img: '../imagens/Componentes/15.png' },
-    { ID:"5", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i7 - 13700K (13ª Geração)', Descricao: '16 Núcleos 24 Threads | 3.4GHz Clock Base | 5.4GHz Clock Turbo', price: 369.90, img: '../imagens/Componentes/27.png' },
+    { ID:"1", type: 'CPU', Socket: 'AM4', name: 'AMD Ryzen 9 7950X', Descricao: '16 Núcleos 32 Threads | 4.5GHz Clock Base | 5.7GHz Clock Turbo', price: 699.90, watts: 170, img: '../imagens/Componentes/1.png' },
+    { ID:"2", type: 'CPU', Socket: 'AM5,AM4', name: 'AMD Ryzen 7 5800X', Descricao: '8 Núcleos 16 Threads | 3.8GHz Clock Base | 4.7GHz Clock Turbo', price: 429.90, watts: 105, img: '../imagens/Componentes/2.png' },
+    { ID:"3", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i9 - 12900K (12ª Geração)', Descricao: '16 Núcleos 24 Threads | 3.2GHz Clock Base | 5.2GHz Clock Turbo', price: 339.90, watts: 125, img: '../imagens/Componentes/14.png' },
+    { ID:"4", type: 'CPU', Socket: 'AM5,AM4', name: 'AMD Ryzen 5 5600G', Descricao: '6 Núcleos 12 Threads | 3.9GHz Clock Base | 4.4GHz Clock Turbo', price: 139.90, watts: 65, img: '../imagens/Componentes/15.png' },
+    { ID:"5", type: 'CPU', Socket: 'LGA1700', name: 'Processador Intel Core i7 - 13700K (13ª Geração)', Descricao: '16 Núcleos 24 Threads | 3.4GHz Clock Base | 5.4GHz Clock Turbo', price: 369.90, watts: 125, img: '../imagens/Componentes/27.png' },
 
     { ID:"6", type: 'COOLER', name: 'Corsair iCUE H150i Elite LCD XT', Descricao: 'Cooler líquido 360mm com LCD RGB personalizável', price: 279.99, img: '../imagens/Componentes/3.png' },
     { ID:"7", type: 'COOLER', name: 'Cooler CPU Arctic Freezer 34 eSports DUO 120mm Cinza', Descricao: 'Cooler a ar com design duplo ventilador para maior desempenho', price: 39.90, img: '../imagens/Componentes/4.png' },
@@ -23,12 +23,12 @@ export const components = [
     { ID:"19", type: 'CAIXA', name: 'Caixa ATX Corsair iCUE 5000T RGB Tempered Glass Preta', Descricao: 'Gabinete ATX com suporte a até 10 ventoinhas e iluminação RGB avançada', price: 329.90, img: '../imagens/Componentes/30.png' },
     { ID:"20", type: 'CAIXA', name: 'Caixa ATX Fractal Design Meshify 2 Compact Lite Black', Descricao: 'Gabinete ATX compacto com excelente ventilação e design clean', price: 109.90, img: '../imagens/Componentes/37.png' },
     
-    { ID:"21", type: 'FONTE', watts: "750W", name: 'Fonte Corsair RM750x 750W 80 Plus Gold Full Modular', Descricao: 'Fonte modular com eficiência 80 Plus Gold e baixo nível de ruído', price: 99.90, img: '../imagens/Componentes/9.png' },
-    { ID:"22", type: 'FONTE', watts: "650W", name: 'Fonte de Alimentação ATX MSI MAG A650BN 650W 80 Plus Bronze', Descricao: 'Fonte de alimentação com eficiência 80 Plus Bronze e construção robusta', price: 59.90, img: '../imagens/Componentes/10.png' },
-    { ID:"23", type: 'FONTE', watts: "650W", name: 'Fonte de Alimentação ATX EVGA GQ 650W 80 Plus Gold Semi Modular', Descricao: 'Fonte semi modular com eficiência 80 Plus Gold e cabos flexíveis', price: 96.90, img: '../imagens/Componentes/20.png' },
-    { ID:"24", type: 'FONTE', watts: "750W", name: 'Fonte de Alimentação SFX Corsair SF Series (2024) SF750 750W 80 PLUS Platinum Full Modular', Descricao: 'Fonte SFX compacta com eficiência 80 Plus Platinum e total modularidade', price: 183.90, img: '../imagens/Componentes/21.png' },
-    { ID:"25", type: 'FONTE', watts: "1000W", name: 'Fonte de Alimentação ATX Corsair HX1000i 1000W 80 Plus Platinum Full Modular', Descricao: 'Fonte de 1000W com eficiência 80 Plus Platinum e conectores totalmente modulares', price: 268.90, img: '../imagens/Componentes/31.png' },
-    { ID:"26", type: 'FONTE', watts: "1200W", name: 'Fonte de Alimentação ATX NZXT C1200 (2023) 1200W 80 Plus Gold Full', Descricao: 'Fonte de 1200W com eficiência 80 Plus Gold e alta capacidade de fornecimento de energia', price: 179.90, img: '../imagens/Componentes/39.png' },
+    { ID:"21", type: 'FONTE', watts: 750, name: 'Fonte Corsair RM750x 750W 80 Plus Gold Full Modular', Descricao: 'Fonte modular com eficiência 80 Plus Gold e baixo nível de ruído', price: 99.90, img: '../imagens/Componentes/9.png' },
+    { ID:"22", type: 'FONTE', watts: 650, name: 'Fonte de Alimentação ATX MSI MAG A650BN 650W 80 Plus Bronze', Descricao: 'Fonte de alimentação com eficiência 80 Plus Bronze e construção robusta', price: 59.90, img: '../imagens/Componentes/10.png' },
+    { ID:"23", type: 'FONTE', watts: 650, name: 'Fonte de Alimentação ATX EVGA GQ 650W 80 Plus Gold Semi Modular', Descricao: 'Fonte semi modular com eficiência 80 Plus Gold e cabos flexíveis', price: 96.90, img: '../imagens/Componentes/20.png' },
+    { ID:"24", type: 'FONTE', watts: 750, name: 'Fonte de Alimentação SFX Corsair SF Series (2024) SF750 750W 80 PLUS Platinum Full Modular', Descricao: 'Fonte SFX compacta com eficiência 80 Plus Platinum e total modularidade', price: 183.90, img: '../imagens/Componentes/21.png' },
+    { ID:"25", type: 'FONTE', watts: 1000, name: 'Fonte de Alimentação ATX Corsair HX1000i 1000W 80 Plus Platinum Full Modular', Descricao: 'Fonte de 1000W com eficiência 80 Plus Platinum e conectores totalmente modulares', price: 268.90, img: '../imagens/Componentes/31.png' },
+    { ID:"26", type: 'FONTE', watts: 1200, name: 'Fonte de Alimentação ATX NZXT C1200 (2023) 1200W 80 Plus Gold Full', Descricao: 'Fonte de 1200W com eficiência 80 Plus Gold e alta capacidade de fornecimento de energia', price: 179.90, img: '../imagens/Componentes/39.png' },
 
     { ID:"27", type: 'ARMAZENAMENTO', name: 'SSD M.2 2280 Kingston KC3000 2TB 3D TLC NVMe PCIe Gen 4.0', Descricao: 'SSD rápido com interface PCIe Gen 4.0 e 2TB de capacidade', price: 162.90, img: '../imagens/Componentes/11.png' },
     { ID:"28", type: 'ARMAZENAMENTO', name: 'SSD M.2 2280 Kingston NV2 500GB 3D QLC NVMe', Descricao: 'SSD de 500GB com excelente custo-benefício e desempenho rápido', price: 44.90, img: '../imagens/Componentes/32.png' },
@@ -38,11 +38,11 @@ export const components = [
     { ID:"31", type: 'RAM', DDR:"DDR5", name: 'Memória RAM G.SKILL Trident Z5 RGB 32GB (2x16GB) DDR5-6400MHz CL32 Preta', Descricao: 'Memória DDR5 de 32GB com RGB e altíssima frequência para desempenho extremo', price: 153.90, img: '../imagens/Componentes/13.png' },
     { ID:"32", type: 'RAM', DDR:"DDR4", name: 'Memória RAM Corsair Dominator Platinum RGB 16GB (2x8GB) DDR4-3600MHz', Descricao: 'Memória DDR4 de alto desempenho com iluminação RGB e 16GB de capacidade', price: 89.90, img: '../imagens/Componentes/35.png' },
 
-    { ID:"33", type: 'GPU', name: 'Placa Gráfica Sapphire AMD Radeon RX 7900 XT', Descricao: 'Placa gráfica de alto desempenho com 24GB GDDR6 e suporte a Ray Tracing', price: 569.90, img: '../imagens/Componentes/23.png' },
-    { ID:"34", type: 'GPU', name: 'Placa Gráfica Asus NVIDIA GeForce RTX 4070 SUPER', Descricao: 'Placa gráfica com 12GB GDDR6X e suporte a DLSS 3.0 para performance excepcional', price: 639.90, img: '../imagens/Componentes/24.png' },
-    { ID:"35", type: 'GPU', name: 'Placa Gráfica Asus NVIDIA GeForce RTX 4060 "Ada Lovelace" Dual White Edition', Descricao: 'Placa gráfica de 8GB GDDR6 com design elegante e alto desempenho', price: 359.90, img: '../imagens/Componentes/33.png' },
-    { ID:"36", type: 'GPU', name: 'Placa Gráfica Powercolor AMD Radeon RX 7700 XT', Descricao: 'Placa gráfica de 12GB GDDR6 com excelente custo-benefício para gamers', price: 499.90, img: '../imagens/Componentes/34.png' },
-    { ID:"37", type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4080 SUPER', Descricao: 'Placa gráfica com 16GB GDDR6X e desempenho ultra-alto para 4K e Ray Tracing', price: 1169.90, img: '../imagens/Componentes/38.png' },
+    { ID:"33", type: 'GPU', name: 'Placa Gráfica Sapphire AMD Radeon RX 7900 XT', Descricao: 'Placa gráfica de alto desempenho com 24GB GDDR6 e suporte a Ray Tracing', price: 569.90, watts: 355, img: '../imagens/Componentes/23.png' },
+    { ID:"34", type: 'GPU', name: 'Placa Gráfica Asus NVIDIA GeForce RTX 4070 SUPER', Descricao: 'Placa gráfica com 12GB GDDR6X e suporte a DLSS 3.0 para performance excepcional', price: 639.90, watts: 220, img: '../imagens/Componentes/24.png' },
+    { ID:"35", type: 'GPU', name: 'Placa Gráfica Asus NVIDIA GeForce RTX 4060 "Ada Lovelace" Dual White Edition', Descricao: 'Placa gráfica de 8GB GDDR6 com design elegante e alto desempenho', price: 359.90, watts: 115, img: '../imagens/Componentes/33.png' },
+    { ID:"36", type: 'GPU', name: 'Placa Gráfica Powercolor AMD Radeon RX 7700 XT', Descricao: 'Placa gráfica de 12GB GDDR6 com excelente custo-benefício para gamers', price: 499.90, watts: 245, img: '../imagens/Componentes/34.png' },
+    { ID:"37", type: 'GPU', name: 'Placa Gráfica MSI NVIDIA GeForce RTX 4080 SUPER', Descricao: 'Placa gráfica com 16GB GDDR6X e desempenho ultra-alto para 4K e Ray Tracing', price: 1169.90, watts: 320, img: '../imagens/Componentes/38.png' },
 
     
 

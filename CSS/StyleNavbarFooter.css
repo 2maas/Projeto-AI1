@@ -161,7 +161,7 @@ body{
 	border-radius: 3px;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(1, 1, 1, 1);
-	margin: 5px 0px 0px 40px;
+	margin: 0px 0px 0px 40px;
 }
 
 .submenu img{
@@ -179,7 +179,7 @@ body{
     color: white;
     display: flex;
 	align-items: center;
-	padding: 15px;
+	padding: 10px;
 }
 
 .submenu li p {
@@ -279,6 +279,8 @@ ul{
 	background-color: #ffffff96;
 }
 
+
+
 /*SCROOLBAR*/
 .ScrolBar, ::-webkit-scrollbar-thumb {
     padding-top: 30px;
@@ -307,6 +309,10 @@ ul{
     background: #5e5e5f;
     border-radius: 10px;
 }
+
+
+
+
 
 /* Sidebar */
 .overlay {
@@ -368,7 +374,7 @@ ul{
 }
 
 
-/*responsive*/
+
 @media(max-width: 840px){
 
   .footer-col{
@@ -412,7 +418,7 @@ ul{
 	}
 
 	.footer-col h4::before{
-	left:50%;
-	transform: translateX(-50%);
+	 	left:50%;
+	 	transform: translateX(-50%);
 	}
 }

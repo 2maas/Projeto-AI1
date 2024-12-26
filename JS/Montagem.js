@@ -1,9 +1,10 @@
 let precototal = 0;
-let imagens = [];
-let imagensAtuais = [];
-const componentes = ['CPU', 'COOLER', 'MOTHERBOARD', 'RAM', 'ARMAZENAMENTO', 'GPU', 'CAIXA', 'FONTE'];
-const defaultComponent = { nome: "Componente Nome", preco: "Componente Preco", descricao: "Componente Descricao", imagem: "../imagens/Componentes/SemComponente.png" };
-let index;
+let index = 0;
+
+let Componentes = [];
+let ComponentesAtuaisCarrosel = [];
+const Tipocomponentes = ['CPU', 'COOLER', 'MOTHERBOARD', 'RAM', 'ARMAZENAMENTO', 'GPU', 'CAIXA', 'FONTE'];
+
 const divs = document.querySelectorAll('.imgs-secundarias .border-imgs');
 window.onload = loadComponents;
 
@@ -11,13 +12,12 @@ function loadComponents() {
 
     let i=0;
     const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    componentes.forEach(componente => {
+    Tipocomponentes.forEach(componente => {
         if (storedItems[componente]) {
             mostrarNaTabela(storedItems[componente], componente);
         } else {
-            const newComponent = {...defaultComponent, nome: "Componente Nome " + i};
+            Componentes.push({nome: "", preco: "", descricao: "", imagem: "../imagens/Componentes/SemComponente.png" });
             i++;
-            imagens.push(newComponent);
         }
     });
 
@@ -26,17 +26,17 @@ function loadComponents() {
     MenosImagens();
 }
 
-function mostrarNaTabela(Componente, tipo) {
-    if (Componente != '' && tipo != ''){
+function mostrarNaTabela(componenteLocalStorage, tipo) {
+    if (componenteLocalStorage != '' && tipo != ''){
         document.getElementById(tipo + '-img').style.display = 'block';
-        document.getElementById(tipo + '-img').src = Componente.img;
-        imagens.push({nome: Componente.nome, preco:Componente.preco, descricao: Componente.desc ,imagem: Componente.img});
-        document.getElementById(tipo + '-info').textContent = Componente.nome;
-        document.getElementById(tipo + '-preco').textContent = Componente.preco.toFixed(2)+'€';
+        document.getElementById(tipo + '-img').src = componenteLocalStorage.img;
+        Componentes.push({tipo: tipo, id: componenteLocalStorage.id, nome: componenteLocalStorage.nome, preco: componenteLocalStorage.preco, descricao: componenteLocalStorage.desc ,imagem: componenteLocalStorage.img});
+        document.getElementById(tipo + '-info').textContent = componenteLocalStorage.nome;
+        document.getElementById(tipo + '-preco').textContent = componenteLocalStorage.preco.toFixed(2)+'€';
         document.getElementById(tipo + '-botaoAdd').style.display = 'none';
         document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
 
-        precototal += Componente.preco;
+        precototal += componenteLocalStorage.preco;
 
         StyleComponentes(tipo);
     }
@@ -47,17 +47,26 @@ function redirectTo(pagina) {
 
     if(pagina == "MOTHERBOARD")
     {
-        if(document.getElementById("CPU-info").innerText != "Nenhum")
-            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(document.getElementById("CPU-info").innerText)}`;
+        if(Componentes[0].tipo == "CPU")
+            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(Componentes[0].id)}`;
         else
         PopUp("Tem que escolher uma CPU Primeiro");
     }
     else if(pagina == "RAM")
     {
-        if(document.getElementById("MOTHERBOARD-info").innerText != "Nenhum")
-            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(document.getElementById("MOTHERBOARD-info").innerText)}`;
+        if(Componentes[2].tipo == "MOTHERBOARD")
+            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(Componentes[2].id)}`;
         else
             PopUp("Tem que escolher uma MotherBoard Primeiro");
+    }
+    else if (pagina == "FONTE")
+    {
+        if(Componentes[0].tipo == "CPU" && Componentes[5].tipo == "GPU")
+            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(Componentes[0].id)}-${encodeURIComponent(Componentes[5].id)}`;
+        else if (Componentes[0].tipo != "CPU")
+            PopUp("Tem que escolher uma CPU Primeiro");
+        else
+            PopUp("Tem que escolher uma GPU Primeiro");
     }
     else
         window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
@@ -69,6 +78,7 @@ function StyleComponentes(tipo) {
     document.getElementById(tipo + '-td').style.gap = '5px';
 }
 
+// remover o componente da lista quando o remover
 function RemoverComponenteTabela(tipo) {
     const Info = document.getElementById(tipo + '-info').textContent;
     const Preco = document.getElementById(tipo + '-preco').textContent;
@@ -98,7 +108,7 @@ function RemoverComponenteTabela(tipo) {
 }
 
 function MenosImagens(){
-    imagensAtuais = [];
+    ComponentesAtuais = [];
     index = 0;
     // Atualizar o conteúdo das divs com as imagens no load da pagina
     for (let i = 0; i < 5; i++) {
@@ -107,11 +117,11 @@ function MenosImagens(){
 
         // Verificar se existe uma imagem na div
         if (img) {
-            img.src = imagens[i].imagem;    
+            img.src = Componentes[i].imagem;    
             if(i == 0)
             {
                 document.getElementById("ImagemPrincipal").src = img.src;
-                document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
+                document.getElementById("NomeSelecinado").innerHTML = Componentes[i].nome;
 
                 
                 // substitui as | por <br> para mostrar como se fosse numa lista
@@ -121,7 +131,7 @@ function MenosImagens(){
             if(i < 4)
             {
                  
-                imagensAtuais.push({nome: imagens[i].nome, preco: imagens[i].preco, descricao: imagens[i].descricao ,imagem: img.src});
+                ComponentesAtuais.push({nome: Componentes[i].nome, preco: Componentes[i].preco, descricao: Componentes[i].descricao ,imagem: img.src});
             }
             else
             {
@@ -143,7 +153,7 @@ function MenosImagens(){
 }        
 
 function MaisImagens(){
-    imagensAtuais = [];
+    ComponentesAtuais = [];
     index = 0;
     for (let i = 4; i < 9; i++) {
         const div = divs[i - 4];
@@ -154,9 +164,9 @@ function MaisImagens(){
         if (img) {
             if(i == 4)
             {
-                img.src = imagens[i].imagem;
+                img.src = Componentes[i].imagem;
                 document.getElementById("ImagemPrincipal").src = img.src;
-                document.getElementById("NomeSelecinado").innerHTML = imagens[i].nome;
+                document.getElementById("NomeSelecinado").innerHTML = Componentes[i].nome;
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 //document.getElementById("descricaoSelecinada").innerHTML = imagens[i].descricao.replace(/\s*\|\s*/g, '<br>');
@@ -164,13 +174,13 @@ function MaisImagens(){
                 
             if(i < 8)
             {
-                img.src = imagens[i].imagem; 
-                imagensAtuais.push({nome: imagens[i].nome, preco: imagens[i].preco, descricao: imagens[i].descricao ,imagem: img.src});
+                img.src = Componentes[i].imagem; 
+                ComponentesAtuais.push({nome: Componentes[i].nome, preco: Componentes[i].preco, descricao: Componentes[i].descricao ,imagem: img.src});
             }else
             {
                 div.removeEventListener('click', MaisImagens);
                 div.addEventListener('click',MenosImagens);
-                img.src = imagens[0].imagem;   
+                img.src = Componentes[0].imagem;   
             }
             
             // Adicionar a borda verde apenas para o primeiro item
@@ -188,8 +198,8 @@ function MudarimagemSetas(teste){
     index += teste;
 
     if (index < 0) {
-        index = imagensAtuais.length - 1;  // Vai para a última imagem se o índice for menor que 0
-    } else if (index >= imagensAtuais.length) {
+        index = ComponentesAtuais.length - 1;  // Vai para a última imagem se o índice for menor que 0
+    } else if (index >= ComponentesAtuais.length) {
         index = 0;  // Volta para a primeira imagem se o índice for maior ou igual ao tamanho do array
     }
 
@@ -220,12 +230,12 @@ function Mudarimagem(img){
         {
             for (let i = 0; i < 5; i++) {
                 //const tste = document.getElementById("NomeSelecinado").innerHTML;
-                if(img.src == imagensAtuais[i].imagem)
+                if(img.src == ComponentesAtuais[i].imagem)
                 {
-                    document.getElementById("NomeSelecinado").innerHTML = imagensAtuais[i].nome;
+                    document.getElementById("NomeSelecinado").innerHTML = ComponentesAtuais[i].nome;
 
                     // substitui as | por <br> para mostrar como se fosse numa lista
-                    //document.getElementById("descricaoSelecinada").innerHTML = imagensAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
+                    //document.getElementById("descricaoSelecinada").innerHTML = ComponentesAtuais[i].descricao.replace(/\s*\|\s*/g, '<br>');
                     index = i;
                     break;
                 }
@@ -246,6 +256,7 @@ function Mudarimagem(img){
         }
 }
 
+// ver esta func melhor
 function baixar() {
     let conteudo = '';
 
