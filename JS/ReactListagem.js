@@ -2,7 +2,7 @@ import { components } from './Lista.js';
 
 // Mostrar Componentes
 function ComponentesHTML(props) {
-    return  React.createElement('div', {id:'DivP' + props.id},
+    return  React.createElement('div', {id:'DivP', key: props.id},
                 React.createElement('div',{ className: 'option'},
                     React.createElement('img', { src: props.img, alt: 'Imagem Exemplo' }),
                     React.createElement('p', {id:'NomeComponente'}, props.nome),
@@ -64,7 +64,7 @@ function App1() {
     }
 
     return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component) => React.createElement(ComponentesHTML,{id: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img})));       
+        filteredComponents.map((component) => React.createElement(ComponentesHTML,{key: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img})));       
 
 }
 
