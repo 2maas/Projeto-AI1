@@ -30,34 +30,21 @@ const PC3 = [{ id:"2"},
     { id:"37"}
 ];
 
+const PCS = {
+    1: PC1,
+    2: PC2,
+    3: PC3
+};
+
 function AbrirPcMontado(escolhido){
-    if(escolhido == 1){
-        PC1.forEach(comp => {
-            const componente = components.find(component => component.ID === comp.id);
-            if (componente) {
-                selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao);
-            }
-        });
-        
-    }
-    else if(escolhido == 2){
-        PC2.forEach(comp => {
-            const componente = components.find(component => component.ID === comp.id);
-            if (componente) {
-                selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao);
-            }
-        });
-        
-    }
-    else if(escolhido == 3){
-        PC3.forEach(comp => {
-            const componente = components.find(component => component.ID === comp.id);
-            if (componente) {
-                selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao);
-            }
-        });
-        
-    }
+    const pcEscolhido = PCS[escolhido];
+
+    pcEscolhido.forEach(comp => {
+        const componente = components.find(component => component.ID === comp.id);
+        if (componente) {
+            selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao);
+        }
+    });
 }
 
 function selectComponent(id, tipo, nome, preco, img, desc) {
