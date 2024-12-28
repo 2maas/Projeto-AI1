@@ -1,6 +1,6 @@
 import { components } from './Lista.js';
 
-const PC1 = [{ id:"4"},
+/*const PC1 = [{ id:"4"},
     { id:"8"},
     { id:"10"},
     { id:"17"},
@@ -34,17 +34,30 @@ const PCS = {
     1: PC1,
     2: PC2,
     3: PC3
-};
+};*/
+
+
+const PCS = [{ idcpu:"4", idcooler:"8", idmotherboard:"10", idram:"17", idarmazenamento:"23", idgpu:"29", idcaixa:"32", idfonte:"35"},
+             { idcpu:"5", idcooler:"7", idmotherboard:"12", idram:"19", idarmazenamento:"26", idgpu:"28", idcaixa:"30", idfonte:"33"},
+             { idcpu:"2", idcooler:"6", idmotherboard:"15", idram:"19", idarmazenamento:"21", idgpu:"27", idcaixa:"31", idfonte:"37"}]
 
 function AbrirPcMontado(escolhido){
     const pcEscolhido = PCS[escolhido];
 
-    pcEscolhido.forEach(comp => {
+    /*pcEscolhido.forEach(comp => {
         const componente = components.find(component => component.ID === comp.id);
         if (componente) {
             selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao);
         }
-    });
+    });*/
+
+    for (const key in pcEscolhido) {
+        const componente = components.find(component => component.ID === pcEscolhido[key]);
+        if (componente) {
+            selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao);
+        }
+    }
+
 }
 
 function selectComponent(id, tipo, nome, preco, img, desc) {
@@ -57,11 +70,11 @@ function selectComponent(id, tipo, nome, preco, img, desc) {
 
 
 document.getElementById("pc1").addEventListener("click", function(){
-    AbrirPcMontado(1)
+    AbrirPcMontado(0)
 });
 document.getElementById("pc2").addEventListener("click", function(){
-    AbrirPcMontado(2)
+    AbrirPcMontado(1)
 });
 document.getElementById("pc3").addEventListener("click", function(){
-    AbrirPcMontado(3)
+    AbrirPcMontado(2)
 });
