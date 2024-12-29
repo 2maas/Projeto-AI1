@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Montado</title>
+
+    <link rel="stylesheet" href="../CSS/StylePCMontado.css">
+    <link rel="stylesheet" href="../CSS/StyleNavbarFooter.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+
+    <div id="Nav"></div>
+    <br>
+
+    <div class="container-conteudo">
+        <div class="conteudo">
+            <div class="img-primaria">
+                <button class="botaoImgs" id="teste1" onclick="MudarimagemSetas(-1)" style="margin-right:10px;"><img src="../imagens/SVG/chevron-left-solid.svg" alt=""></button>
+                <img id="ImagemPrincipal" alt="">
+                <button class="botaoImgs" id="teste2" onclick="MudarimagemSetas(1)" style="margin-left:10px;"><img src="../imagens/SVG/chevron-right-solid.svg" alt=""></button>
+            </div>
+            <div class="imgs-secundarias">
+                <div class="border-imgs" style="border-color: #41b857;"><img onmouseover="Mudarimagem(this)" alt=""></div>
+                <div class="border-imgs"><img onmouseover="Mudarimagem(this)" alt="" value=""></div>
+                <div class="border-imgs"><img onmouseover="Mudarimagem(this)" alt="" value=""></div>
+                <div class="border-imgs"><img onmouseover="Mudarimagem(this)" alt="" value=""></div>
+                <div class="border-imgs"><img  alt="" style="filter: blur(1px);"><span class="mais4">+4</span></div>
+            </div>
+        </div>
+        <!--Colocar bonito esta parte-->
+        <div class="Componente-descricao">
+            <h2 id="NomeSelecinado"></h2>
+            <p id="precoSelecionado"></p>
+            <p id="descricaoSelecinada"></p>
+            <button onclick="AbrirPopUp()">Config PC</button>
+        </div>       
+
+        <div class="container-popup">
+            <div class="texto-popup">
+                <div class="img-popup">
+                    <img src="../imagens/SVG/exclamation-solid.svg" >
+                </div>
+                <p id="texto"></p>
+                <div class="botoes-popup"><button onclick="Config()">Sim</button><button onclick="FecharPopUp()">Não</button></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="Footer"></div>
+    <div id="Direitos"></div>
+    
+    <script src="../JS/PcMontado.js"></script>
+    <script src="../JS/ReactNavBar_Footer.js"></script>
+</body>
+</html>

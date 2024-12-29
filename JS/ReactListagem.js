@@ -1,5 +1,4 @@
 import { components } from './Lista.js';
-
 // Mostrar Componentes
 function ComponentesHTML(props) {
     return  React.createElement('div', {id:'DivP', key: props.id},
@@ -8,7 +7,7 @@ function ComponentesHTML(props) {
                     React.createElement('p', {id:'NomeComponente'}, props.nome),
                     React.createElement('p', {id:'DescricaoComponente'}, props.Descricao),
                     React.createElement('p', {id:'PrecoComponente'}, `${props.preco.toFixed(2)}€`),
-                    React.createElement('button',{onClick: () => selectComponent(props.id, props.tipo, props.nome, props.preco, props.img, props.Descricao), id:'Selecionar'},'Selecionar')
+                    React.createElement('button',{onClick: () => selectComponent(props.id, props.tipo, props.nome, props.preco, props.img, props.Descricao, 'MontagemPC.html'), id:'Selecionar'},'Selecionar')
                 ),
             React.createElement('hr')
     );
@@ -64,16 +63,16 @@ function App1() {
     }
 
     return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component) => React.createElement(ComponentesHTML,{key: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img})));       
+        filteredComponents.map((component) => React.createElement(ComponentesHTML,{key: component.ID,  id: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img})));       
 
 }
 
 ReactDOM.render(App1(), document.getElementById('listar'));
 
-function selectComponent(id, tipo, nome, preco, img, desc) {
-    // Pega os componentes da lista
+
+function selectComponent(id, tipo, nome, preco, img, desc, pagina) {
     let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    storedItems[tipo] = {id, nome, preco, img, desc};
+    storedItems[tipo] = { id, nome, preco, img, desc };
     localStorage.setItem('selectedItems', JSON.stringify(storedItems));
-    window.location.href = 'MontagemPC.html';
+    window.location.href = pagina;
 }
