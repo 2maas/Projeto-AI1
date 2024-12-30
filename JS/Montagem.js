@@ -79,9 +79,7 @@ function RemoverComponenteTabela(tipo) {
         let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
 
         if (storedItems[tipo]) {
-            precototal -= storedItems[tipo].price;
-            document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
-
+            precototal = 0;
             delete storedItems[tipo];
             localStorage.setItem('selectedItems', JSON.stringify(storedItems));
 
@@ -96,8 +94,6 @@ function RemoverComponenteTabela(tipo) {
             document.getElementById(tipo + '-td').style.display = 'table-cell';
             document.getElementById(tipo + '-botaoAdd').style.display = 'inline';
             document.getElementById(tipo + '-botaoRemove').style.display = 'none';
-
-            // Remove o componente da lista de "Componentes"
 
             StyleComponentes(tipo);
         }
