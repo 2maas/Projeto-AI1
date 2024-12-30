@@ -54,7 +54,7 @@ function AbrirPcMontado(escolhido){
     for (const key in pcEscolhido) {
         const componente = components.find(component => component.ID === pcEscolhido[key]);
         if (componente) {
-            selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao, '../HTML/PcMontado.html');
+            selectComponent(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao, 'HTML/PcMontado.html');
         }
     }
 
