@@ -97,35 +97,35 @@ function NavBar() {
                     React.createElement('a', { className: 'menu-title', href: CaminhoDaPagina('listagem.html?valor=todos')}, 'Produtos disponíveis'),
                     React.createElement('ul', { className: 'submenu', id:"Produtos"},
                         React.createElement('li', null,
-                            React.createElement('a', {href: 'listagem.html?valor=CPU'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=CPU')},
                                 React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}) ,
                                 React.createElement('p', null ,'CPU'),
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=COOLER'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=COOLER')},
                                 React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/COOLER_icon.png')}),
                                 React.createElement('p', null ,'Cooler'),
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=MOTHERBOARD'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=MOTHERBOARD')},
                                 React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/placa-mae.png')}),
                                 React.createElement('p', null ,'Motherboard')
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=RAM'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=RAM')},
                                 React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/ram.png')}),
                                 React.createElement('p', null ,'RAM')
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=ARMAZENAMENTO'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=ARMAZENAMENTO')},
                                 React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/ARMAZENAMENTO_icon.png')}),
                                 React.createElement('p',  null ,'Armazenamento')
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=GPU'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=GPU')},
                                 React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/GPU_icon.webp')}),
                                 React.createElement('p',  null ,'GPU')  
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=CAIXA'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=CAIXA')},
                                 React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
                                 React.createElement('p', null ,'Caixa')
                             ),
-                            React.createElement('a', {href: 'listagem.html?valor=FONTE'},
+                            React.createElement('a', {href: CaminhoDaPagina('listagem.html?valor=FONTE')},
                                 React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
                                 React.createElement('p', null ,'Fonte')
                             )
