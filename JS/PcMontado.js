@@ -11,7 +11,7 @@ function load() {
     const PCMontado = JSON.parse(localStorage.getItem('PCSMontados')) || {};
     Tipocomponentes.forEach(componente => {
         if (PCMontado[componente]) {
-            Componentes.push({ tipo: componente, id: PCMontado[componente].id, nome: PCMontado[componente].nome, preco: PCMontado[componente].preco, descricao: PCMontado[componente].desc, imagem: PCMontado[componente].img });
+            Componentes.push({ tipo: componente, id: PCMontado[componente].id, nome: PCMontado[componente].nome, preco: PCMontado[componente].preco, descricao: PCMontado[componente].desc, imagem: PCMontado[componente].img, watts: PCMontado[componente].watts});
             precototal += PCMontado[componente].preco;
         }
     });
@@ -165,14 +165,14 @@ function Mudarimagem(img) {
 function Config() {
     for (const comp of Componentes) {
         if (comp) {
-            EscolherComponente(comp.id, comp.tipo, comp.nome, comp.preco, comp.imagem, comp.descricao, "MontagemPC.html");
+            EscolherComponente(comp.id, comp.tipo, comp.nome, comp.preco, comp.imagem, comp.descricao, comp.watts, "MontagemPC.html");
         }
     }
 }
 
-function EscolherComponente(id, tipo, nome, preco, img, desc, pagina) {
+function EscolherComponente(id, tipo, nome, preco, img, desc, watts, pagina) {
     let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    storedItems[tipo] = { id, nome, preco, img, desc };
+    storedItems[tipo] = { id, nome, preco, img, desc, watts };
     localStorage.setItem('selectedItems', JSON.stringify(storedItems));
     window.location.href = pagina;
 }

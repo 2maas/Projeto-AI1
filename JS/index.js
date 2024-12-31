@@ -10,7 +10,7 @@ function AbrirPcMontado(escolhido){
     for (const key in pcEscolhido) {
         const componente = components.find(component => component.ID === pcEscolhido[key]);
         if (componente) {
-            EscolherComponente(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao, 'HTML/PcMontado.html');
+            EscolherComponente(componente.ID, componente.type, componente.name, componente.price, componente.img, componente.Descricao, componente.watts, 'HTML/PcMontado.html');
         }
     }
 
@@ -26,9 +26,9 @@ document.getElementById("pc3").addEventListener("click", function(){
     AbrirPcMontado(2)
 });
 
-function EscolherComponente(id, tipo, nome, preco, img, desc, pagina) {
+function EscolherComponente(id, tipo, nome, preco, img, desc, watts, pagina) {
     let storedItems = JSON.parse(localStorage.getItem('PCSMontados')) || {};
-    storedItems[tipo] = { id, nome, preco, img, desc };
+    storedItems[tipo] = { id, nome, preco, img, desc , watts };
     localStorage.setItem('PCSMontados', JSON.stringify(storedItems));
     window.location.href = pagina;
 }

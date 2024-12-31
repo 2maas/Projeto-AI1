@@ -30,11 +30,11 @@ function mostrarNaTabela(componenteLocalStorage, tipo) {
         document.getElementById(tipo + '-botaoAdd').style.display = 'none';
         document.getElementById(tipo + '-botaoRemove').style.display = 'inline';
         document.getElementById(tipo + '-desc').innerText = componenteLocalStorage.desc;
-        if(tipo!='FONTE' && componenteLocalStorage.watts==null){
-            WATTS+=50;
-        }
-        else{
-            WATTS+=componenteLocalStorage.watts;
+        if(tipo!='FONTE' && tipo!='CAIXA'){
+            if(componenteLocalStorage.watts==null)
+                WATTS+=50;
+            else
+                WATTS+=componenteLocalStorage.watts;
         }
         document.getElementById('WATTS').innerText= WATTS + ' W';  
         precototal += componenteLocalStorage.preco;
