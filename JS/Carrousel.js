@@ -3,10 +3,10 @@ document.getElementById("radio1").checked = true;
 const slidesContainer = document.querySelector(".slide");
 
 setInterval(function(){
-  nextImage();
+  ImagemSeguinte();
 }, 4000);
 
-function nextImage(){
+function ImagemSeguinte(){
   if (count == 3) {
     // Exibe o slide 6 por apenas 1 segundo
     document.getElementById("radio4").checked = true;

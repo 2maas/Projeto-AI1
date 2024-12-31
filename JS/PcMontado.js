@@ -165,12 +165,12 @@ function Mudarimagem(img) {
 function Config() {
     for (const comp of Componentes) {
         if (comp) {
-            selectComponent(comp.id, comp.tipo, comp.nome, comp.preco, comp.imagem, comp.descricao, "MontagemPC.html");
+            EscolherComponente(comp.id, comp.tipo, comp.nome, comp.preco, comp.imagem, comp.descricao, "MontagemPC.html");
         }
     }
 }
 
-function selectComponent(id, tipo, nome, preco, img, desc, pagina) {
+function EscolherComponente(id, tipo, nome, preco, img, desc, pagina) {
     let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
     storedItems[tipo] = { id, nome, preco, img, desc };
     localStorage.setItem('selectedItems', JSON.stringify(storedItems));

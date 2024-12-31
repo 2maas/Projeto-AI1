@@ -11,7 +11,8 @@ document.getElementById('form') .addEventListener('submit', function(event) {
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-        alert('Sent!');
+        alert('Email enviado!');
+        document.getElementById('form').reset();
     }, (err) => {
         alert(JSON.stringify(err));
     });

@@ -20,7 +20,7 @@
         <table>
             <thead id="thead">
                 <tr>
-                    <th id="componentes" style="display: flex;align-items: center;justify-content: space-between;">Componente <button onclick="baixar()"><img src="../imagens/SVG/file-lines-solid.svg" style="width: 15px;" alt=""></button></th>
+                    <th id="componentes" style="display: flex;align-items: center;justify-content: space-between;">Componente <p style="color: white; padding-left: 64%;" id="WATTS">0 W</p> <button onclick="transferir()"><img src="../imagens/SVG/file-lines-solid.svg" style="width: 15px;" alt=""></button></th>
                 </tr>
             </thead>
             <tbody id="component-table">
@@ -38,7 +38,7 @@
                                     </div>
                                     <label id="CPU-preco"></label>
                                 </div>
-                                <p class="descricao" id="descCpu"></p>
+                                <p class="descricao" id="CPU-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button id="CPU-botaoAdd" onclick="redirectTo('CPU')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
@@ -62,7 +62,7 @@
                                     </div>
                                     <label id="COOLER-preco"></label>
                                 </div>
-                                <p class="descricao" id="descCooler"></p>
+                                <p class="descricao" id="COOLER-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button id="COOLER-botaoAdd" onclick="redirectTo('COOLER')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
@@ -87,7 +87,7 @@
                                     </div>
                                     <label id="MOTHERBOARD-preco"></label>
                                 </div>
-                                <p class="descricao" id="descMotherboard"></p>
+                                <p class="descricao" id="MOTHERBOARD-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button id="MOTHERBOARD-botaoAdd" onclick="redirectTo('MOTHERBOARD')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
@@ -112,7 +112,7 @@
                                     </div>
                                     <label id="RAM-preco"></label>
                                 </div>
-                                <p class="descricao" id="descRam"></p>
+                                <p class="descricao" id="RAM-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button id="RAM-botaoAdd" onclick="redirectTo('RAM')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
@@ -137,7 +137,7 @@
                                     </div>
                                     <label id="ARMAZENAMENTO-preco"></label>
                                 </div>
-                                <p class="descricao" id="descArmazenamento"></p>
+                                <p class="descricao" id="ARMAZENAMENTO-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button  id="ARMAZENAMENTO-botaoAdd" onclick="redirectTo('ARMAZENAMENTO')"><img src="../imagens/SVG/plus-solid.svg"
@@ -162,7 +162,7 @@
                                     </div>
                                     <label id="GPU-preco"></label>
                                 </div>
-                                <p class="descricao" id="descGpu"></p>
+                                <p class="descricao" id="GPU-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button  id="GPU-botaoAdd" onclick="redirectTo('GPU')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
@@ -187,7 +187,7 @@
                                     </div>
                                     <label id="CAIXA-preco"></label>
                                 </div>
-                                <p class="descricao" id="descCaixa"></p>
+                                <p class="descricao" id="CAIXA-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button  id="CAIXA-botaoAdd" onclick="redirectTo('CAIXA')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"
@@ -212,7 +212,7 @@
                                     </div>
                                     <label id="FONTE-preco"></label>
                                 </div>
-                                <p class="descricao" id="descFonte"></p>
+                                <p class="descricao" id="FONTE-desc"></p>
                             </div>
                             <div style="display: flex; align-items: center;">
                                 <button  id="FONTE-botaoAdd" onclick="redirectTo('FONTE')"><img src="../imagens/SVG/plus-solid.svg" alt="Adicionar"

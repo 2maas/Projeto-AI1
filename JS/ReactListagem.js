@@ -1,4 +1,5 @@
 import { components } from './Lista.js';
+
 // Mostrar Componentes
 function ComponentesHTML(props) {
     return  React.createElement('div', {id:'DivP', key: props.id},
@@ -7,13 +8,13 @@ function ComponentesHTML(props) {
                     React.createElement('p', {id:'NomeComponente'}, props.nome),
                     React.createElement('p', {id:'DescricaoComponente'}, props.Descricao),
                     React.createElement('p', {id:'PrecoComponente'}, `${props.preco.toFixed(2)}€`),
-                    React.createElement('button',{onClick: () => selectComponent(props.id, props.tipo, props.nome, props.preco, props.img, props.Descricao, 'MontagemPC.html'), id:'Selecionar'},'Selecionar')
+                    React.createElement('button',{onClick: () => EscolherComponente(props.id, props.tipo, props.nome, props.preco, props.img, props.Descricao, props.watts, 'MontagemPC.html'), id:'Selecionar'},'Selecionar')
                 ),
             React.createElement('hr')
     );
 }
 
-function App1() {
+function App() {
     // Obter o parâmetro da URL
     const params = new URLSearchParams(window.location.search);
     const [filterType, id] = params.get('valor').split('/');
@@ -63,16 +64,15 @@ function App1() {
     }
 
     return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component) => React.createElement(ComponentesHTML,{key: component.ID,  id: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img})));       
+        filteredComponents.map((component) => React.createElement(ComponentesHTML,{key: component.ID,  id: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img, watts: component.watts})));       
 
 }
 
-ReactDOM.render(App1(), document.getElementById('listar'));
+ReactDOM.render(App(), document.getElementById('listar'));
 
-
-function selectComponent(id, tipo, nome, preco, img, desc, pagina) {
+function EscolherComponente(id, tipo, nome, preco, img, desc, watts, pagina) {
     let storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
-    storedItems[tipo] = { id, nome, preco, img, desc };
+    storedItems[tipo] = { id, nome, preco, img, desc, watts };
     localStorage.setItem('selectedItems', JSON.stringify(storedItems));
     window.location.href = pagina;
 }

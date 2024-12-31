@@ -102,7 +102,7 @@ function NavBar() {
                                 React.createElement('p', null ,'CPU'),
                             ),
                             React.createElement('a', {href: 'listagem.html?valor=COOLER'},
-                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/COOLER_icon.png')}),
                                 React.createElement('p', null ,'Cooler'),
                             ),
                             React.createElement('a', {href: 'listagem.html?valor=MOTHERBOARD'},
@@ -114,11 +114,11 @@ function NavBar() {
                                 React.createElement('p', null ,'RAM')
                             ),
                             React.createElement('a', {href: 'listagem.html?valor=ARMAZENAMENTO'},
-                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/ARMAZENAMENTO_icon.png')}),
                                 React.createElement('p',  null ,'Armazenamento')
                             ),
                             React.createElement('a', {href: 'listagem.html?valor=GPU'},
-                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg')}),
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/GPU_icon.webp')}),
                                 React.createElement('p',  null ,'GPU')  
                             ),
                             React.createElement('a', {href: 'listagem.html?valor=CAIXA'},
@@ -186,7 +186,7 @@ function NavBar() {
                         ),
                         React.createElement('li', null,
                             React.createElement('a', {href: 'listagem.html?valor=COOLER'},
-                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Cooler'
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/COOLER_icon.png'), style: {width: '25px', height: '25px'} }) ,'Cooler'
                             ),
                         ),
                         React.createElement('li', null,
@@ -201,12 +201,12 @@ function NavBar() {
                         ),
                         React.createElement('li', null,
                             React.createElement('a', {href: 'listagem.html?valor=ARMAZENAMENTO'},
-                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'Armazenamento'
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/ARMAZENAMENTO_icon.png'), style: {width: '25px', height: '25px'} }) ,'Armazenamento'
                             ),
                         ),
                         React.createElement('li', null,
                             React.createElement('a', {href: 'listagem.html?valor=GPU'},
-                                React.createElement('img', { src: CaminhoDaImagem('SVG/microchip-solid.svg'), style: {width: '25px', height: '25px'} }) ,'GPU'
+                                React.createElement('img', { src: CaminhoDaImagem('Componentes_icons/GPU_icon.webp'), style: {width: '25px', height: '25px'} }) ,'GPU'
                             ),
                         ),
                         React.createElement('li', null,
