@@ -29,7 +29,6 @@ function App() {
             const selected = components.find(component => component.ID === id);
             if (selected) {
                 const validarSockets = selected.Socket.split(',');
-                // Aqui você precisa verificar se o socket da motherboard está na lista de sockets válidos
                 filteredComponents = components.filter(component => component.type === 'MOTHERBOARD' && validarSockets.includes(component.Socket));
             }
         }
@@ -41,14 +40,7 @@ function App() {
             } 
         }
         else if (filterType == "FONTE" && id) {
-            const ids = id.split('-');
-            const CPUSelected = components.find(component => component.ID === ids[0]);
-            const GPUSelected = components.find(component => component.ID === ids[1]);
-
-            if (CPUSelected && GPUSelected) {
-                const TotalWatts = CPUSelected.watts + GPUSelected.watts + 150;
-                filteredComponents = components.filter(component => component.type === 'FONTE' && component.watts > TotalWatts);
-            }
+            filteredComponents = components.filter(component => component.type === 'FONTE' && component.watts > id);            
         }
         else
         {
