@@ -177,7 +177,6 @@ function EscolherComponente(id, tipo, nome, preco, img, desc, watts, pagina) {
     window.location.href = pagina;
 }
 
-
 function AbrirPopUp(){
     const container = document.querySelector(".container-popup");
     

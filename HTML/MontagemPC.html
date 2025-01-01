@@ -20,7 +20,14 @@
         <table>
             <thead id="thead">
                 <tr>
-                    <th id="componentes" style="display: flex;align-items: center;justify-content: space-between;">Componente <p style="color: white; padding-left: 64%;" id="WATTS">0 W</p> <button onclick="transferir()"><img src="../imagens/SVG/file-lines-solid.svg" style="width: 15px;" alt=""></button></th>
+                    <th id="componentes" style="display: flex;align-items: center;justify-content: space-between;">
+                        Componente 
+                        <p style="color: white; padding-left: 64%;" id="WATTS">0 W</p> 
+                        <div>
+                            <button onclick="transferir()"><img src="../imagens/SVG/file-lines-solid.svg" style="width: 15px;" alt=""></button>
+                            <button onclick="RemoverComponentesTodos()"><img src="../imagens/SVG/trash-solid.svg" style="width: 15px; height: 20px;" alt=""></button>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody id="component-table">

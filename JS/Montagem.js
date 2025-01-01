@@ -43,23 +43,23 @@ function mostrarNaTabela(componenteLocalStorage, tipo) {
         
 }
 
-function redirectTo(pagina) {
+function redirectTo(COMP) {
 
-    if(pagina == "MOTHERBOARD")
+    if(COMP == "MOTHERBOARD")
     {
         if(Componentes[0].tipo == "CPU" && Componentes[0].nome != "Nenhum")
-            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(Componentes[0].id)}`;
+            window.location.href = `listagem.html?valor=${encodeURIComponent(COMP)}/${encodeURIComponent(Componentes[0].id)}`;
         else
         PopUp("Tem que escolher uma CPU Primeiro");
     }
-    else if(pagina == "RAM")
+    else if(COMP == "RAM")
     {
         if(Componentes[2].tipo == "MOTHERBOARD" && Componentes[2].nome != "Nenhum")
-            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(Componentes[2].id)}`;
+            window.location.href = `listagem.html?valor=${encodeURIComponent(COMP)}/${encodeURIComponent(Componentes[2].id)}`;
         else
             PopUp("Tem que escolher uma MotherBoard Primeiro");
     }
-    else if (pagina == "FONTE")
+    else if (COMP == "FONTE")
     {
         let PCCompleto = 0;
         Componentes.forEach(componente => {
@@ -68,12 +68,12 @@ function redirectTo(pagina) {
         });
 
         if(PCCompleto == 7)
-            window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}/${encodeURIComponent(WATTS)}`;
+            window.location.href = `listagem.html?valor=${encodeURIComponent(COMP)}/${encodeURIComponent(WATTS)}`;
         else
             PopUp("Finalize a config do PC toda antes de escolher a fonte.");
     }
     else
-        window.location.href = `listagem.html?valor=${encodeURIComponent(pagina)}`;
+        window.location.href = `listagem.html?valor=${encodeURIComponent(COMP)}`;
 
 }
 
@@ -114,7 +114,17 @@ function RemoverComponenteTabela(tipo) {
     }
 }
 
-function baixar() {
+function RemoverComponentesTodos() {
+    const storedItems = JSON.parse(localStorage.getItem('selectedItems')) || {};
+    Tipocomponentes.forEach(componente => {
+        if (storedItems[componente]) {
+            RemoverComponenteTabela(componente);
+            Componentes = [];
+        }
+    });
+}
+
+function transferir() {
     let conteudo = '';
 
     for (const comp of Componentes)
