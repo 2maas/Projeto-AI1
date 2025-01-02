@@ -17,7 +17,7 @@ function loadComponents() {
         }
     });
 
-    document.getElementById("labelteste").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
+    document.getElementById("labelPreco").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
 }
 
 function mostrarNaTabela(componenteLocalStorage, tipo) {
@@ -175,3 +175,42 @@ function PopUp(texto){
 
 }
 
+function GuardarConfig(){
+
+    let PCCompleto = 0;
+    Componentes.forEach(componente => {
+        if(componente.nome != 'Nenhum')
+            PCCompleto++;
+    });
+
+    if(PCCompleto == 8)
+    {
+        const nomepc = prompt("Nome da Configuração:");
+        let PCS = JSON.parse(localStorage.getItem("ConfigGuardadas")) || [];
+        const existe = PCS.some(pc => pc.NomePC === nomepc);
+        
+        if(!existe)
+        {
+            let NovoPC = {
+                NomePC: nomepc,
+                CPU: Componentes[0],
+                COOLER: Componentes[1],
+                MOTHERBOARD: Componentes[2],
+                RAM: Componentes[3],
+                ARMAZENAMENTO: Componentes[4],
+                GPU: Componentes[5],
+                CAIXA: Componentes[6],
+                FONTE: Componentes[7],
+                preco: precototal
+            };
+            
+            PCS.push(NovoPC);
+            localStorage.setItem("ConfigGuardadas", JSON.stringify(PCS));
+            window.location.href = `PcsMontados.html`;
+        }
+        else
+            PopUp("Já existe uma configuração com este nome. Escolha outro nome."); 
+    }
+    else
+        PopUp("Finalize a config do PC toda antes de guardar.");    
+}

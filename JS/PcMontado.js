@@ -15,9 +15,9 @@ function load() {
             precototal += PCMontado[componente].preco;
         }
     });
-
     MenosImagens();
 }
+
 
 function MenosImagens() {
     ComponentesAtuaisCarrosel = [];
@@ -37,7 +37,7 @@ function MenosImagens() {
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = Componentes[i].descricao.replace(/\s*\|\s*/g, '<br>');
-                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco;
+                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco + "€";
             }
 
             if (i < 4) {
@@ -79,7 +79,7 @@ function MaisImagens() {
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = Componentes[i].descricao.replace(/\s*\|\s*/g, '<br>');
-                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco;
+                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco + "€";
             }
 
             if (i < 8) {
@@ -136,20 +136,19 @@ function Mudarimagem(img) {
 
     if (!img.src.includes("imagens/Componentes/SemComponente.png")) {
         for (let i = 0; i < 5; i++) {
-            //const tste = document.getElementById("NomeSelecinado").innerHTML;
             if (img.src == ComponentesAtuaisCarrosel[i].imagem) {
                 document.getElementById("NomeSelecinado").innerHTML = ComponentesAtuaisCarrosel[i].nome;
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = ComponentesAtuaisCarrosel[i].descricao.replace(/\s*\|\s*/g, '<br>');
-                document.getElementById("precoSelecionado").innerHTML = ComponentesAtuaisCarrosel[i].preco;
+                document.getElementById("precoSelecionado").innerHTML = ComponentesAtuaisCarrosel[i].preco + "€";
                 index = i;
                 break;
             }
         }
     }
     else {
-        // verficar onde esta a borda ver para atualizar o index
+        // verfica onde esta a borda ver para atualizar o index
         for (let i = 0; i < borderImgs.length; i++) {
             if (borderImgs[i].style.borderColor === "rgb(65, 184, 87)") {
                 index = i;
