@@ -159,7 +159,7 @@ body{
     margin: 0;
 }
 
-button{
+.botao {
     background-color: #5e5d5d;
     color: white;
     padding: 8px 15px;
@@ -227,12 +227,11 @@ button{
     {
         width: 100%;
     }
-
     
-.Descricao-preco{
-    position: static;
-    top: 80px;
-}
+    .Descricao-preco{
+        position: static;
+        top: 80px;
+    }
 
 }
 
