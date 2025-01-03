@@ -16,6 +16,15 @@ function loadComponents() {
             i++;
         }
     });
+    if(i < 8)
+    {
+        document.getElementById("RemoverTudo").style.display = 'inline';
+    }
+    else
+    {
+        document.getElementById("RemoverTudo").style.display = 'none';
+    }
+
 
     document.getElementById("labelPreco").innerHTML = "Valor Total: " + precototal.toFixed(2) + '€';
 }
