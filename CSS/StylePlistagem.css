@@ -102,9 +102,11 @@ button[id='Selecionar']:hover {
 
     .option #DescricaoComponente {
         padding-top: 5px;
-        display: -webkit-box;
-        -webkit-line-clamp: 4; 
-        -webkit-box-orient: vertical;
+        overflow: hidden;            
+        text-overflow: ellipsis;      
+        display: -webkit-box;   
+        -webkit-line-clamp: 2;   
+        -webkit-box-orient: vertical;    
     }
 
     .option #PrecoComponente {
