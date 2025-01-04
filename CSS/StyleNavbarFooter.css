@@ -335,7 +335,7 @@ ul{
 	padding: 5px;
 	border-radius: 4px;
 	display: none;
-	margin-left: auto; /* Empurra o elemento com as horas para a direita */
+	margin-left: auto; 
 	margin-right: 3vh;
 }
 
@@ -346,20 +346,18 @@ ul{
 .sidebar {
 	position: fixed;
 	right: -80%;
-	/* Inicialmente escondida no lado direito */
 	top: 0;
-	width: 80%;
+	max-width: 80%;
+	width: 400px;
 	height: 100%;
 	background-color: #282828;
 	color: white;
 	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-	/* Animação suave ao abrir/fechar */
 	transition: right 0.3s ease;
 	z-index: 999;
 }
 
 .sidebar.open {
-	/* Mostra a sidebar */
 	right: 0;	
 }
 
@@ -376,13 +374,12 @@ ul{
 
 
 @media(max-width: 840px){
-
+	
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
 	}
 
-	
 }
   
 @media(max-width: 800px){
