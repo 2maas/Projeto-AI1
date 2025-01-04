@@ -178,14 +178,14 @@ body{
         opacity: 0;
     }
     100% {
-        top: 50px;
+        top: 60px;
         opacity: 1;
     }
 }
 
 @keyframes PopUpCima {
     0% {
-        top: 50px; 
+        top: 60px; 
         opacity: 1;
     }
     100% {
@@ -233,6 +233,10 @@ body{
     .Descricao-preco{
         position: static;
         top: 80px;
+    }
+
+    .texto-popup p{
+        width: 45vw;
     }
 
 }

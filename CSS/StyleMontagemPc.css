@@ -89,6 +89,7 @@ table button:hover {
 
 /* POP UP*/
 .container-popup{
+    color: white;
     position: fixed;
     left: 50%;
     top: -100%;
@@ -180,6 +181,10 @@ table button:hover {
 
     .descricao{
         display: none;
+    }
+
+    .texto-popup p{
+        width: 45vw;
     }
 
 }

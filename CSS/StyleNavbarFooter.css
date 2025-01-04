@@ -50,7 +50,7 @@ body{
 }
 
 .nav-cont-ul .data_hora {
-    margin-left: auto; /* Empurra o elemento com as horas para a direita */
+    margin-left: auto;
 	margin-right: 3vh;
 }
 
@@ -69,9 +69,6 @@ body{
 {
 	width: 100%;
 	padding: 15px 20px 15px 20px;
-
-	/*talvez colocar so no ultimo para separa a data do resto*/
-	/*border-bottom: 0.5px solid #b7b6b6;*/	
 	
 	display: flex;
 	justify-content: space-between;
@@ -89,14 +86,14 @@ body{
 
 .SideBarUL 
 {
-	max-height: 0; /* Começa com altura 0 (oculto) */
-    overflow: hidden; /* Impede o conteúdo de aparecer fora da área visível */
-    opacity: 0; /* Inicialmente invisível */
+	max-height: 0;
+    overflow: hidden; 
+    opacity: 0;
     transition: max-height 0.8s ease, opacity 0.5s ease; 
 }
 
 .SideBarUL.visivel {
-	max-height: 300px; /* Ajuste conforme o conteúdo do menu */
+	max-height: 300px; 
     opacity: 1; 
 }
 
@@ -139,7 +136,7 @@ body{
 	transition: transform 0.3s ease-in-out; 
 }
 
-/* esconder neste caso a imagem para depois se a pagina tiver tipo 500px colocar a imagem*/
+
 .nav-cont-ul a .imagem {
 	display: none;
 	width: 24px; 
@@ -388,7 +385,7 @@ ul{
 	
 }
   
-@media(max-width: 782px){
+@media(max-width: 800px){
 
 	.nav-cont-ul a .texto {
 		display: none; 
