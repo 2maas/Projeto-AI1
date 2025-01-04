@@ -259,6 +259,7 @@ function Footer() {
                     React.createElement('h4', null, 'Companhia'),
                     React.createElement('ul', {style: {paddingLeft: '0px'}}, 
                         React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós')),
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('PcsMontados.html')}, 'Configs Guardadas')),
                     )
                 ),
                 // Obter ajuda Section
