@@ -67,7 +67,7 @@ html{
     overflow: hidden;              /* Esconde o texto que ultrapassar a área visível */
     text-overflow: ellipsis;       /* Adiciona '...' ao final do texto se ele for cortado */
     display: -webkit-box;          /* Ativa o layout de caixa flexível WebKit */
-    -webkit-line-clamp: 1;         /* Limita a exibição a 1 linha de texto */
+    -webkit-line-clamp: 2;         /* Limita a exibição a 1 linha de texto */
     -webkit-box-orient: vertical;  /* Define a orientação da caixa como vertical */
     height: 1.2em;                 /* Limita a altura do parágrafo para caber uma linha */
     line-height: 1.2em;            /* Define a altura da linha */
