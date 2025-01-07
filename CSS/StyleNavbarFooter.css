@@ -380,10 +380,6 @@ ul{
     margin-bottom: 30px;
 	}
 
-}
-  
-@media(max-width: 815px){
-
 	.nav-cont-ul a .texto {
 		display: none; 
 	}

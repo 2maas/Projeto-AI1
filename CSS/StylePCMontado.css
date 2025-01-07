@@ -202,12 +202,15 @@ body{
 }
  
 
-@media(max-width: 775px){
+@media(max-width: 800px){
     .conteudo{
         margin: 15px;
     }
     .img-primaria img{
         width: 80%;
+    }
+    .container-conteudo{
+        padding-bottom: 120px;
     }
 
 }
@@ -232,7 +235,6 @@ body{
     
     .Descricao-preco{
         position: static;
-        top: 80px;
     }
 
     .texto-popup p{
