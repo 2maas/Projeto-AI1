@@ -161,11 +161,11 @@ function NavBar() {
             React.createElement('div', { className: 'overlay', id: 'overlay', onClick: () => fecharSidebar() }),
                 React.createElement('div', { className: 'sidebar', id: 'mySidebar' },
                     React.createElement('div', { style: { display: 'flex', paddingTop: '10px'} }, 
-                        React.createElement('button', { className: 'button-close', onClick: () => fecharSidebar() },
-                            React.createElement('img', { src: CaminhoDaImagem('SVG/X_voltar.svg'), alt: 'Botão Fechar SideBar', style: { width: '20px'} })
+                        React.createElement('div', { style: {fontWeight: 'bold', paddingTop: '14px'}},
+                            React.createElement('label', { className: "data_hora_texto", style: {paddingLeft:'30px'} })
                         ),
-                        React.createElement('div', { style: {fontWeight: 'bold', paddingTop: '14px', width:'100%'} },
-                            React.createElement('label', { className: "data_hora_texto", style: {paddingLeft:'15%'} })
+                        React.createElement('button', { className: 'button-close', onClick: () => fecharSidebar(), style: { paddingLeft: '20vw'}},
+                            React.createElement('img', { src: CaminhoDaImagem('SVG/X_voltar.svg'), alt: 'Botão Fechar SideBar', style: { width: '20px'} })
                         )
                     ),
                 React.createElement('ul', { className: 'nav-cont-ul-sideBar' },
