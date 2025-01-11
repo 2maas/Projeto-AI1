@@ -37,7 +37,7 @@ function MenosImagens() {
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = Componentes[i].descricao.replace(/\s*\|\s*/g, '<br>');
-                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco + "€";
+                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco.toFixed(2) + "€";
             }
 
             if (i < 4) {
@@ -79,7 +79,7 @@ function MaisImagens() {
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = Componentes[i].descricao.replace(/\s*\|\s*/g, '<br>');
-                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco + "€";
+                document.getElementById("precoSelecionado").innerHTML = Componentes[i].preco.toFixed(2) + "€";
             }
 
             if (i < 8) {
@@ -141,7 +141,7 @@ function Mudarimagem(img) {
 
                 // substitui as | por <br> para mostrar como se fosse numa lista
                 document.getElementById("descricaoSelecinada").innerHTML = ComponentesAtuaisCarrosel[i].descricao.replace(/\s*\|\s*/g, '<br>');
-                document.getElementById("precoSelecionado").innerHTML = ComponentesAtuaisCarrosel[i].preco + "€";
+                document.getElementById("precoSelecionado").innerHTML = ComponentesAtuaisCarrosel[i].preco.toFixed(2) + "€";
                 index = i;
                 break;
             }

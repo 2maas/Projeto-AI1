@@ -4,7 +4,7 @@ body{
 
 .container-conteudo{
     display: flex;
-    margin: 3vw;
+    padding: 3vw 3vw 3vw 5vw;
 }
 
 .conteudo{
@@ -80,7 +80,7 @@ body{
 .Componente-descricao
 {
     position: relative;
-    width: 75%;
+    width: 65%;
     padding: 0 0 0 20px;
 }
 
@@ -107,16 +107,9 @@ body{
 .PrecoBtConf{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding : 15px 0 15px 0;
 }
-
-.Preco{
-    width: 75%;
-}
-
-.BtConfig{
-    width: 25%;
-}
-
 
 /* POP UP*/
 .container-popup{
@@ -182,7 +175,6 @@ body{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
 }
 
 @keyframes PopUpBaixo {
@@ -206,42 +198,22 @@ body{
         opacity: 0;
     }
 }
-@media(max-width: 850px){
-    .Preco{
-        width: 60%;
-    }
 
-    .BtConfig{
-        width: 40%;
-    }
+@media(max-width: 850px){
     .container-conteudo{
         padding-bottom: 80px;
     }
 }
 
-/*
-@media(max-width: 1100px){
-    .img-primaria img{
-        width: 90%;
-    }
-}
- 
-@media(max-width: 800px){
+@media(max-width: 840px){
+    
     .conteudo{
         margin: 15px;
     }
     .img-primaria img{
         width: 80%;
     }
-    .container-conteudo{
-        padding-bottom: 120px;
-    }
 
-}
-*/
-
-@media(max-width: 700px){
-    
     .container-conteudo{
         display: flex;
         justify-content: center;
@@ -250,13 +222,10 @@ body{
         flex-wrap: wrap;
     }
 
-    .descricao{
-        padding: 0;
-    }
-
     .Componente-descricao
     {
         width: 100%;
+        padding: 0 40px 0 40px;
     }
     
     .Descricao-preco{
@@ -266,6 +235,11 @@ body{
     .texto-popup p{
         width: 45vw;
     }
-
 }
 
+@media(max-width: 500px){
+    .Componente-descricao
+    {
+        padding: 0 15px 0 15px;
+    }
+}
