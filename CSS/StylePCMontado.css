@@ -175,6 +175,7 @@ body{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
 }
 
 @keyframes PopUpBaixo {
