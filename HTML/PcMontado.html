@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Montado</title>
+    <title>Montagens</title>
     <link rel="icon" href="../imagens/WallpaperInicio/logo_icon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="../CSS/StylePCMontado.css">
@@ -34,9 +34,11 @@
         <div class="Componente-descricao">
             <h2 id="NomeSelecinado"></h2>
             <div class="Descricao-preco">
-                <p id="precoSelecionado"></p>
                 <p id="descricaoSelecinada"></p>
-                <button class="botao" onclick="AbrirPopUp()">Config PC</button>
+                <div class="PrecoBtConf">
+                    <div class="Preco"><p id="precoSelecionado"></p></div>
+                    <div class="BtConfig"><button class="botao" onclick="AbrirPopUp()">Abrir Configuração</button></div>
+                </div>
             </div>
         </div>       
 
@@ -46,9 +48,10 @@
                     <img src="../imagens/SVG/exclamation-solid.svg" >
                 </div>
                 <p id="texto"></p>
-                <div class="botoes-popup "><button class="botao" onclick="Config()">Sim</button><button class="botao" onclick="FecharPopUp()">Não</button></div>
+                <div class="botoes-popup">
+                    <button class="botao" onclick="Config()">Sim</button><button class="botao" onclick="FecharPopUp()">Não</button>
+                </div>
             </div>
-
         </div>
     </div>
 
