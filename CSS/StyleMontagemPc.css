@@ -179,12 +179,15 @@ table button:hover {
         display: none;
     }
 
-    .descricao{
-        display: none;
-    }
-
     .texto-popup p{
         width: 45vw;
     }
 
+}
+
+@media (max-width: 500px)
+{
+    .descricao{
+        display: none;
+    }
 }
