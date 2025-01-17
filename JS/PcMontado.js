@@ -18,7 +18,6 @@ function load() {
     MenosImagens();
 }
 
-
 function MenosImagens() {
     ComponentesAtuaisCarrosel = [];
     index = 0;

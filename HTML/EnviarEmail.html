@@ -18,25 +18,7 @@
     
     <div class="conteudo">
         <h1 style="text-align: center;">Contacta-nos</h1>
-        <div class="card">
-            <form id="form">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" placeholder="Nome" required>
-
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="Email" required>
-
-                <label for="assunto">Assunto</label>
-                <input type="text" name="assunto" id="assunto" placeholder="Assunto" required>
-
-                <label for="mensagem">Mensagem</label>
-                <textarea type="text" name="mensagem" id="mensagem" placeholder="Escreva aqui..." required></textarea>
-
-                <div id="div_button">
-                    <input type="submit" id="button" value="Enviar">
-                </div>
-            </form>
-        </div>
+        <div class="card" id="card_forms"></div>
     </div>
 
     <div id="Footer"></div>
@@ -45,7 +27,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript"> emailjs.init('H84Hpuf7zsaHPXYfG')</script>
 
-    <script src="../JS/EnviarEmail.js"></script>
+    <script type="module" src="../JS/EnviarEmail.js"></script>
     <script src="../JS/ReactNavBar_Footer.js"></script>
 </body>
 </html>
