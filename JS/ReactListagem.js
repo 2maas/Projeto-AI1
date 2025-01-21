@@ -56,7 +56,9 @@ function App() {
     }
 
     return React.createElement("div", { id: 'component-options' },
-        filteredComponents.map((component) => React.createElement(ComponentesHTML,{key: component.ID,  id: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao , preco: component.price, img: component.img, watts: component.watts})));       
+        filteredComponents.map((component) => React.createElement(ComponentesHTML,
+            {key: component.ID,  id: component.ID, tipo: component.type, nome: component.name, Descricao: component.Descricao,
+                preco: component.price, img: component.img, watts: component.watts})));       
 
 }
 

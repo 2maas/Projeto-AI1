@@ -1,10 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Chama a função logo após o conteúdo da página ser carregado
-    data_horaF();
-    // Atualiza a data e hora a cada segundo
-    setInterval(data_horaF, 1000);
-});
-
 function data_horaF() {
     const dateTimeElement = document.querySelectorAll('.data_hora_texto');
     const now = new Date();
@@ -25,8 +18,6 @@ function data_horaF() {
 }
 
 setInterval(data_horaF, 1000);
-
-data_horaF();
 
 function abrirSidebar() {
     document.getElementById("mySidebar").classList.add("open");
@@ -259,7 +250,7 @@ function Footer() {
                     React.createElement('h4', null, 'Companhia'),
                     React.createElement('ul', {style: {paddingLeft: '0px'}}, 
                         React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('SobreNos.html')}, 'Sobre nós')),
-                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('PcsMontados.html')}, 'Configs Guardadas')),
+                        React.createElement('li', null, React.createElement('a', {href: CaminhoDaPagina('PcsMontados.html')}, 'Configurações Guardadas')),
                     )
                 ),
                 // Obter ajuda Section

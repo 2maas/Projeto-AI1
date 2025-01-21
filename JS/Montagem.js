@@ -33,7 +33,8 @@ function mostrarNaTabela(componenteLocalStorage, tipo) {
     if (componenteLocalStorage != '' && tipo != ''){
         document.getElementById(tipo + '-img').style.display = 'block';
         document.getElementById(tipo + '-img').src = componenteLocalStorage.img;
-        Componentes.push({tipo: tipo, id: componenteLocalStorage.id, nome: componenteLocalStorage.nome, preco: componenteLocalStorage.preco, descricao: componenteLocalStorage.desc ,imagem: componenteLocalStorage.img, watts: componenteLocalStorage.watts});
+        Componentes.push({tipo: tipo, id: componenteLocalStorage.id, nome: componenteLocalStorage.nome, preco: componenteLocalStorage.preco,
+             descricao: componenteLocalStorage.desc ,imagem: componenteLocalStorage.img, watts: componenteLocalStorage.watts});
         document.getElementById(tipo + '-info').textContent = componenteLocalStorage.nome;
         document.getElementById(tipo + '-preco').textContent = componenteLocalStorage.preco.toFixed(2)+'€';
         document.getElementById(tipo + '-botaoAdd').style.display = 'none';
@@ -152,7 +153,7 @@ function transferir() {
     // Juntar a hora e data
     const formattedDateTime = `${hour} - ${date}`;
 
-    // %0A = "\n" so que na url
+   
     conteudo += "Total -> " + precototal.toFixed(2) + '€' + '%0A' + "Gerado por PCChip8Builder " + formattedDateTime;
 
     // Cria o link para download
